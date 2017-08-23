@@ -1,0 +1,5907 @@
+/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
+
+
+html {
+	font-family: sans-serif;
+	line-height: 1.15;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+	display: block;
+}
+
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
+figcaption,
+figure,
+main {
+	display: block;
+}
+
+figure {
+	margin: 1em 40px;
+}
+
+hr {
+	box-sizing: content-box;
+	height: 0;
+	overflow: visible;
+}
+
+pre {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+
+a {
+	background-color: transparent;
+	-webkit-text-decoration-skip: objects;
+}
+
+a:active,
+a:hover {
+	outline-width: 0;
+}
+
+abbr[title] {
+	border-bottom: none;
+	text-decoration: underline;
+	text-decoration: underline dotted;
+}
+
+code,
+kbd,
+samp {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+
+dfn {
+	font-style: italic;
+}
+
+mark {
+	background-color: #ff0;
+	color: #000;
+}
+
+small {
+	font-size: 80%;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+audio,
+video {
+	display: inline-block;
+}
+
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+img {
+	border-style: none;
+}
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	font-family: sans-serif;
+	font-size: 100%;
+	line-height: 1.15;
+	margin: 0;
+}
+
+button,
+input {
+	overflow: visible;
+}
+
+button,
+select {
+	text-transform: none;
+}
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+	-webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+	outline: 1px dotted ButtonText;
+}
+
+fieldset {
+	border: 1px solid #c0c0c0;
+	margin: 0 2px;
+	padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+	box-sizing: border-box;
+	color: inherit;
+	display: table;
+	max-width: 100%;
+	padding: 0;
+	white-space: normal;
+}
+
+progress {
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+textarea {
+	overflow: auto;
+}
+
+[type="checkbox"],
+[type="radio"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+[type="search"] {
+	-webkit-appearance: textfield;
+	outline-offset: -2px;
+}
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+	-webkit-appearance: button;
+	font: inherit;
+}
+
+details,
+menu {
+	display: block;
+}
+
+summary {
+	display: list-item;
+}
+
+canvas {
+	display: inline-block;
+}
+
+template {
+	display: none;
+}
+
+[hidden] {
+	display: none;
+}
+/*! spectre.css v0.2.9 | MIT License | github.com/picturepan2/spectre */
+/* line 19, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+a {
+  color: #d80027;
+  text-decoration: none;
+}
+
+/* line 24, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+a:focus,
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+/* line 31, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+button:focus {
+  outline: 0;
+}
+
+/* line 35, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn .icon,
+.toast .icon,
+.menu .icon {
+  font-size: 1.3333em;
+  line-height: .8em;
+  vertical-align: -20%;
+}
+
+/* line 43, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.icon-caret {
+  border-left: .4rem solid transparent;
+  border-right: .4rem solid transparent;
+  border-top: .4rem solid currentColor;
+  display: inline-block;
+  height: 0;
+  margin: 0;
+  vertical-align: middle;
+  width: 0;
+}
+
+/* line 54, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: inherit;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+}
+
+/* line 67, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+h1 {
+  font-size: 5rem;
+}
+
+/* line 71, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+h2 {
+  font-size: 4rem;
+}
+
+/* line 75, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+h3 {
+  font-size: 3rem;
+}
+
+/* line 79, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+h4 {
+  font-size: 2.4rem;
+}
+
+/* line 83, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+h5 {
+  font-size: 2rem;
+}
+
+/* line 87, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+h6 {
+  font-size: 1.6rem;
+}
+
+/* line 91, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+p {
+  margin: 0 0 1rem;
+}
+
+/* line 95, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+blockquote {
+  border-left: .2rem solid #efefef;
+  margin-left: 0;
+  padding: 1rem 2rem;
+}
+
+/* line 101, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* line 105, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+blockquote cite {
+  color: #999;
+}
+
+/* line 109, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+ul,
+ol {
+  margin: 2rem 0 2rem 2rem;
+  padding: 0;
+}
+
+/* line 115, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+  margin: 1.5rem 0 1.5rem 2rem;
+}
+
+/* line 122, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+ul li,
+ol li {
+  margin-top: 1rem;
+}
+
+/* line 127, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+ul ul {
+  list-style-type: circle;
+}
+
+/* line 131, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+ol {
+  list-style: decimal inside;
+}
+
+/* line 135, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+ol ol {
+  list-style-type: lower-alpha;
+}
+
+/* line 139, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+dl dt {
+  font-weight: bold;
+}
+
+/* line 143, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+dl dd {
+  margin: .5rem 0 1.5rem 0;
+}
+
+/* line 147, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+mark {
+  background: #ffe9b3;
+  border-radius: .2rem;
+  display: inline-block;
+  line-height: 1;
+  padding: .3rem .4rem;
+  vertical-align: baseline;
+}
+
+/* line 156, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+kbd {
+  background: #333;
+  border-radius: .2rem;
+  color: #fff;
+  display: inline-block;
+  line-height: 1;
+  padding: .3rem .4rem;
+  vertical-align: baseline;
+}
+
+/* line 166, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+abbr[title] {
+  border-bottom: .1rem dotted;
+  cursor: help;
+  text-decoration: none;
+}
+
+/* line 172, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: left;
+  width: 100%;
+}
+
+/* line 179, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.table.table-striped tbody tr:nth-of-type(odd) {
+  background: #f8f8f8;
+}
+
+/* line 183, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.table.table-hover tbody tr:hover {
+  background: #f0f0f0;
+}
+
+/* line 187, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.table tbody tr.active,
+.table.table-striped tbody tr.active {
+  background: #f0f0f0;
+}
+
+/* line 192, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.table td {
+  border-bottom: .1rem solid #efefef;
+  padding: 1.3rem .5rem;
+}
+
+/* line 197, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.table th {
+  border-bottom: .2rem solid #333;
+  padding: 1.3rem .5rem;
+}
+
+/* line 202, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn {
+  -webkit-appearance: none;
+  background: #fff;
+  border: 0.1rem solid #d80027;
+  border-radius: .2rem;
+  color: #d80027;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.4rem;
+  height: 3.2rem;
+  line-height: 2rem;
+  padding: .5rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all .2s ease;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* line 225, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn:focus {
+  background: #f7f8fc;
+  text-decoration: none;
+}
+
+/* line 230, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn:hover {
+  background: #d80027;
+  border-color: #bf0022;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* line 237, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn:active,
+.btn.active {
+  background: #bf0022;
+  border-color: #a5001e;
+  color: #fff;
+}
+
+/* line 244, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn[disabled],
+.btn:disabled,
+.btn.disabled {
+  cursor: default;
+  opacity: .5;
+  pointer-events: none;
+}
+
+/* line 252, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn.btn-primary {
+  background: #d80027;
+  border-color: #bf0022;
+  color: #fff;
+}
+
+/* line 258, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn.btn-primary:focus {
+  background: #bf0022;
+  border-color: #b40021;
+  color: #fff;
+}
+
+/* line 264, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn.btn-primary:hover {
+  background: #b40021;
+  border-color: #9b001c;
+  color: #fff;
+}
+
+/* line 270, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn.btn-primary:active,
+.btn.btn-primary.active {
+  background: #aa001f;
+  border-color: #36429f;
+  color: #fff;
+}
+
+/* line 277, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn.btn-primary.loading::after {
+  border-color: #fff;
+  border-right-color: transparent;
+  border-top-color: transparent;
+}
+
+/* line 283, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn.btn-link {
+  background: transparent;
+  border-color: transparent;
+  color: #d80027;
+}
+
+/* line 289, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn.btn-link:focus,
+.btn.btn-link:hover,
+.btn.btn-link:active {
+  background-color: whitesmoke;
+}
+
+/* line 296, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn.btn-sm {
+  font-size: 1.2rem;
+  height: 2.4rem;
+  padding: .1rem .8rem;
+}
+
+/* line 302, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn.btn-lg {
+  font-size: 1.8rem;
+  height: 4rem;
+  padding: .9rem 1.5rem;
+}
+
+/* line 308, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn.btn-block {
+  display: block;
+  width: 100%;
+}
+
+/* line 313, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn.btn-action {
+  padding-left: .2rem;
+  padding-right: .2rem;
+  width: 3.2rem;
+}
+
+/* line 319, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn.btn-action.btn-sm {
+  width: 2.4rem;
+}
+
+/* line 323, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn.btn-action.btn-lg {
+  width: 4rem;
+}
+
+/* line 327, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn.btn-clear {
+  background: transparent;
+  border: 0;
+  color: currentColor;
+  height: 2rem;
+  margin-left: .2rem;
+  margin-right: -.4rem;
+  opacity: .45;
+  padding: 0 .4rem;
+  text-decoration: none;
+  width: 2rem;
+}
+
+/* line 340, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn.btn-clear:hover {
+  opacity: .85;
+}
+
+/* line 344, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn.btn-clear::before {
+  content: "\00d7";
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 2rem;
+}
+
+/* line 351, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn.btn-danger {
+  border-color: red;
+  color: red;
+}
+
+/* line 356, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn-group {
+  display: inline-flex;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+/* line 365, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn-group .btn {
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+/* line 371, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn-group .btn:first-child:not(:last-child) {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* line 376, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn-group .btn:not(:first-child):not(:last-child) {
+  border-radius: 0;
+  margin-left: -.1rem;
+}
+
+/* line 381, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn-group .btn:last-child:not(:first-child) {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  margin-left: -.1rem;
+}
+
+/* line 387, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn-group .btn:hover,
+.btn-group .btn:focus,
+.btn-group .btn:active,
+.btn-group .btn.active {
+  z-index: 9;
+}
+
+/* line 394, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.btn-group.btn-group-block {
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+}
+
+/* line 400, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+/* line 405, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #fff;
+  background-image: none;
+  border: .1rem solid #ccc;
+  border-radius: .2rem;
+  color: #333;
+  display: block;
+  font-size: 1.4rem;
+  height: 3.2rem;
+  line-height: 2rem;
+  max-width: 100%;
+  outline: 0;
+  padding: .5rem .8rem;
+  position: relative;
+  width: 100%;
+}
+
+/* line 426, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-input:focus {
+  border-color: #d80027;
+  box-shadow: 0 0 0 0.2rem #d80027;
+}
+
+/* line 431, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-input.input-sm {
+  font-size: 1.2rem;
+  height: 2.4rem;
+  padding: .1rem .6rem;
+}
+
+/* line 437, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-input.input-lg {
+  font-size: 1.6rem;
+  height: 4rem;
+  padding: .9rem .8rem;
+}
+
+/* line 443, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-input.input-inline {
+  display: inline-block;
+  vertical-align: middle;
+  width: auto;
+}
+
+/* line 449, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+textarea.form-input {
+  height: auto;
+  line-height: 2rem;
+}
+
+/* line 454, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-input[type=file] {
+  height: auto;
+}
+
+/* line 458, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-input-hint {
+  color: #999;
+  margin-top: .4rem;
+}
+
+/* line 463, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.has-success .form-input-hint,
+.is-success + .form-input-hint {
+  color: #32b643;
+}
+
+/* line 468, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.has-danger .form-input-hint,
+.is-danger + .form-input-hint {
+  color: #e85600;
+}
+
+/* line 473, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-label {
+  display: inline-block;
+  font-family: Lato, sans-serif;
+  font-weight: bold;
+  line-height: 1.6rem;
+  margin-bottom: .5rem;
+}
+
+/* line 481, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAUCAMAAACzvE1FAAAADFBMVEUzMzMzMzMzMzMzMzMKAG/3AAAAA3RSTlMAf4C/aSLHAAAAPElEQVR42q3NMQ4AIAgEQTn//2cLdRKppSGzBYwzVXvznNWs8C58CiussPJj8h6NwgorrKRdTvuV9v16Afn0AYFOB7aYAAAAAElFTkSuQmCC) no-repeat right 0.75rem center/0.8rem 1rem;
+  border: .1rem solid #ccc;
+  border-radius: .2rem;
+  font-size: 1.4rem;
+  height: 3.2rem;
+  line-height: 2rem;
+  outline: 0;
+  padding: .5rem .8rem;
+  padding-right: 2.4rem;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* line 498, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-select:focus {
+  border-color: #d80027;
+  box-shadow: 0 0 0 0.2rem #d80027;
+}
+
+/* line 503, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-select::-ms-expand {
+  display: none;
+}
+
+/* line 507, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-select.select-sm {
+  font-size: 1.2rem;
+  height: 2.4rem;
+  padding: .1rem 2rem .1rem .6rem;
+}
+
+/* line 513, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-select.select-lg {
+  font-size: 1.6rem;
+  height: 4rem;
+  padding: .9rem 2.4rem .9rem .8rem;
+}
+
+/* line 519, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.has-success .form-input,
+.has-success .form-select,
+.form-input.is-success,
+.form-select.is-success {
+  border-color: #32b643;
+}
+
+/* line 526, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.has-success .form-input:focus,
+.has-success .form-select:focus,
+.form-input.is-success:focus,
+.form-select.is-success:focus {
+  box-shadow: 0 0 0 0.2rem rgba(50, 182, 67, 0.15);
+}
+
+/* line 533, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.has-danger .form-input,
+.has-danger .form-select,
+.form-input.is-danger,
+.form-select.is-danger {
+  border-color: #e85600;
+}
+
+/* line 540, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.has-danger .form-input:focus,
+.has-danger .form-select:focus,
+.form-input.is-danger:focus,
+.form-select.is-danger:focus {
+  box-shadow: 0 0 0 0.2rem rgba(232, 86, 0, 0.15);
+}
+
+/* line 547, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-checkbox input,
+.form-radio input,
+.form-switch input {
+  clip: rect(0, 0, 0, 0);
+  height: .1rem;
+  margin: -.1rem;
+  overflow: hidden;
+  position: absolute;
+  width: .1rem;
+}
+
+/* line 558, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-checkbox input:focus + .form-icon,
+.form-radio input:focus + .form-icon,
+.form-switch input:focus + .form-icon {
+  border-color: #d80027;
+}
+
+/* line 564, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-checkbox,
+.form-radio {
+  display: inline-block;
+  line-height: 1.8rem;
+  padding: .3rem 2rem;
+  position: relative;
+}
+
+/* line 572, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-checkbox .form-icon,
+.form-radio .form-icon {
+  border: .1rem solid #ccc;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.4rem;
+  height: 1.4rem;
+  left: 0;
+  line-height: 2.4rem;
+  outline: none;
+  padding: 0;
+  position: absolute;
+  top: .5rem;
+  transition: all .2s ease;
+  vertical-align: top;
+  width: 1.4rem;
+}
+
+/* line 591, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-checkbox input:checked + .form-icon,
+.form-radio input:checked + .form-icon {
+  background: #d80027;
+  border-color: #d80027;
+}
+
+/* line 597, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-checkbox input:active + .form-icon,
+.form-radio input:active + .form-icon {
+  background: #efefef;
+}
+
+/* line 602, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-checkbox .form-icon {
+  border-radius: .2rem;
+}
+
+/* line 606, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-checkbox input:checked + .form-icon::after {
+  background-clip: padding-box;
+  border: .2rem solid #fff;
+  border-left-width: 0;
+  border-top-width: 0;
+  content: "";
+  height: 1rem;
+  left: 50%;
+  margin-left: -.3rem;
+  margin-top: -.6rem;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  width: .6rem;
+}
+
+/* line 624, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-checkbox input:indeterminate + .form-icon {
+  background: #d80027;
+  border-color: #d80027;
+}
+
+/* line 629, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-checkbox input:indeterminate + .form-icon::after {
+  background: #fff;
+  content: "";
+  height: .2rem;
+  left: 50%;
+  margin-left: -.4rem;
+  margin-top: -.1rem;
+  position: absolute;
+  top: 50%;
+  width: .8rem;
+}
+
+/* line 641, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-radio .form-icon {
+  border-radius: .7rem;
+}
+
+/* line 645, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-radio input:checked + .form-icon::after {
+  background: #fff;
+  border-radius: .2rem;
+  content: "";
+  height: .4rem;
+  left: 50%;
+  margin-left: -.2rem;
+  margin-top: -.2rem;
+  position: absolute;
+  top: 50%;
+  width: .4rem;
+}
+
+/* line 658, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-switch {
+  display: inline-block;
+  line-height: 2rem;
+  padding: .2rem 2rem .2rem 3.6rem;
+  position: relative;
+}
+
+/* line 665, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-switch .form-icon {
+  background: #ccc;
+  background-clip: padding-box;
+  border: .1rem solid #ccc;
+  border-radius: .9rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  height: 1.8rem;
+  left: 0;
+  line-height: 2.6rem;
+  outline: none;
+  padding: 0;
+  position: absolute;
+  top: .3rem;
+  vertical-align: top;
+  width: 3rem;
+}
+
+/* line 684, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-switch .form-icon::after {
+  background: #fff;
+  border-radius: .8rem;
+  content: "";
+  display: block;
+  height: 1.6rem;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: left .2s ease;
+  width: 1.6rem;
+}
+
+/* line 697, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-switch input:checked + .form-icon {
+  background: #d80027;
+  border-color: #d80027;
+}
+
+/* line 702, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-switch input:checked + .form-icon::after {
+  left: 1.2rem;
+}
+
+/* line 706, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-switch input:active + .form-icon::after {
+  background: #efefef;
+}
+
+/* line 710, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.input-group {
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+}
+
+/* line 716, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.input-group .input-group-addon {
+  background: #f8f8f8;
+  border: .1rem solid #ccc;
+  border-radius: .2rem;
+  line-height: 2rem;
+  padding: .5rem .8rem;
+}
+
+/* line 724, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.input-group .input-group-addon.addon-sm {
+  font-size: 1.2rem;
+  padding: .1rem .6rem;
+}
+
+/* line 729, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.input-group .input-group-addon.addon-lg {
+  font-size: 1.6rem;
+  line-height: 2rem;
+  padding: .9rem .8rem;
+}
+
+/* line 735, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.input-group .input-group-addon,
+.input-group .input-group-btn {
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+/* line 742, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.input-group .form-input:first-child:not(:last-child),
+.input-group .input-group-addon:first-child:not(:last-child),
+.input-group .input-group-btn:first-child:not(:last-child) {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* line 749, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.input-group .form-input:not(:first-child):not(:last-child),
+.input-group .input-group-addon:not(:first-child):not(:last-child),
+.input-group .input-group-btn:not(:first-child):not(:last-child) {
+  border-radius: 0;
+  margin-left: -.1rem;
+}
+
+/* line 756, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.input-group .form-input:last-child:not(:first-child),
+.input-group .input-group-addon:last-child:not(:first-child),
+.input-group .input-group-btn:last-child:not(:first-child) {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  margin-left: -.1rem;
+}
+
+/* line 764, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.input-group .form-input:focus,
+.input-group .input-group-addon:focus,
+.input-group .input-group-btn:focus {
+  z-index: 99;
+}
+
+/* line 770, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.input-group.input-inline {
+  display: inline-flex;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+}
+
+/* line 776, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-input:disabled,
+.form-select:disabled,
+.form-input.disabled,
+.form-select.disabled {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+  opacity: .5;
+}
+
+/* line 785, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+input:disabled + .form-icon,
+input.disabled + .form-icon {
+  background: #f0f0f0;
+  border-color: #ccc;
+  cursor: not-allowed;
+  opacity: .5;
+}
+
+/* line 793, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-switch input:disabled + .form-icon::after,
+.form-switch input.disabled + .form-icon::after {
+  background: #fff;
+}
+
+/* line 798, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-horizontal {
+  padding: 1rem;
+}
+
+/* line 802, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-horizontal .form-group {
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+}
+
+/* line 808, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-horizontal .form-label {
+  margin-bottom: 0;
+  padding: .8rem .4rem;
+}
+
+/* line 813, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-horizontal .form-checkbox,
+.form-horizontal .form-radio,
+.form-horizontal .form-switch {
+  margin: .4rem 0;
+}
+
+/* line 819, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.label {
+  background: #f8f8f8;
+  border-radius: .2rem;
+  color: #666;
+  display: inline-block;
+  line-height: 1;
+  padding: .3rem .4rem;
+  vertical-align: baseline;
+}
+
+/* line 829, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.label.label-primary {
+  background: #d80027;
+  color: #fff;
+}
+
+/* line 834, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.label.label-success {
+  background: #32b643;
+  color: #fff;
+}
+
+/* line 839, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.label.label-warning {
+  background: #ffb700;
+  color: #fff;
+}
+
+/* line 844, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.label.label-danger {
+  background: #e85600;
+  color: #fff;
+}
+
+/* line 849, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+code {
+  background: #f8f8f8;
+  border-radius: .2rem;
+  color: #e06870;
+  display: inline-block;
+  line-height: 1;
+  padding: .3rem .4rem;
+  vertical-align: baseline;
+}
+
+/* line 859, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.code {
+  border-radius: .2rem;
+  color: #666;
+  line-height: 2rem;
+  position: relative;
+}
+
+/* line 866, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.code::before {
+  color: #ccc;
+  content: attr(data-lang);
+  font-size: 1.2rem;
+  position: absolute;
+  right: 1rem;
+  top: .2rem;
+}
+
+/* line 875, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.code code {
+  color: inherit;
+  display: block;
+  line-height: inherit;
+  overflow-x: auto;
+  padding: 2rem;
+  width: 100%;
+}
+
+/* line 884, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.img-responsive {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+/* line 890, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.video-responsive {
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+
+/* line 898, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.video-responsive::before {
+  content: "";
+  display: block;
+  padding-bottom: 56.25%;
+}
+
+/* line 904, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.video-responsive iframe,
+.video-responsive object,
+.video-responsive embed {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+/* line 916, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.video-responsive video {
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+/* line 922, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.video-responsive-4-3::before {
+  padding-bottom: 75%;
+}
+
+/* line 926, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.video-responsive-1-1::before {
+  padding-bottom: 100%;
+}
+
+/* line 930, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.figure {
+  margin: 0 0 1rem 0;
+}
+
+/* line 934, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.figure .figure-caption {
+  color: #666;
+  margin-top: 1rem;
+}
+
+/* line 939, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* line 946, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.columns {
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+/* line 957, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.columns.col-gapless {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* line 962, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.columns.col-gapless .column {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* line 967, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.columns.col-oneline {
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+/* line 974, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.column {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 1rem;
+}
+
+/* line 981, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.column.col-12,
+.column.col-11,
+.column.col-10,
+.column.col-9,
+.column.col-8,
+.column.col-7,
+.column.col-6,
+.column.col-5,
+.column.col-4,
+.column.col-3,
+.column.col-2,
+.column.col-1 {
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+}
+
+/* line 998, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.col-12 {
+  width: 100%;
+}
+
+/* line 1002, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.col-11 {
+  width: 91.66666667%;
+}
+
+/* line 1006, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.col-10 {
+  width: 83.33333333%;
+}
+
+/* line 1010, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.col-9 {
+  width: 75%;
+}
+
+/* line 1014, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.col-8 {
+  width: 66.66666667%;
+}
+
+/* line 1018, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.col-7 {
+  width: 58.33333333%;
+}
+
+/* line 1022, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.col-6 {
+  width: 50%;
+}
+
+/* line 1026, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.col-5 {
+  width: 41.66666667%;
+}
+
+/* line 1030, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.col-4 {
+  width: 33.33333333%;
+}
+
+/* line 1034, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.col-3 {
+  width: 25%;
+}
+
+/* line 1038, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.col-2 {
+  width: 16.66666667%;
+}
+
+/* line 1042, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.col-1 {
+  width: 8.33333333%;
+}
+
+@media screen and (max-width: 1280px) {
+  /* line 1047, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-xl-12,
+  .col-xl-11,
+  .col-xl-10,
+  .col-xl-9,
+  .col-xl-8,
+  .col-xl-7,
+  .col-xl-6,
+  .col-xl-5,
+  .col-xl-4,
+  .col-xl-3,
+  .col-xl-2,
+  .col-xl-1 {
+    -webkit-flex: none;
+    -ms-flex: none;
+    flex: none;
+  }
+
+  /* line 1063, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-xl-12 {
+    width: 100%;
+  }
+
+  /* line 1066, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-xl-11 {
+    width: 91.66666667%;
+  }
+
+  /* line 1069, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-xl-10 {
+    width: 83.33333333%;
+  }
+
+  /* line 1072, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-xl-9 {
+    width: 75%;
+  }
+
+  /* line 1075, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-xl-8 {
+    width: 66.66666667%;
+  }
+
+  /* line 1078, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-xl-7 {
+    width: 58.33333333%;
+  }
+
+  /* line 1081, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-xl-6 {
+    width: 50%;
+  }
+
+  /* line 1084, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-xl-5 {
+    width: 41.66666667%;
+  }
+
+  /* line 1087, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-xl-4 {
+    width: 33.33333333%;
+  }
+
+  /* line 1090, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-xl-3 {
+    width: 25%;
+  }
+
+  /* line 1093, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-xl-2 {
+    width: 16.66666667%;
+  }
+
+  /* line 1096, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-xl-1 {
+    width: 8.33333333%;
+  }
+}
+@media screen and (max-width: 960px) {
+  /* line 1102, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-lg-12,
+  .col-lg-11,
+  .col-lg-10,
+  .col-lg-9,
+  .col-lg-8,
+  .col-lg-7,
+  .col-lg-6,
+  .col-lg-5,
+  .col-lg-4,
+  .col-lg-3,
+  .col-lg-2,
+  .col-lg-1 {
+    -webkit-flex: none;
+    -ms-flex: none;
+    flex: none;
+  }
+
+  /* line 1118, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-lg-12 {
+    width: 100%;
+  }
+
+  /* line 1121, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-lg-11 {
+    width: 91.66666667%;
+  }
+
+  /* line 1124, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-lg-10 {
+    width: 83.33333333%;
+  }
+
+  /* line 1127, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-lg-9 {
+    width: 75%;
+  }
+
+  /* line 1130, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-lg-8 {
+    width: 66.66666667%;
+  }
+
+  /* line 1133, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-lg-7 {
+    width: 58.33333333%;
+  }
+
+  /* line 1136, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-lg-6 {
+    width: 50%;
+  }
+
+  /* line 1139, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-lg-5 {
+    width: 41.66666667%;
+  }
+
+  /* line 1142, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-lg-4 {
+    width: 33.33333333%;
+  }
+
+  /* line 1145, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-lg-3 {
+    width: 25%;
+  }
+
+  /* line 1148, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-lg-2 {
+    width: 16.66666667%;
+  }
+
+  /* line 1151, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-lg-1 {
+    width: 8.33333333%;
+  }
+}
+@media screen and (max-width: 840px) {
+  /* line 1157, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-md-12,
+  .col-md-11,
+  .col-md-10,
+  .col-md-9,
+  .col-md-8,
+  .col-md-7,
+  .col-md-6,
+  .col-md-5,
+  .col-md-4,
+  .col-md-3,
+  .col-md-2,
+  .col-md-1 {
+    -webkit-flex: none;
+    -ms-flex: none;
+    flex: none;
+  }
+
+  /* line 1173, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-md-12 {
+    width: 100%;
+  }
+
+  /* line 1176, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-md-11 {
+    width: 91.66666667%;
+  }
+
+  /* line 1179, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-md-10 {
+    width: 83.33333333%;
+  }
+
+  /* line 1182, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-md-9 {
+    width: 75%;
+  }
+
+  /* line 1185, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-md-8 {
+    width: 66.66666667%;
+  }
+
+  /* line 1188, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-md-7 {
+    width: 58.33333333%;
+  }
+
+  /* line 1191, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-md-6 {
+    width: 50%;
+  }
+
+  /* line 1194, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-md-5 {
+    width: 41.66666667%;
+  }
+
+  /* line 1197, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-md-4 {
+    width: 33.33333333%;
+  }
+
+  /* line 1200, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-md-3 {
+    width: 25%;
+  }
+
+  /* line 1203, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-md-2 {
+    width: 16.66666667%;
+  }
+
+  /* line 1206, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-md-1 {
+    width: 8.33333333%;
+  }
+}
+@media screen and (max-width: 600px) {
+  /* line 1212, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-sm-12,
+  .col-sm-11,
+  .col-sm-10,
+  .col-sm-9,
+  .col-sm-8,
+  .col-sm-7,
+  .col-sm-6,
+  .col-sm-5,
+  .col-sm-4,
+  .col-sm-3,
+  .col-sm-2,
+  .col-sm-1 {
+    -webkit-flex: none;
+    -ms-flex: none;
+    flex: none;
+  }
+
+  /* line 1228, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-sm-12 {
+    width: 100%;
+  }
+
+  /* line 1231, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-sm-11 {
+    width: 91.66666667%;
+  }
+
+  /* line 1234, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-sm-10 {
+    width: 83.33333333%;
+  }
+
+  /* line 1237, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-sm-9 {
+    width: 75%;
+  }
+
+  /* line 1240, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-sm-8 {
+    width: 66.66666667%;
+  }
+
+  /* line 1243, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-sm-7 {
+    width: 58.33333333%;
+  }
+
+  /* line 1246, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-sm-6 {
+    width: 50%;
+  }
+
+  /* line 1249, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-sm-5 {
+    width: 41.66666667%;
+  }
+
+  /* line 1252, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-sm-4 {
+    width: 33.33333333%;
+  }
+
+  /* line 1255, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-sm-3 {
+    width: 25%;
+  }
+
+  /* line 1258, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-sm-2 {
+    width: 16.66666667%;
+  }
+
+  /* line 1261, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-sm-1 {
+    width: 8.33333333%;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* line 1267, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-xs-12,
+  .col-xs-11,
+  .col-xs-10,
+  .col-xs-9,
+  .col-xs-8,
+  .col-xs-7,
+  .col-xs-6,
+  .col-xs-5,
+  .col-xs-4,
+  .col-xs-3,
+  .col-xs-2,
+  .col-xs-1 {
+    -webkit-flex: none;
+    -ms-flex: none;
+    flex: none;
+  }
+
+  /* line 1283, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-xs-12 {
+    width: 100%;
+  }
+
+  /* line 1286, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-xs-11 {
+    width: 91.66666667%;
+  }
+
+  /* line 1289, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-xs-10 {
+    width: 83.33333333%;
+  }
+
+  /* line 1292, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-xs-9 {
+    width: 75%;
+  }
+
+  /* line 1295, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-xs-8 {
+    width: 66.66666667%;
+  }
+
+  /* line 1298, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-xs-7 {
+    width: 58.33333333%;
+  }
+
+  /* line 1301, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-xs-6 {
+    width: 50%;
+  }
+
+  /* line 1304, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-xs-5 {
+    width: 41.66666667%;
+  }
+
+  /* line 1307, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-xs-4 {
+    width: 33.33333333%;
+  }
+
+  /* line 1310, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-xs-3 {
+    width: 25%;
+  }
+
+  /* line 1313, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-xs-2 {
+    width: 16.66666667%;
+  }
+
+  /* line 1316, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .col-xs-1 {
+    width: 8.33333333%;
+  }
+}
+/* line 1321, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.show-xs,
+.show-sm,
+.show-md,
+.show-lg,
+.show-xl {
+  display: none !important;
+}
+
+@media screen and (max-width: 480px) {
+  /* line 1330, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .hide-xs {
+    display: none !important;
+  }
+
+  /* line 1333, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .show-xs {
+    display: block !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  /* line 1339, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .hide-sm {
+    display: none !important;
+  }
+
+  /* line 1342, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .show-sm {
+    display: block !important;
+  }
+}
+@media screen and (max-width: 840px) {
+  /* line 1348, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .hide-md {
+    display: none !important;
+  }
+
+  /* line 1351, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .show-md {
+    display: block !important;
+  }
+}
+@media screen and (max-width: 960px) {
+  /* line 1357, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .hide-lg {
+    display: none !important;
+  }
+
+  /* line 1360, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .show-lg {
+    display: block !important;
+  }
+}
+@media screen and (max-width: 1280px) {
+  /* line 1366, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .hide-xl {
+    display: none !important;
+  }
+
+  /* line 1369, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+  .show-xl {
+    display: block !important;
+  }
+}
+/* line 1374, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.navbar {
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  -ms-flex-align: stretch;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+/* line 1386, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.navbar .navbar-section {
+  -webkit-align-items: center;
+  align-items: center;
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  -webkit-flex: 1 0 0;
+  -ms-flex: 1 0 0;
+  flex: 1 0 0;
+  -ms-flex-align: center;
+}
+
+/* line 1398, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.navbar .navbar-section:last-of-type {
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+/* line 1404, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.navbar .navbar-primary {
+  -webkit-align-items: center;
+  align-items: center;
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -ms-flex-align: center;
+}
+
+/* line 1416, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.navbar .navbar-brand {
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* line 1422, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.panel {
+  border: .1rem solid #efefef;
+  border-radius: .2rem;
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+/* line 1433, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.panel .panel-header,
+.panel .panel-footer {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 1.5rem;
+}
+
+/* line 1441, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.panel .panel-nav {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+/* line 1447, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.panel .panel-body {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  overflow-y: auto;
+}
+
+/* line 1454, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.panel .panel-body {
+  padding: 0 1.5rem;
+}
+
+/* line 1458, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.panel .panel-title {
+  font-size: 2rem;
+  line-height: 1.4;
+}
+
+/* line 1463, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.empty {
+  background: #f8f8f8;
+  border-radius: .2rem;
+  color: #666;
+  padding: 4rem;
+  text-align: center;
+}
+
+/* line 1471, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.empty .empty-title,
+.empty .empty-meta {
+  margin: 1rem auto;
+}
+
+/* line 1476, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.empty .empty-meta {
+  color: #999;
+}
+
+/* line 1480, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.empty .empty-action {
+  margin-top: 1.5rem;
+}
+
+/* line 1484, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-autocomplete {
+  position: relative;
+}
+
+/* line 1488, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-autocomplete .form-autocomplete-input {
+  -webkit-align-content: flex-start;
+  align-content: flex-start;
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  -ms-flex-line-pack: start;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  height: auto;
+  min-height: 3.6rem;
+  padding: .1rem 0 .1rem .2rem;
+}
+
+/* line 1503, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-autocomplete .form-autocomplete-input.is-focused {
+  border-color: #d80027;
+}
+
+/* line 1507, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-autocomplete .form-autocomplete-input .form-input {
+  border-color: transparent;
+  display: inline-block;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  padding: .3rem;
+  width: auto;
+}
+
+/* line 1517, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-autocomplete mark {
+  font-size: 1;
+  padding: .1em 0;
+}
+
+/* line 1522, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.form-autocomplete .menu {
+  left: 0;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+}
+
+/* line 1529, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.avatar {
+  background: #d80027;
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.75);
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: 300;
+  height: 3.2rem;
+  line-height: 1;
+  margin: 0;
+  position: relative;
+  vertical-align: middle;
+  width: 3.2rem;
+}
+
+/* line 1544, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.avatar.avatar-xs {
+  font-size: 1.4rem;
+  height: 1.6rem;
+  width: 1.6rem;
+}
+
+/* line 1550, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.avatar.avatar-sm {
+  font-size: 1rem;
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+/* line 1556, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.avatar.avatar-lg {
+  font-size: 2rem;
+  height: 4.8rem;
+  width: 4.8rem;
+}
+
+/* line 1562, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.avatar.avatar-xl {
+  font-size: 2.6rem;
+  height: 6.4rem;
+  width: 6.4rem;
+}
+
+/* line 1568, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.avatar img {
+  border-radius: 50%;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  z-index: 99;
+}
+
+/* line 1576, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.avatar .avatar-icon {
+  background: #fff;
+  bottom: -.2em;
+  height: 50%;
+  padding: 5%;
+  position: absolute;
+  right: -.2em;
+  width: 50%;
+}
+
+/* line 1586, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.avatar[data-initial]::before {
+  color: currentColor;
+  content: attr(data-initial);
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  vertical-align: middle;
+  z-index: 1;
+}
+
+/* line 1599, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.avatar.avatar-xs[data-initial]::before {
+  -webkit-transform: translate(-50%, -50%) scale(0.5);
+  -ms-transform: translate(-50%, -50%) scale(0.5);
+  transform: translate(-50%, -50%) scale(0.5);
+}
+
+/* line 1605, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.badge {
+  display: inline-block;
+  position: relative;
+}
+
+/* line 1610, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.badge[data-badge]::after,
+.badge:not([data-badge])::after {
+  background: #d80027;
+  background-clip: padding-box;
+  border: .1rem solid #fff;
+  border-radius: 1rem;
+  color: #fff;
+  content: attr(data-badge);
+  display: inline-block;
+  -webkit-transform: translate(-0.4rem, -1rem);
+  -ms-transform: translate(-0.4rem, -1rem);
+  transform: translate(-0.4rem, -1rem);
+}
+
+/* line 1624, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.badge[data-badge]::after {
+  font-size: 1.2rem;
+  height: 2rem;
+  line-height: 1.4rem;
+  min-width: 2rem;
+  padding: .2rem .5rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* line 1634, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.badge:not([data-badge])::after,
+.badge[data-badge=""]::after {
+  height: .8rem;
+  min-width: .8rem;
+  padding: 0;
+  width: .8rem;
+}
+
+/* line 1642, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.badge.btn::after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transform: translate(50%, -50%);
+  -ms-transform: translate(50%, -50%);
+  transform: translate(50%, -50%);
+}
+
+/* line 1651, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.bar {
+  background: #efefef;
+  border-radius: .2rem;
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  height: 1.6rem;
+  width: 100%;
+}
+
+/* line 1664, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.bar.bar-sm {
+  height: .4rem;
+}
+
+/* line 1668, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.bar .bar-item {
+  background: #d80027;
+  color: #fff;
+  display: block;
+  -ms-flex-negative: 0;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  height: 100%;
+  line-height: 1;
+  padding: .2rem 0;
+  text-align: center;
+  width: 0;
+}
+
+/* line 1683, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.bar .bar-item:first-of-type {
+  border-bottom-left-radius: .2rem;
+  border-top-left-radius: .2rem;
+}
+
+/* line 1688, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.bar .bar-item:last-of-type {
+  border-bottom-right-radius: .2rem;
+  border-top-right-radius: .2rem;
+  -ms-flex-negative: 1;
+  -webkit-flex-shrink: 1;
+  flex-shrink: 1;
+}
+
+/* line 1696, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.card {
+  background: #fff;
+  border: .1rem solid #efefef;
+  border-radius: .2rem;
+  display: block;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* line 1706, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.card .card-header,
+.card .card-body,
+.card .card-footer {
+  padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+/* line 1712, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.card .card-header:last-child,
+.card .card-body:last-child,
+.card .card-footer:last-child {
+  padding-bottom: 1.5rem;
+}
+
+/* line 1718, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.card .card-image {
+  padding-top: 1.5rem;
+}
+
+/* line 1722, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.card .card-image:first-child {
+  padding-top: 0;
+}
+
+/* line 1726, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.card .card-image:first-child img {
+  border-top-left-radius: .2rem;
+  border-top-right-radius: .2rem;
+}
+
+/* line 1731, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.card .card-image:last-child img {
+  border-bottom-left-radius: .2rem;
+  border-bottom-right-radius: .2rem;
+}
+
+/* line 1736, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.card .card-title {
+  font-size: 2rem;
+  line-height: 1.4;
+}
+
+/* line 1741, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.card .card-meta {
+  color: #999;
+  font-size: 1.3rem;
+}
+
+/* line 1746, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.chip {
+  -webkit-align-items: center;
+  align-items: center;
+  background: #efefef;
+  border-radius: .2rem;
+  color: #666;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  display: -webkit-inline-flex;
+  -ms-flex-align: center;
+  height: 3rem;
+  margin: .1rem .2rem .1rem 0;
+  max-width: 100%;
+  padding: .3rem .8rem;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+/* line 1764, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.chip.active {
+  background: #d80027;
+  color: #fff;
+}
+
+/* line 1769, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.chip .avatar {
+  margin-left: -.4rem;
+  margin-right: .4rem;
+}
+
+/* line 1774, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.dropdown {
+  background-color: inherit;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+
+/* line 1781, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.dropdown .menu {
+  -webkit-animation: slide-down .2s 1;
+  animation: slide-down .2s 1;
+  display: none;
+  left: 0;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+}
+
+/* line 1791, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.dropdown.dropdown-right .menu {
+  left: auto;
+  right: 0;
+}
+
+/* line 1796, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.dropdown.active .menu,
+.dropdown .dropdown-toggle:focus + .menu,
+.dropdown .menu:hover {
+  display: block;
+}
+
+/* line 1802, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.menu {
+  background: #fff;
+  border-radius: .2rem;
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.3);
+  list-style: none;
+  margin: 0;
+  min-width: 18rem;
+  padding: .8rem;
+  text-align: left;
+}
+
+/* line 1813, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.menu .menu-item {
+  border-radius: .2rem;
+  margin-top: 0;
+  padding: 0 .8rem;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* line 1824, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.menu .menu-item > a {
+  border-radius: .2rem;
+  color: inherit;
+  display: block;
+  line-height: 2.4rem;
+  margin: 0 -.8rem;
+  padding: .4rem .8rem;
+  text-decoration: none;
+}
+
+/* line 1834, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.menu .menu-item > a:focus,
+.menu .menu-item > a:hover {
+  color: #d80027;
+}
+
+/* line 1839, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.menu .menu-item > a:active,
+.menu .menu-item > a.active {
+  background: #f7f8fc;
+  color: #d80027;
+}
+
+/* line 1845, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.menu .menu-header {
+  color: #ccc;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  margin-top: 0;
+  padding: .2rem 0;
+  position: relative;
+}
+
+/* line 1854, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.menu .menu-header::after {
+  border-bottom: .1rem solid #efefef;
+  content: "";
+  display: block;
+  height: .1rem;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+
+/* line 1864, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.menu .menu-header .menu-header-text {
+  background: #fff;
+  display: inline-block;
+  padding: 0 .8rem;
+  position: relative;
+  z-index: 99;
+}
+
+/* line 1872, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.menu .menu-badge {
+  float: right;
+  padding: .4rem 0;
+}
+
+/* line 1877, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.menu .menu-badge .label {
+  margin: .2rem 0;
+}
+
+/* line 1881, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.modal {
+  -webkit-align-items: center;
+  align-items: center;
+  bottom: 0;
+  display: none;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 1rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+/* line 1899, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.modal:target,
+.modal.active {
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  opacity: 1;
+  z-index: 1988;
+}
+
+/* line 1908, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.modal:target .modal-overlay,
+.modal.active .modal-overlay {
+  background: rgba(51, 51, 51, 0.5);
+  bottom: 0;
+  display: block;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* line 1919, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.modal:target .modal-container,
+.modal.active .modal-container {
+  -webkit-animation: slide-down .2s;
+  animation: slide-down .2s;
+  width: 64rem;
+}
+
+/* line 1926, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.modal.modal-sm .modal-container {
+  max-width: 32rem;
+}
+
+/* line 1930, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.modal-container {
+  background: #fff;
+  border-radius: .2rem;
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.3);
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  text-align: left;
+  z-index: 1988;
+}
+
+/* line 1941, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.modal-container .modal-header {
+  padding: 1.5rem;
+}
+
+/* line 1945, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.modal-container .modal-header .modal-title {
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+/* line 1950, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.modal-container .modal-body {
+  background-color: whitesmoke;
+  border-bottom: .1rem solid #ccc;
+  border-top: .1rem solid #ccc;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 1.5rem;
+  position: relative;
+}
+
+/* line 1960, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.modal-container .modal-footer {
+  padding: 1.5rem;
+  text-align: right;
+}
+
+/* line 1965, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.breadcrumb,
+.tab,
+.pagination,
+.nav {
+  list-style: none;
+  margin: .5rem 0;
+}
+
+/* line 1973, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.breadcrumb {
+  padding: 1.2rem;
+}
+
+/* line 1977, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.breadcrumb .breadcrumb-item {
+  display: inline-block;
+  margin: 0;
+}
+
+/* line 1982, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.breadcrumb .breadcrumb-item:last-child {
+  color: #999;
+}
+
+/* line 1986, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.breadcrumb .breadcrumb-item:not(:first-child)::before {
+  color: #ccc;
+  content: "/";
+  padding: 0 .4rem;
+}
+
+/* line 1992, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tab {
+  -webkit-align-items: center;
+  align-items: center;
+  border-bottom: .1rem solid #efefef;
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  -ms-flex-align: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+/* line 2005, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tab .tab-item {
+  margin-top: 0;
+}
+
+/* line 2009, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tab .tab-item.tab-action {
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  text-align: right;
+}
+
+/* line 2016, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tab .tab-item a {
+  border-bottom: .2rem solid transparent;
+  color: inherit;
+  display: block;
+  margin-bottom: -.1rem;
+  margin-top: 0;
+  padding: .6rem 1.2rem;
+  text-decoration: none;
+}
+
+/* line 2026, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tab .tab-item a:focus,
+.tab .tab-item a:hover {
+  color: #d80027;
+}
+
+/* line 2031, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tab .tab-item.active a,
+.tab .tab-item a.active {
+  border-bottom-color: #d80027;
+  color: #d80027;
+}
+
+/* line 2037, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tab.tab-block .tab-item {
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  text-align: center;
+}
+
+/* line 2044, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tab.tab-block .tab-item .badge[data-badge]::after {
+  position: absolute;
+  right: -.4rem;
+  top: -.4rem;
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+/* line 2053, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tab:not(.tab-block) .badge {
+  padding-right: 0;
+}
+
+/* line 2057, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.pagination {
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+}
+
+/* line 2063, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.pagination .page-item {
+  margin: 1rem .1rem;
+}
+
+/* line 2067, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.pagination .page-item span {
+  display: inline-block;
+  padding: .6rem .4rem;
+}
+
+/* line 2072, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.pagination .page-item a {
+  border-radius: .2rem;
+  color: #666;
+  display: inline-block;
+  padding: .6rem .8rem;
+  text-decoration: none;
+}
+
+/* line 2080, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.pagination .page-item a:focus,
+.pagination .page-item a:hover {
+  color: #d80027;
+}
+
+/* line 2085, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.pagination .page-item a[disabled],
+.pagination .page-item a.disabled {
+  cursor: default;
+  opacity: .5;
+  pointer-events: none;
+}
+
+/* line 2092, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.pagination .page-item.active a {
+  background: #d80027;
+  color: #fff;
+}
+
+/* line 2097, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.pagination .page-item.page-prev,
+.pagination .page-item.page-next {
+  -webkit-flex: 1 0 50%;
+  -ms-flex: 1 0 50%;
+  flex: 1 0 50%;
+}
+
+/* line 2104, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.pagination .page-item.page-next {
+  text-align: right;
+}
+
+/* line 2108, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.pagination .page-item .page-item-title {
+  margin: 0;
+}
+
+/* line 2112, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.pagination .page-item .page-item-meta {
+  margin: 0;
+  opacity: .5;
+}
+
+/* line 2117, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.nav {
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+/* line 2126, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.nav .nav-item a {
+  color: #666;
+  padding: .6rem .8rem;
+  text-decoration: none;
+}
+
+/* line 2132, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.nav .nav-item a:focus,
+.nav .nav-item a:hover {
+  color: #d80027;
+}
+
+/* line 2137, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.nav .nav-item.active > a {
+  color: #666;
+  font-weight: bold;
+}
+
+/* line 2142, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.nav .nav-item.active > a:focus,
+.nav .nav-item.active > a:hover {
+  color: #d80027;
+}
+
+/* line 2147, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.nav .nav {
+  margin-bottom: 1rem;
+  margin-left: 2rem;
+}
+
+/* line 2152, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.nav .nav a {
+  color: #999;
+}
+
+/* line 2156, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.step {
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  list-style: none;
+  margin: .5rem 0;
+  width: 100%;
+}
+
+/* line 2168, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.step .step-item {
+  -webkit-flex: 1 1 0;
+  -ms-flex: 1 1 0;
+  flex: 1 1 0;
+  margin-top: 0;
+  min-height: 2rem;
+  position: relative;
+  text-align: center;
+}
+
+/* line 2178, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.step .step-item:not(:first-child)::before {
+  background: #d80027;
+  content: "";
+  height: .2rem;
+  left: -50%;
+  position: absolute;
+  top: .9rem;
+  width: 100%;
+}
+
+/* line 2188, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.step .step-item a {
+  color: #999;
+  display: inline-block;
+  padding: 2rem 1rem 0;
+  text-decoration: none;
+}
+
+/* line 2195, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.step .step-item a::before {
+  background: #d80027;
+  border: .2rem solid #fff;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 1.2rem;
+  left: 50%;
+  position: absolute;
+  top: .4rem;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 1.2rem;
+  z-index: 99;
+}
+
+/* line 2212, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.step .step-item.active a::before {
+  background: #fff;
+  border: 0.2rem solid #d80027;
+}
+
+/* line 2217, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.step .step-item.active ~ .step-item::before {
+  background: #efefef;
+}
+
+/* line 2221, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.step .step-item.active ~ .step-item a::before {
+  background: #ccc;
+}
+
+/* line 2225, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tile {
+  -webkit-align-content: space-between;
+  align-content: space-between;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  -ms-flex-align: start;
+  -ms-flex-line-pack: justify;
+  margin: .5rem 0;
+  padding: .5rem 0;
+}
+
+/* line 2239, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tile .tile-icon,
+.tile .tile-action {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+/* line 2246, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tile .tile-content {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+/* line 2252, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tile .tile-content:not(:first-child) {
+  padding-left: 1rem;
+}
+
+/* line 2256, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tile .tile-content:not(:last-child) {
+  padding-right: 1rem;
+}
+
+/* line 2260, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tile .tile-title {
+  font-weight: 500;
+}
+
+/* line 2264, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tile .tile-meta {
+  color: #999;
+  line-height: 2rem;
+}
+
+/* line 2269, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tile.tile-centered {
+  -webkit-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+}
+
+/* line 2275, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tile.tile-centered .tile-content {
+  overflow: hidden;
+}
+
+/* line 2279, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tile.tile-centered .tile-title,
+.tile.tile-centered .tile-meta {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* line 2286, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.toast {
+  background: rgba(51, 51, 51, 0.9);
+  border: .1rem solid #333;
+  border-color: #333;
+  border-radius: .2rem;
+  color: #fff;
+  display: block;
+  padding: 1.4rem;
+  width: 100%;
+}
+
+/* line 2297, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.toast.toast-primary {
+  background: rgba(87, 100, 198, 0.9);
+  border-color: #d80027;
+}
+
+/* line 2302, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.toast.toast-success {
+  background: rgba(50, 182, 67, 0.9);
+  border-color: #32b643;
+}
+
+/* line 2307, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.toast.toast-danger {
+  background: rgba(232, 86, 0, 0.9);
+  border-color: #e85600;
+}
+
+/* line 2312, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.toast.toast-error {
+  background: indianred;
+  border-color: indianred;
+}
+
+/* line 2317, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.toast a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* line 2322, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.toast a:hover,
+.toast a:focus,
+.toast a:active {
+  opacity: .75;
+}
+
+/* line 2328, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tooltip {
+  position: relative;
+}
+
+/* line 2332, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tooltip::after {
+  background: rgba(51, 51, 51, 0.9);
+  border-radius: .2rem;
+  bottom: 100%;
+  color: #fff;
+  content: attr(data-tooltip);
+  display: block;
+  font-size: 1.2rem;
+  left: 50%;
+  line-height: 1.6rem;
+  max-width: 32rem;
+  opacity: 0;
+  overflow: hidden;
+  padding: .6rem 1rem;
+  pointer-events: none;
+  position: absolute;
+  text-overflow: ellipsis;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  transition: transform .2s ease, -webkit-transform .2s ease;
+  transition: transform .2s ease;
+  transition: -webkit-transform .2s ease;
+  white-space: nowrap;
+  z-index: 999;
+}
+
+/* line 2359, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tooltip:focus::after,
+.tooltip:hover::after {
+  opacity: 1;
+  -webkit-transform: translate(-50%, -0.5rem);
+  -ms-transform: translate(-50%, -0.5rem);
+  transform: translate(-50%, -0.5rem);
+}
+
+/* line 2367, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tooltip[disabled],
+.tooltip.disabled {
+  pointer-events: auto;
+}
+
+/* line 2372, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tooltip.tooltip-right::after {
+  bottom: 50%;
+  left: 100%;
+  -webkit-transform: translate(0, 50%);
+  -ms-transform: translate(0, 50%);
+  transform: translate(0, 50%);
+}
+
+/* line 2380, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tooltip.tooltip-right:focus::after,
+.tooltip.tooltip-right:hover::after {
+  -webkit-transform: translate(0.5rem, 50%);
+  -ms-transform: translate(0.5rem, 50%);
+  transform: translate(0.5rem, 50%);
+}
+
+/* line 2387, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tooltip.tooltip-bottom::after {
+  bottom: auto;
+  top: 100%;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+
+/* line 2395, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tooltip.tooltip-bottom:focus::after,
+.tooltip.tooltip-bottom:hover::after {
+  -webkit-transform: translate(-50%, 0.5rem);
+  -ms-transform: translate(-50%, 0.5rem);
+  transform: translate(-50%, 0.5rem);
+}
+
+/* line 2402, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tooltip.tooltip-left::after {
+  bottom: 50%;
+  left: auto;
+  right: 100%;
+  -webkit-transform: translate(0, 50%);
+  -ms-transform: translate(0, 50%);
+  transform: translate(0, 50%);
+}
+
+/* line 2411, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.tooltip.tooltip-left:focus::after,
+.tooltip.tooltip-left:hover::after {
+  -webkit-transform: translate(-0.5rem, 50%);
+  -ms-transform: translate(-0.5rem, 50%);
+  transform: translate(-0.5rem, 50%);
+}
+
+@-webkit-keyframes loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes slide-down {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-3rem);
+    transform: translateY(-3rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-3rem);
+    transform: translateY(-3rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+/* line 2466, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.divider {
+  border-bottom: .1rem solid #efefef;
+  display: block;
+  margin: .8rem 0;
+}
+
+/* line 2472, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.loading {
+  color: transparent !important;
+  min-height: 1.6rem;
+  pointer-events: none;
+  position: relative;
+}
+
+/* line 2479, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.loading::after {
+  -webkit-animation: loading 750ms infinite linear;
+  animation: loading 750ms infinite linear;
+  border: 0.2rem solid #d80027;
+  border-radius: .8rem;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  box-sizing: border-box;
+  content: "";
+  display: block;
+  height: 1.6rem;
+  left: 50%;
+  margin-left: -.8rem;
+  margin-top: -.8rem;
+  position: absolute;
+  top: 50%;
+  width: 1.6rem;
+}
+
+/* line 2498, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+/* line 2504, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.float-left {
+  float: left !important;
+}
+
+/* line 2508, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.float-right {
+  float: right !important;
+}
+
+/* line 2512, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.rel {
+  position: relative;
+}
+
+/* line 2516, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.abs {
+  position: absolute;
+}
+
+/* line 2520, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.fixed {
+  position: fixed;
+}
+
+/* line 2524, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.centered {
+  display: block;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 2531, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.mt-10 {
+  margin-top: 1rem;
+}
+
+/* line 2535, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.mr-10 {
+  margin-right: 1rem;
+}
+
+/* line 2539, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.mb-10 {
+  margin-bottom: 1rem;
+}
+
+/* line 2543, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.ml-10 {
+  margin-left: 1rem;
+}
+
+/* line 2547, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.mt-5 {
+  margin-top: .5rem;
+}
+
+/* line 2551, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.mr-5 {
+  margin-right: .5rem;
+}
+
+/* line 2555, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.mb-5 {
+  margin-bottom: .5rem;
+}
+
+/* line 2559, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.ml-5 {
+  margin-left: .5rem;
+}
+
+/* line 2563, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.pt-10 {
+  padding-top: 1rem;
+}
+
+/* line 2567, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.pr-10 {
+  padding-right: 1rem;
+}
+
+/* line 2571, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.pb-10 {
+  padding-bottom: 1rem;
+}
+
+/* line 2575, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.pl-10 {
+  padding-left: 1rem;
+}
+
+/* line 2579, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.pt-5 {
+  padding-top: .5rem;
+}
+
+/* line 2583, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.pr-5 {
+  padding-right: .5rem;
+}
+
+/* line 2587, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.pb-5 {
+  padding-bottom: .5rem;
+}
+
+/* line 2591, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.pl-5 {
+  padding-left: .5rem;
+}
+
+/* line 2595, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.block {
+  display: block;
+}
+
+/* line 2599, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.inline {
+  display: inline;
+}
+
+/* line 2603, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.inline-block {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* line 2608, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.flex {
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+}
+
+/* line 2614, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.inline-flex {
+  display: inline-flex;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+}
+
+/* line 2620, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.hide {
+  display: none !important;
+}
+
+/* line 2624, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.visible {
+  visibility: visible;
+}
+
+/* line 2628, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.invisible {
+  visibility: hidden;
+}
+
+/* line 2632, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.text-hide {
+  background: transparent;
+  border: 0;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  text-shadow: none;
+}
+
+/* line 2641, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.text-assistive {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: .1rem;
+  margin: -.1rem;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: .1rem;
+}
+
+/* line 2652, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.text-left {
+  text-align: left;
+}
+
+/* line 2656, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.text-right {
+  text-align: right;
+}
+
+/* line 2660, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.text-center {
+  text-align: center;
+}
+
+/* line 2664, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.text-justify {
+  text-align: justify;
+}
+
+/* line 2668, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+/* line 2672, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+/* line 2676, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+/* line 2680, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.text-normal {
+  font-weight: normal;
+}
+
+/* line 2684, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.text-bold {
+  font-weight: bold;
+}
+
+/* line 2688, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.text-italic {
+  font-style: italic;
+}
+
+/* line 2692, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.text-large {
+  font-size: 1.2em;
+}
+
+/* line 2696, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* line 2702, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.text-clip {
+  overflow: hidden;
+  text-overflow: clip;
+  white-space: nowrap;
+}
+
+/* line 2708, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.text-break {
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+/* line 2716, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.hand {
+  cursor: pointer;
+}
+
+/* line 2720, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.shadow {
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.3);
+}
+
+/* line 2724, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.light-shadow {
+  box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.15);
+}
+
+/* line 2728, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.rounded {
+  border-radius: .2rem;
+}
+
+/* line 2732, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/spectre.scss */
+.circle {
+  border-radius: 50%;
+}
+/* line 1, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/bubbles.scss */
+.speech-bubble {
+  position: relative;
+  background: #ffffff;
+  border-radius: .4em;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  margin-right: 2rem;
+}
+
+/* line 10, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/bubbles.scss */
+.speech-bubble:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 0.688em solid transparent;
+  border-right-color: #ffffff;
+  border-left: 0;
+  margin-top: -0.687em;
+  margin-left: -0.687em;
+}
+
+/* line 24, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/bubbles.scss */
+.speech-bubble-user {
+  position: relative;
+  background: #d80027;
+  border-radius: .4em;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  margin-left: 2rem;
+  color: white;
+}
+
+/* line 34, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/bubbles.scss */
+.speech-bubble-user:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 0.688em solid transparent;
+  border-left-color: #d80027;
+  border-right: 0;
+  margin-top: -0.687em;
+  margin-right: -0.687em;
+}
+
+/* line 48, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/bubbles.scss */
+.message-user {
+  font-weight: bold;
+  margin-bottom: 0.6rem;
+}
+
+/* line 53, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/bubbles.scss */
+.message-date {
+  text-align: right;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+/* line 59, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/bubbles.scss */
+#chat-container .form-input:focus {
+  border: .1rem solid #d80027;
+  box-shadow: none;
+}
+/*!
+ * Datepicker for Bootstrap v1.6.4 (https://github.com/eternicode/bootstrap-datepicker)
+ *
+ * Copyright 2012 Stefan Petre
+ * Improvements by Andrew Rowls
+ * Licensed under the Apache License v2.0 (http://www.apache.org/licenses/LICENSE-2.0)
+ */
+
+
+.datepicker {
+	padding: 4px;
+	border-radius: 4px;
+	direction: ltr
+}
+
+.datepicker-inline {
+	width: 220px
+}
+
+.datepicker.datepicker-rtl {
+	direction: rtl
+}
+
+.datepicker.datepicker-rtl table tr td span {
+	float: right
+}
+
+.datepicker-dropdown {
+	top: 0;
+	left: 0
+}
+
+.datepicker-dropdown:before {
+	content: '';
+	display: inline-block;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-bottom: 7px solid #999;
+	border-top: 0;
+	border-bottom-color: rgba(0, 0, 0, .2);
+	position: absolute
+}
+
+.datepicker-dropdown:after {
+	content: '';
+	display: inline-block;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 6px solid #fff;
+	border-top: 0;
+	position: absolute
+}
+
+.datepicker-dropdown.datepicker-orient-left:before {
+	left: 6px
+}
+
+.datepicker-dropdown.datepicker-orient-left:after {
+	left: 7px
+}
+
+.datepicker-dropdown.datepicker-orient-right:before {
+	right: 6px
+}
+
+.datepicker-dropdown.datepicker-orient-right:after {
+	right: 7px
+}
+
+.datepicker-dropdown.datepicker-orient-bottom:before {
+	top: -7px
+}
+
+.datepicker-dropdown.datepicker-orient-bottom:after {
+	top: -6px
+}
+
+.datepicker-dropdown.datepicker-orient-top:before {
+	bottom: -7px;
+	border-bottom: 0;
+	border-top: 7px solid #999
+}
+
+.datepicker-dropdown.datepicker-orient-top:after {
+	bottom: -6px;
+	border-bottom: 0;
+	border-top: 6px solid #fff
+}
+
+.datepicker table {
+	margin: 0;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none
+}
+
+.datepicker td,
+.datepicker th {
+	text-align: center;
+	width: 20px;
+	height: 20px;
+	border-radius: 4px;
+	border: none
+}
+
+.table-striped .datepicker table tr td,
+.table-striped .datepicker table tr th {
+	background-color: transparent
+}
+
+.datepicker table tr td.day.focused,
+.datepicker table tr td.day:hover {
+	background: #eee;
+	cursor: pointer
+}
+
+.datepicker table tr td.new,
+.datepicker table tr td.old {
+	color: #999
+}
+
+.datepicker table tr td.disabled,
+.datepicker table tr td.disabled:hover {
+	background: 0 0;
+	color: #999;
+	cursor: default
+}
+
+.datepicker table tr td.highlighted {
+	background: #d9edf7;
+	border-radius: 0
+}
+
+.datepicker table tr td.today,
+.datepicker table tr td.today.disabled,
+.datepicker table tr td.today.disabled:hover,
+.datepicker table tr td.today:hover {
+	background-color: wheat;
+	border-color: wheat;
+	border-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, .1) rgba(0, 0, 0, .25);
+	color: black
+}
+
+.datepicker table tr td.today.active,
+.datepicker table tr td.today.disabled,
+.datepicker table tr td.today.disabled.active,
+.datepicker table tr td.today.disabled.disabled,
+.datepicker table tr td.today.disabled:active,
+.datepicker table tr td.today.disabled:hover,
+.datepicker table tr td.today.disabled:hover.active,
+.datepicker table tr td.today.disabled:hover.disabled,
+.datepicker table tr td.today.disabled:hover:active,
+.datepicker table tr td.today.disabled:hover:hover,
+.datepicker table tr td.today.disabled:hover[disabled],
+.datepicker table tr td.today.disabled[disabled],
+.datepicker table tr td.today:active,
+.datepicker table tr td.today:hover,
+.datepicker table tr td.today:hover.active,
+.datepicker table tr td.today:hover.disabled,
+.datepicker table tr td.today:hover:active,
+.datepicker table tr td.today:hover:hover,
+.datepicker table tr td.today:hover[disabled],
+.datepicker table tr td.today[disabled] {
+	background-color: #fdf59a
+}
+
+.datepicker table tr td.today.active,
+.datepicker table tr td.today.disabled.active,
+.datepicker table tr td.today.disabled:active,
+.datepicker table tr td.today.disabled:hover.active,
+.datepicker table tr td.today.disabled:hover:active,
+.datepicker table tr td.today:active,
+.datepicker table tr td.today:hover.active,
+.datepicker table tr td.today:hover:active {
+	background-color: #fbf069\9
+}
+
+.datepicker table tr td.today:hover:hover {
+	color: #000
+}
+
+.datepicker table tr td.today.active:hover {
+	color: #fff
+}
+
+.datepicker table tr td.range,
+.datepicker table tr td.range.disabled,
+.datepicker table tr td.range.disabled:hover,
+.datepicker table tr td.range:hover {
+	background: #eee;
+	border-radius: 0
+}
+
+.datepicker table tr td.range.today,
+.datepicker table tr td.range.today.disabled,
+.datepicker table tr td.range.today.disabled:hover,
+.datepicker table tr td.range.today:hover {
+	background-color: wheat;
+	border-color: wheat;
+	border-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, .1) rgba(0, 0, 0, .25);
+	border-radius: 0
+}
+
+.datepicker table tr td.range.today.active,
+.datepicker table tr td.range.today.disabled,
+.datepicker table tr td.range.today.disabled.active,
+.datepicker table tr td.range.today.disabled.disabled,
+.datepicker table tr td.range.today.disabled:active,
+.datepicker table tr td.range.today.disabled:hover,
+.datepicker table tr td.range.today.disabled:hover.active,
+.datepicker table tr td.range.today.disabled:hover.disabled,
+.datepicker table tr td.range.today.disabled:hover:active,
+.datepicker table tr td.range.today.disabled:hover:hover,
+.datepicker table tr td.range.today.disabled:hover[disabled],
+.datepicker table tr td.range.today.disabled[disabled],
+.datepicker table tr td.range.today:active,
+.datepicker table tr td.range.today:hover,
+.datepicker table tr td.range.today:hover.active,
+.datepicker table tr td.range.today:hover.disabled,
+.datepicker table tr td.range.today:hover:active,
+.datepicker table tr td.range.today:hover:hover,
+.datepicker table tr td.range.today:hover[disabled],
+.datepicker table tr td.range.today[disabled] {
+	background-color: #f3e97a
+}
+
+.datepicker table tr td.range.today.active,
+.datepicker table tr td.range.today.disabled.active,
+.datepicker table tr td.range.today.disabled:active,
+.datepicker table tr td.range.today.disabled:hover.active,
+.datepicker table tr td.range.today.disabled:hover:active,
+.datepicker table tr td.range.today:active,
+.datepicker table tr td.range.today:hover.active,
+.datepicker table tr td.range.today:hover:active {
+	background-color: #efe24b\9
+}
+
+.datepicker table tr td.selected,
+.datepicker table tr td.selected.disabled,
+.datepicker table tr td.selected.disabled:hover,
+.datepicker table tr td.selected:hover {
+	background-color: #9e9e9e;
+	border-color: grey;
+	border-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, .1) rgba(0, 0, 0, .25);
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, .25)
+}
+
+.datepicker table tr td.selected.active,
+.datepicker table tr td.selected.disabled,
+.datepicker table tr td.selected.disabled.active,
+.datepicker table tr td.selected.disabled.disabled,
+.datepicker table tr td.selected.disabled:active,
+.datepicker table tr td.selected.disabled:hover,
+.datepicker table tr td.selected.disabled:hover.active,
+.datepicker table tr td.selected.disabled:hover.disabled,
+.datepicker table tr td.selected.disabled:hover:active,
+.datepicker table tr td.selected.disabled:hover:hover,
+.datepicker table tr td.selected.disabled:hover[disabled],
+.datepicker table tr td.selected.disabled[disabled],
+.datepicker table tr td.selected:active,
+.datepicker table tr td.selected:hover,
+.datepicker table tr td.selected:hover.active,
+.datepicker table tr td.selected:hover.disabled,
+.datepicker table tr td.selected:hover:active,
+.datepicker table tr td.selected:hover:hover,
+.datepicker table tr td.selected:hover[disabled],
+.datepicker table tr td.selected[disabled] {
+	background-color: grey
+}
+
+.datepicker table tr td.selected.active,
+.datepicker table tr td.selected.disabled.active,
+.datepicker table tr td.selected.disabled:active,
+.datepicker table tr td.selected.disabled:hover.active,
+.datepicker table tr td.selected.disabled:hover:active,
+.datepicker table tr td.selected:active,
+.datepicker table tr td.selected:hover.active,
+.datepicker table tr td.selected:hover:active {
+	background-color: #666\9
+}
+
+.datepicker table tr td.active,
+.datepicker table tr td.active.disabled,
+.datepicker table tr td.active.disabled:hover,
+.datepicker table tr td.active:hover {
+	background-color: dodgerblue;
+	border-color: dodgerblue;
+	border-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, .1) rgba(0, 0, 0, .25);
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, .25)
+}
+
+.datepicker table tr td.active.active,
+.datepicker table tr td.active.disabled,
+.datepicker table tr td.active.disabled.active,
+.datepicker table tr td.active.disabled.disabled,
+.datepicker table tr td.active.disabled:active,
+.datepicker table tr td.active.disabled:hover,
+.datepicker table tr td.active.disabled:hover.active,
+.datepicker table tr td.active.disabled:hover.disabled,
+.datepicker table tr td.active.disabled:hover:active,
+.datepicker table tr td.active.disabled:hover:hover,
+.datepicker table tr td.active.disabled:hover[disabled],
+.datepicker table tr td.active.disabled[disabled],
+.datepicker table tr td.active:active,
+.datepicker table tr td.active:hover,
+.datepicker table tr td.active:hover.active,
+.datepicker table tr td.active:hover.disabled,
+.datepicker table tr td.active:hover:active,
+.datepicker table tr td.active:hover:hover,
+.datepicker table tr td.active:hover[disabled],
+.datepicker table tr td.active[disabled] {
+	background-color: dodgerblue
+}
+
+.datepicker table tr td.active.active,
+.datepicker table tr td.active.disabled.active,
+.datepicker table tr td.active.disabled:active,
+.datepicker table tr td.active.disabled:hover.active,
+.datepicker table tr td.active.disabled:hover:active,
+.datepicker table tr td.active:active,
+.datepicker table tr td.active:hover.active,
+.datepicker table tr td.active:hover:active {
+	background-color: #039\9
+}
+
+.datepicker table tr td span {
+	display: block;
+	width: 23%;
+	height: 54px;
+	line-height: 54px;
+	float: left;
+	margin: 1%;
+	cursor: pointer;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px
+}
+
+.datepicker table tr td span.focused,
+.datepicker table tr td span:hover {
+	background: #eee
+}
+
+.datepicker table tr td span.disabled,
+.datepicker table tr td span.disabled:hover {
+	background: 0 0;
+	color: #999;
+	cursor: default
+}
+
+.datepicker table tr td span.active,
+.datepicker table tr td span.active.disabled,
+.datepicker table tr td span.active.disabled:hover,
+.datepicker table tr td span.active:hover {
+	background-color: #006dcc;
+	background-image: -moz-linear-gradient(to bottom, #08c, dodgerblue);
+	background-image: -ms-linear-gradient(to bottom, #08c, dodgerblue);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#08c), to(dodgerblue));
+	background-image: -webkit-linear-gradient(to bottom, #08c, dodgerblue);
+	background-image: -o-linear-gradient(to bottom, #08c, dodgerblue);
+	background-image: linear-gradient(to bottom, #08c, dodgerblue);
+	background-repeat: repeat-x;
+	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#08c', endColorstr='#0044cc', GradientType=0);
+	border-color: dodgerblue dodgerblue #002a80;
+	border-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, .1) rgba(0, 0, 0, .25);
+	filter: progid: DXImageTransform.Microsoft.gradient(enabled=false);
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, .25)
+}
+
+.datepicker table tr td span.active.active,
+.datepicker table tr td span.active.disabled,
+.datepicker table tr td span.active.disabled.active,
+.datepicker table tr td span.active.disabled.disabled,
+.datepicker table tr td span.active.disabled:active,
+.datepicker table tr td span.active.disabled:hover,
+.datepicker table tr td span.active.disabled:hover.active,
+.datepicker table tr td span.active.disabled:hover.disabled,
+.datepicker table tr td span.active.disabled:hover:active,
+.datepicker table tr td span.active.disabled:hover:hover,
+.datepicker table tr td span.active.disabled:hover[disabled],
+.datepicker table tr td span.active.disabled[disabled],
+.datepicker table tr td span.active:active,
+.datepicker table tr td span.active:hover,
+.datepicker table tr td span.active:hover.active,
+.datepicker table tr td span.active:hover.disabled,
+.datepicker table tr td span.active:hover:active,
+.datepicker table tr td span.active:hover:hover,
+.datepicker table tr td span.active:hover[disabled],
+.datepicker table tr td span.active[disabled] {
+	background-color: dodgerblue
+}
+
+.datepicker table tr td span.active.active,
+.datepicker table tr td span.active.disabled.active,
+.datepicker table tr td span.active.disabled:active,
+.datepicker table tr td span.active.disabled:hover.active,
+.datepicker table tr td span.active.disabled:hover:active,
+.datepicker table tr td span.active:active,
+.datepicker table tr td span.active:hover.active,
+.datepicker table tr td span.active:hover:active {
+	background-color: #039\9
+}
+
+.datepicker table tr td span.new,
+.datepicker table tr td span.old {
+	color: #999
+}
+
+.datepicker .datepicker-switch {
+	width: 145px
+}
+
+.datepicker .datepicker-switch,
+.datepicker .next,
+.datepicker .prev,
+.datepicker tfoot tr th {
+	cursor: pointer
+}
+
+.datepicker .datepicker-switch:hover,
+.datepicker .next:hover,
+.datepicker .prev:hover,
+.datepicker tfoot tr th:hover {
+	background: #eee
+}
+
+.datepicker .cw {
+	font-size: 10px;
+	width: 12px;
+	padding: 0 2px 0 5px;
+	vertical-align: middle
+}
+
+.input-append.date .add-on,
+.input-prepend.date .add-on {
+	cursor: pointer
+}
+
+.input-append.date .add-on i,
+.input-prepend.date .add-on i {
+	margin-top: 3px
+}
+
+.input-daterange input {
+	text-align: center
+}
+
+.input-daterange input:first-child {
+	-webkit-border-radius: 3px 0 0 3px;
+	-moz-border-radius: 3px 0 0 3px;
+	border-radius: 3px 0 0 3px
+}
+
+.input-daterange input:last-child {
+	-webkit-border-radius: 0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	border-radius: 0 3px 3px 0
+}
+
+.input-daterange .add-on {
+	display: inline-block;
+	width: auto;
+	min-width: 16px;
+	height: 20px;
+	padding: 4px 5px;
+	font-weight: 400;
+	line-height: 20px;
+	text-align: center;
+	text-shadow: 0 1px 0 #fff;
+	vertical-align: middle;
+	background-color: #eee;
+	border: 1px solid #ccc;
+	margin-left: -5px;
+	margin-right: -5px
+}
+
+.datepicker.dropdown-menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 1000;
+	float: left;
+	display: none;
+	min-width: 160px;
+	list-style: none;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, .2);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+	*border-right-width: 2px;
+	*border-bottom-width: 2px;
+	color: #333;
+	font-size: 13px;
+	line-height: 20px
+}
+
+.datepicker.datepicker-inline td,
+.datepicker.datepicker-inline th,
+.datepicker.dropdown-menu td,
+.datepicker.dropdown-menu th {
+	padding: 4px 5px
+}
+/*
+
+
+
+
+*/
+/* start of custom style */
+/* line 14, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+html {
+  font-size: 10px;
+  height: 100%;
+}
+
+/* line 19, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.4rem;
+  height: 100%;
+}
+
+/* line 25, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+div,
+a,
+img,
+form,
+button,
+input,
+select,
+textarea,
+span,
+section,
+header,
+footer {
+  box-sizing: border-box;
+}
+
+/* line 40, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+button:focus {
+  outline: none;
+}
+
+/* line 44, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.container {
+  max-width: 100rem;
+}
+
+/* line 48, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.container .panel {
+  height: 78vh;
+  background-color: whitesmoke;
+}
+
+/* line 53, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.container .column {
+  padding-top: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 0rem;
+  padding-left: 1rem;
+}
+
+/* line 60, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+/* line 65, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+header {
+  background-color: #222;
+  position: relative;
+  width: 100%;
+  z-index: 5;
+}
+
+/* line 72, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+header .fa-bars {
+  color: white;
+  line-height: 5rem;
+  padding: 0 1rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* line 81, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#logo,
+#logo img {
+  display: inline-block;
+  height: 5rem;
+}
+
+/* line 87, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#logo img {
+  padding: .75rem;
+}
+
+/* line 91, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+nav {
+  background-color: inherit;
+  display: none;
+}
+
+/* line 96, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+nav > a,
+nav > label[for="metric"] {
+  color: white;
+  display: block;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+
+/* line 104, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+nav > label[for="metric"] span {
+  display: block;
+  line-height: 1.5rem;
+  opacity: .25;
+}
+
+/* line 110, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+nav > label[for="metric"] input:checked + span {
+  opacity: 1;
+}
+
+/* line 114, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+nav > label[for="metric"] input:not(:checked) + span + span {
+  opacity: 1;
+}
+
+/* line 118, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+nav > .btn {
+  box-shadow: none !important;
+  font-weight: bold;
+  height: auto;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 841px) {
+  /* line 128, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+  #map {
+    padding-top: 4rem;
+  }
+
+  /* line 131, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+  header {
+    height: 5rem;
+    line-height: 5rem;
+    position: fixed;
+  }
+
+  /* line 136, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+  nav {
+    display: block !important;
+    float: right;
+    height: inherit;
+  }
+
+  /* line 141, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+  nav > a,
+  nav > label[for="metric"] {
+    background-color: inherit;
+    border-right: .1rem solid #555;
+    display: inline-block;
+    float: left;
+    line-height: inherit;
+    padding-bottom: 0;
+    padding-top: 0;
+    position: relative;
+    vertical-align: top;
+    z-index: 1;
+  }
+
+  /* line 154, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+  nav > label[for="metric"] {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+
+  /* line 158, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+  nav > a:first-child {
+    border-left: .1rem solid #555;
+  }
+
+  /* line 161, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+  nav > a:hover,
+  nav > a:focus {
+    box-shadow: inset 0 -.5rem;
+    text-decoration: none;
+  }
+
+  /* line 166, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+  nav > .btn {
+    height: 3.2rem;
+    margin: .9rem 2rem;
+    padding-bottom: .5rem;
+    padding-top: .5rem;
+    width: auto;
+  }
+
+  /* line 173, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+  header + section {
+    padding-bottom: 5rem;
+    padding-top: 10rem;
+  }
+
+  /* line 177, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+  section.post {
+    background-color: whitesmoke;
+  }
+
+  /* line 180, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+  section.post > .container {
+    background-color: white;
+    border: .1rem solid #ddd;
+    padding: 3rem;
+  }
+}
+/* line 187, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+aside {
+  display: none;
+  position: absolute;
+  top: 4rem;
+  width: 30rem;
+  z-index: 3;
+}
+
+/* line 195, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.aside-general {
+  background-color: white;
+  border-bottom: .1rem solid #ccc;
+  padding: 9rem 2rem 2rem;
+}
+
+/* line 201, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.aside-general .aside-subtitle {
+  margin-bottom: .75rem;
+}
+
+/* line 205, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#copied {
+  bottom: 4.2rem;
+  position: absolute;
+  right: 0;
+}
+
+/* line 211, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.aside-title {
+  border-bottom: .2rem solid;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 3rem 0;
+  padding-bottom: .5rem;
+  text-transform: uppercase;
+}
+
+/* line 220, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.aside-title button {
+  background-color: transparent;
+  border: 0;
+  color: #aaa;
+  cursor: pointer;
+}
+
+/* line 227, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.aside-title button:hover {
+  color: inherit;
+}
+
+/* line 231, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.aside-subtitle {
+  color: #999;
+  font-size: 1.3em;
+  text-transform: uppercase;
+}
+
+/* line 237, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.aside-section {
+  padding: 0 2rem;
+}
+
+/* line 241, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.aside-section .well_info_container > div {
+  margin-top: 0rem;
+  margin-bottom: 3rem;
+}
+
+/* line 245, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.aside-section .casing_completions_container > div {
+  margin-top: 0rem;
+  margin-bottom: 3rem;
+}
+
+/* line 250, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#layer1 {
+  background-color: white;
+}
+
+/* line 254, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#layer2 {
+  background-color: white;
+  display: none;
+  left: 100%;
+  height: calc(100vh - 9rem);
+  position: absolute;
+  top: 0;
+  width: 60rem;
+}
+
+/* line 265, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#layer2 > .fa {
+  opacity: .25;
+  padding: 1rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* line 273, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#layer2 > .fa:hover {
+  opacity: 1;
+}
+
+/* line 277, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.aside-buttons {
+  background-color: white;
+  border-bottom: .1rem solid #ccc;
+}
+
+/* line 282, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.aside-button {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: bold;
+  height: 3.5em;
+  line-height: 3.5em;
+  padding-left: 2rem;
+  position: relative;
+}
+
+/* line 292, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.aside-button:hover {
+  background-color: #f7f7f7;
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  text-decoration: none;
+  z-index: 1;
+}
+
+/* line 300, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.aside-button.disabled,
+.aside-button.disabled:hover {
+  background-color: whitesmoke;
+  box-shadow: none;
+  color: silver;
+  cursor: default;
+  z-index: 0;
+}
+
+/* line 309, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.aside-button.active,
+.aside-button.active:hover {
+  background-color: #d80027;
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.3);
+  color: white;
+  font-weight: bold;
+}
+
+/* line 317, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.aside-button.active::after {
+  border-bottom: 1.75em solid transparent;
+  border-left: 1em solid #d80027;
+  border-top: 1.75em solid transparent;
+  content: "";
+  height: 0;
+  left: 100%;
+  position: absolute;
+  top: 0;
+  width: 0;
+}
+
+/* line 329, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.aside-button .fa:first-child {
+  display: none;
+}
+
+/* line 333, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.aside-button span + .fa {
+  line-height: inherit;
+  margin-right: 1em;
+}
+
+/* line 338, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.aside-button.active span + .fa {
+  color: #d80027;
+}
+
+/* line 342, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.table-attributes td:first-child {
+  font-weight: bold;
+  width: 13rem;
+}
+
+/* line 347, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.table-attributes td + td {
+  text-align: right;
+}
+
+/* line 351, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+aside .btn.pull-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* line 357, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+aside.expanded #layer1 {
+  width: 10rem;
+}
+
+/* line 361, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+aside.expanded #layer1 .aside-section {
+  visibility: hidden;
+  white-space: nowrap;
+}
+
+/* line 366, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+aside.expanded .aside-general {
+  visibility: hidden;
+}
+
+/* line 370, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+aside.expanded .aside-button span {
+  display: none;
+}
+
+/* line 374, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+aside.expanded .aside-button .fa:first-child {
+  display: inline-block;
+}
+
+/* line 378, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+aside.expanded #layer2 {
+  left: 10rem;
+  width: calc(100vw - 10rem);
+}
+
+/* line 383, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.form-switch.with-text {
+  border: 0.1rem solid #d80027;
+  border-radius: .2rem;
+  line-height: normal;
+  margin-bottom: 2rem;
+  margin-right: 2rem;
+  padding: 0;
+}
+
+/* line 392, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.form-switch.with-text span {
+  display: inline-block;
+  line-height: 3rem;
+  padding: 0 2rem;
+}
+
+/* line 398, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.form-switch.with-text input:checked + span,
+.form-switch.with-text input:not(:checked) + span + span {
+  background-color: #d80027;
+  color: white;
+}
+
+/* line 404, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#subheader {
+  background-color: #555;
+  box-shadow: 0 0.1rem #ccc;
+  left: 0;
+  height: 4rem;
+  line-height: 4rem;
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+}
+
+/* line 416, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#subheader > div {
+  display: inline-block;
+  height: inherit;
+  position: relative;
+  vertical-align: top;
+  width: 30rem;
+}
+
+/* line 424, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#subheader label {
+  line-height: inherit;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 4rem;
+}
+
+/* line 432, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#subheader .btn {
+  position: absolute;
+  right: 2.9rem;
+  top: 0;
+  background-color: white;
+}
+
+#subheader #search_button {
+    right: 0rem !important;
+}
+
+/* line 439, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#subheader span {
+  color: white;
+  display: inline-block;
+  padding-left: 3rem;
+  padding-right: .5rem;
+  vertical-align: top;
+}
+
+/* line 447, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#search-input {
+  border: 0;
+  display: block;
+  height: inherit;
+  font-weight: bold;
+  outline: 0;
+  padding-left: 1rem;
+  transition: ease-in-out .1s;
+  width: inherit;
+}
+
+/* line 459, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#search-input:focus,
+#search-input:valid {
+  background-color: white;
+}
+
+/* line 464, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#search-input ~ .close {
+  display: none;
+}
+
+/* line 468, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#search-input:valid ~ .close {
+  display: block;
+}
+
+/* line 472, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+i.fa.fa-search.fa-lg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.8rem;
+  height: 3rem;
+  padding: 1.4rem 1.2rem;
+}
+
+/* line 481, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#uwi_list {
+  border-color: transparent;
+  border-radius: 0;
+  display: none;
+  height: inherit;
+  vertical-align: top;
+  width: auto;
+}
+
+/* line 490, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#menu {
+  float: right;
+  text-align: right;
+}
+
+/* line 495, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#menu a {
+  border-left: .1rem solid #777;
+  color: #aaa;
+  display: inline-block;
+  max-width: 8rem;
+  padding: 0 1rem;
+  overflow: hidden;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+/* line 508, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#menu a:hover {
+  background-color: #666;
+  color: white;
+  text-decoration: none;
+}
+
+/* line 514, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#menu a.active {
+  background-color: #d80027;
+  color: white;
+}
+
+/* line 519, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.dataTables_wrapper {
+  padding-top: 2rem;
+  position: relative;
+}
+
+/* line 524, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.table {
+  border-top: .1rem solid #ccc;
+}
+
+/* line 528, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.dataTable th {
+  height: 3.5em;
+  line-height: 3.5em;
+  padding-bottom: 0;
+  padding-top: 0;
+  position: relative;
+}
+
+/* line 536, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.dataTable .sort > span {
+  line-height: 1.15em;
+  max-height: 2.3em;
+  max-width: calc(100% - 1.4em);
+  white-space: normal;
+}
+
+/* line 543, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.dataTable th > .fa {
+  display: none;
+}
+
+/* line 547, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.dataTable .sorting:hover,
+.dataTable .sorting_asc:hover,
+.dataTable .sorting_desc:hover {
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+/* line 554, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.dataTable .sorting_asc,
+.dataTable .sorting_desc {
+  border-bottom-color: #d80027;
+  color: #d80027;
+}
+
+/* line 560, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.dataTable .sorting_asc::before,
+.dataTable .sorting_desc::before {
+  background-color: #d80027;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: .3rem;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+/* line 572, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.dataTable th[data-unit]::after {
+  bottom: 100%;
+  content: attr(data-unit);
+  left: 0;
+  line-height: normal;
+  font-size: .85em;
+  opacity: .5;
+  padding-bottom: .2rem;
+  position: absolute;
+}
+
+/* line 583, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.dataTable .sorting > .fa-sort,
+.dataTable .sorting_asc > .fa-arrow-up,
+.dataTable .sorting_desc > .fa-arrow-down {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* line 590, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.dataTable th > .fa-sort {
+  opacity: .15;
+}
+
+/* line 594, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.dataTable td.sorting_1 {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+/* line 598, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.dataTables_empty {
+  background-color: white;
+  border: 0 !important;
+  box-sizing: border-box;
+  color: #777;
+  height: 5rem;
+  text-align: center;
+}
+
+/* line 607, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.table-container {
+  height: calc(100vh - 282px);
+  overflow-y: scroll;
+  padding-top: 2rem;
+}
+
+/* line 613, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.casing_completions_container {
+  height: calc(100vh - 210px);
+  overflow-y: scroll;
+}
+
+/* line 618, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.well_info_container {
+  height: calc(100vh - 210px);
+  overflow-y: scroll;
+}
+
+/* line 624, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.l_empty {
+  color: #777;
+}
+
+/* line 628, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.dt-buttons {
+  bottom: 100%;
+  position: absolute;
+  right: 0;
+}
+
+/* line 634, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.dt-button {
+  color: #aaa;
+  display: inline-block;
+  padding: .25rem 1rem;
+}
+
+/* line 640, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.dt-button::before {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  margin-right: .25em;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 650, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.buttons-csv::before {
+  content: "\f1c3";
+}
+
+/* line 654, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.buttons-csv:hover {
+  color: #02723b;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* line 660, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.buttons-pdf::before {
+  content: "\f1c1";
+}
+
+/* line 664, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.buttons-pdf:hover {
+  color: #bb0706;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* line 670, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.login-only::after {
+  color: #aaa;
+  content: "Log in to see this information";
+}
+
+/* line 675, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#well_completions .login-only,
+#well_production .login-only {
+  background-color: white;
+  bottom: 0;
+  line-height: 4.5rem;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+/* line 685, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+aside .toast a {
+  border-bottom: 0.1rem dashed rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+}
+
+/* line 690, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#user-menu {
+  width: 20rem;
+}
+
+/* line 694, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.dropdown-title {
+  padding: 0 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* line 700, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.dropdown-title p {
+  margin: 0;
+}
+
+/* line 704, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#user-menu .dropdown-title {
+  background-color: #222;
+  color: white;
+}
+
+/* line 709, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#user-menu .dropdown-title > div {
+  display: inline-block;
+  line-height: normal;
+  vertical-align: middle;
+  width: calc(100% - 3.5rem);
+}
+
+/* line 716, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+article {
+  border-bottom: .2rem solid #ddd;
+  margin-bottom: 3rem;
+  padding: 2rem;
+}
+
+/* line 722, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.post h3 {
+  border-bottom: .1rem solid #ccc;
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin-top: 2em;
+}
+
+/* line 729, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.post p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+/* line 734, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.indent1 {
+  margin-left: 2em;
+}
+
+/* line 738, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.indent2 {
+  margin-left: 4em;
+}
+
+/* line 742, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#about h3 {
+  margin-top: 0;
+}
+
+/* line 794, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.mapboxgl-ctrl-directions.mapboxgl-ctrl {
+  display: none;
+}
+
+/* line 798, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.mapbox-directions-component.mapbox-directions-inputs {
+  top: 9rem;
+}
+
+/* line 802, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.mapbox-directions-profile {
+  display: none;
+}
+
+/* line 806, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#google_directions {
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 30rem;
+  line-height: 2rem;
+  text-align: center;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  display: none;
+}
+
+/* line 816, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#google_directions a {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* line 820, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.mapboxgl-ctrl-icon.mapboxgl-ctrl-compass {
+  display: none;
+}
+
+/* line 824, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#petroninja_watermark {
+  position: fixed;
+}
+
+/* line 828, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+footer {
+  background-color: #222;
+  color: #aaa;
+  padding: 2rem 0;
+}
+
+/* line 834, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+footer a {
+  color: inherit;
+}
+
+/* line 838, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+footer a:hover {
+  color: white;
+}
+
+/* line 842, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+footer .petroniche {
+  opacity: .666;
+  transition: opacity ease-in-out .1s;
+  width: 30rem;
+}
+
+/* line 848, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+footer .petroniche:hover {
+  opacity: 1;
+}
+
+/* line 852, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+footer .petroniche + p {
+  opacity: .5;
+}
+
+/* line 856, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+footer img {
+  width: 100%;
+}
+
+/* line 860, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+footer .contact {
+  border-left: 0.1rem solid rgba(255, 255, 255, 0.25);
+  margin-top: 2rem;
+  padding: .5rem 0 .5rem 1.5rem;
+}
+
+/* line 866, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+footer .contact .fa {
+  margin-right: .5em;
+}
+
+/* line 870, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+footer .colophon {
+  margin-top: 2rem;
+}
+
+/* line 874, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#search_results {
+  background-color: white;
+  display: none;
+  line-height: 3rem;
+  padding: 1rem;
+}
+
+/* Session form elements */
+/* line 884, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.session form {
+  margin: auto;
+  padding: 1em 2em;
+}
+
+/* line 889, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.form-title {
+  color: #444;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* line 897, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.form-subtitle {
+  color: #aaa;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 1rem;
+  text-align: center;
+}
+
+/* line 905, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.session h1 span,
+.session img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* line 911, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.form-input.with-icon {
+  padding-left: 4.5rem;
+}
+
+/* line 915, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.form-label.with-icon {
+  font-size: 2rem;
+  line-height: 4.2rem;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 4.5rem;
+}
+
+/* line 924, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#forgot {
+  bottom: 0;
+  line-height: 4rem;
+  position: absolute;
+  right: 1rem;
+}
+
+/* line 931, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.toast-error:empty {
+  display: none;
+}
+
+/* line 935, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.session input[type="submit"] {
+  font-weight: bold;
+  margin-top: 1em;
+  width: 100%;
+}
+
+/* line 941, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.session .account {
+  margin-top: 1em;
+  text-align: center;
+}
+
+@media screen and (min-width: 841px) {
+  /* line 947, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+  .session {
+    background-color: whitesmoke;
+    min-height: 100vh;
+    padding: 10rem 0 5rem;
+  }
+
+  /* line 952, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+  .session form {
+    background-color: white;
+    border: .1rem solid #e6e6e6;
+    border-radius: .2rem;
+    max-width: 45rem;
+  }
+}
+/* line 960, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#uwi {
+  display: none;
+}
+
+/* line 964, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.form-group span.max {
+  bottom: 0;
+  line-height: 3.2rem;
+  opacity: .5;
+  position: absolute;
+  right: 1rem;
+}
+
+/* line 972, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.form-group span.max.danger {
+  color: red;
+}
+
+/* line 976, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.browser.modal.active {
+  display: block;
+}
+
+/* line 980, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.autosize {
+  resize: none;
+}
+
+/* line 985, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.sidebar-toggle {
+  -webkit-transition: all 0.15s ease-out 0;
+  -moz-transition: all 0.15s ease-out 0;
+  transition: all 0.45s ease-out 0;
+  cursor: pointer;
+}
+
+/* line 992, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.sidebar {
+  position: fixed;
+  top: 50px;
+  bottom: 0px;
+  left: -30rem;
+  -webkit-transition: all 0.15s ease-out 0;
+  -moz-transition: all 0.15s ease-out 0;
+  transition: all 0.15s ease-out 0;
+  width: 25rem;
+  background: white;
+  z-index: 5;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  line-height: 2rem;
+}
+
+/* line 1008, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#sidebar-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+/* line 1013, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#slide-toggle:checked + .sidemenu-container .sidebar {
+  left: 0px;
+}
+
+/* line 1018, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#slide-toggle {
+  display: none;
+}
+
+/* line 1022, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#slide-toggle:checked + .sidemenu-container .map_disabled {
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(173, 173, 173, 0.5);
+  z-index: 4;
+}
+
+/* line 1033, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.layer_group {
+  border-top: 1px solid #d9d9d9;
+  padding: 5px;
+}
+
+/* line 1042, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.layer_toggles a {
+  color: #aaa;
+  display: inline-block;
+  padding: 0 1rem;
+  overflow: hidden;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  vertical-align: top;
+  width: 80%;
+}
+
+/* line 1053, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.layer_toggles a.active:hover {
+  color: #aaa;
+  text-decoration: none;
+}
+
+/* line 1058, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.layer_toggles a:hover {
+  color: #d80027;
+  text-decoration: none;
+}
+
+/* line 1063, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.layer_toggles a.active {
+  color: #d80027;
+}
+
+/* line 1067, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#selected_photo {
+  max-height: 50rem;
+  display: none;
+}
+
+/* line 1071, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#photo-caption {
+  display: none;
+}
+
+/* line 1074, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#photo-caption #title {
+  font-weight: bold;
+}
+
+/* line 1078, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.modal-container {
+  -webkit-animation: slide-down .2s;
+  animation: slide-down .2s;
+}
+
+/* line 1082, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.modal.active .modal-container {
+  -webkit-animation: slide-down .2s;
+  animation: slide-down .2s;
+  width: initial;
+}
+
+/* line 1091, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.abandoned_gas_black {
+  background: url(/assets/well_icons/abandoned_gas_black-5714d79817679cd9e287cd7068a687a76cef5ade2c721e2e5209c51d2fbec192.svg);
+  display: block;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 2rem;
+}
+
+/* line 1099, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.abandoned_injection_black {
+  background: url(/assets/well_icons/abandoned_injection_black-208783e292ff9ed2c89096ba61bc6fcd05f86f75e3a4eb0464a27d17dc194404.svg);
+  display: block;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 2rem;
+}
+
+/* line 1107, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.abandoned_oil_black {
+  background: url(/assets/well_icons/abandoned_oil_black-8ea43f9dbad58111e851edec112d9937d3366f73de88d8ffaaa0676e7bff6f98.svg);
+  display: block;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 2rem;
+}
+
+/* line 1115, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.abandoned_source_black {
+  background: url(/assets/well_icons/abandoned_source_black-f62fe027496ef85c8ec8e0c3069bd1ad51bc6a0a4a9be6fd176b971a5080d466.svg);
+  display: block;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 2rem;
+}
+
+/* line 1123, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.dry_or_abandoned_black {
+  background: url(/assets/well_icons/dry_or_abandoned_black-1a445b197bd3ec8d4398a1661812194a0b02c694d93b7ab41b4e11ec9a5f378d.svg);
+  display: block;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 2rem;
+}
+
+/* line 1131, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.gas_black {
+  background: url(/assets/well_icons/gas_black-b21ba905a52d5c14436dafa6f1ee1efcea7f0b14bbe18e2d38cab4b4f9136621.svg);
+  display: block;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 2rem;
+}
+
+/* line 1139, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.injection_black {
+  background: url(/assets/well_icons/injection_black-c465aa4d4a59e99aa6cc7f79ce5d9f2797f78d821683d67787fd1c2bc844a72e.svg);
+  display: block;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 2rem;
+}
+
+/* line 1147, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.location_black {
+  background: url(/assets/well_icons/location_black-b20972d86dcfda829ddbc98f711a9fb8d7aabd8c1e6a75c2189ca520f5c89411.svg);
+  display: block;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 2rem;
+}
+
+/* line 1155, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.oil_black {
+  background: url(/assets/well_icons/oil_black-b713017630f71e969d848abdc5c9c21f7c69d3b7cff147cb75602cc9b0d91e2b.svg);
+  display: block;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 2rem;
+}
+
+/* line 1163, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.source_black {
+  background: url(/assets/well_icons/source_black-3af9557454f7d658360e9cbc55f7e24608bafd6b2c3ad48c357a2e73fa3309bf.svg);
+  display: block;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 2rem;
+}
+
+/* line 1171, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.suspended_gas_black {
+  background: url(/assets/well_icons/suspended_gas_black-73f992d8445e46b5105e2a194647d2bf20f4b9b140b4e4696be293ad2b67f1bd.svg);
+  display: block;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 2rem;
+}
+
+/* line 1179, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.suspended_injection_black {
+  background: url(/assets/well_icons/suspended_injection_black-4fa7649703fa8313837349ec902bf333a66dc466c5b1e0b2af658a4f1e798912.svg);
+  display: block;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 2rem;
+}
+
+/* line 1187, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.suspended_oil_black {
+  background: url(/assets/well_icons/suspended_oil_black-22a7e197a13d78634aabf9b404ee8d7f0a13115f83444543addbea48ad63a6a6.svg);
+  display: block;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 2rem;
+}
+
+/* line 1195, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.suspended_source_black {
+  background: url(/assets/well_icons/suspended_source_black-bcffcd5300bba65bb427fe62a5c074189471775d52c6e78c4e8b219596fded2d.svg);
+  display: block;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 2rem;
+}
+
+/* line 1203, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.suspended_source_black {
+  background: url(/assets/well_icons/suspended_source_black-bcffcd5300bba65bb427fe62a5c074189471775d52c6e78c4e8b219596fded2d.svg);
+  display: block;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 2rem;
+}
+
+/* line 1211, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.fa-picture {
+  background: url(/assets/fa_pic-131e24783160505b4af0e0c420d1a241a84ea1a962917f5b3913727777aeb683.svg);
+  display: block;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 2rem;
+}
+
+/* line 1219, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.svg-fa-list {
+  background: url(/assets/fa_list-8844550e9617b1b72093599b33bebdcdc5f858e8307d737b104bfddcf209b59a.svg);
+  display: block;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 2rem;
+}
+
+/* line 1227, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.fa-twitter:before {
+  content: "\f099";
+  color: #0077ff;
+}
+
+/* line 1233, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.list-button > i {
+  position: relative;
+}
+
+/* line 1238, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.list-button {
+  display: block;
+  width: 110px;
+  height: 35px;
+  color: black;
+  font-family: sans-serif;
+  font-size: 16px;
+  text-align: left;
+  padding-left: 0.7rem;
+  cursor: pointer;
+}
+
+/* line 1251, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#well_list_success {
+  display: none;
+}
+
+/* line 1255, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#well_list_errors {
+  display: none;
+}
+
+/* line 1259, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+a.layer_edit_btn {
+  float: right;
+  width: 20%;
+}
+
+/* line 1264, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.saving {
+  font-size: 40px;
+}
+
+/* line 1268, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.spinner {
+  font-size: 20px;
+  background: rgba(51, 51, 51, 0.5);
+  bottom: 0;
+  display: block;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 3000;
+  text-align: center;
+  color: red;
+}
+
+/* line 1281, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.center-spin {
+  top: 50%;
+  position: absolute;
+}
+
+/* line 1286, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.camera-image img {
+  max-height: 40rem;
+}
+
+/* line 1290, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.saving span {
+  font-size: 90px;
+  animation-name: blink;
+  animation-duration: 1.4s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  color: #d80027;
+}
+
+/* line 1299, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.saving span:nth-child(2) {
+  animation-delay: .2s;
+}
+
+/* line 1303, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.saving span:nth-child(3) {
+  animation-delay: .4s;
+}
+
+/* line 1307, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+input#well_url {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+/* line 1311, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.hidden-well-details {
+  display: none;
+}
+
+/* line 1315, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.mapboxgl-ctrl.mapboxgl-ctrl-group.groups {
+  width: 10rem;
+}
+
+/* line 1319, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.mapboxgl-ctrl.mapboxgl-ctrl-group.groups i {
+  width: 10rem;
+}
+
+/* line 1325, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.modal.group.list .modal-container .modal-body {
+  left: 0px;
+  position: absolute;
+  width: calc(100% - 4rem);
+  height: 100%;
+  max-height: calc(100% - 6rem);
+  top: 2rem;
+  margin: 2rem;
+  padding-top: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 0rem;
+  padding-left: 1.5rem;
+  background-color: white;
+}
+
+/* line 1340, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#group-name {
+  border-bottom: darkgrey;
+  border-bottom-style: solid;
+  font-size: 3rem;
+  padding-bottom: 0.7rem;
+  border-bottom-width: 0.2rem;
+}
+
+/* line 1348, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#group-members .member {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.3em;
+}
+
+/* line 1354, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.modal-body .container {
+  max-width: none;
+}
+
+/* line 1358, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#wrap {
+  overflow: hidden;
+}
+
+/* line 1362, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.wrap {
+  overflow: hidden;
+}
+
+/* line 1365, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.box {
+  float: left;
+  position: relative;
+  width: 5%;
+  padding-bottom: 5%;
+}
+
+/* line 1371, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.boxInner {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* line 1380, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.boxInner img {
+  width: 100%;
+}
+
+/* line 1383, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.boxInner .titleBox {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: -50px;
+  background: #000;
+  background: rgba(0, 0, 0, 0.5);
+  color: #FFF;
+  padding: 10px;
+  text-align: center;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+/* line 1399, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+body.no-touch .boxInner:hover .titleBox, body.touch .boxInner.touchFocus .titleBox {
+  margin-bottom: 0;
+}
+
+/* line 1403, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#photos-container {
+  height: 100%;
+}
+
+/* line 1407, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#container-title {
+  font-size: 2rem;
+}
+
+/* line 1410, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#group-large-photo img {
+  max-width: 100%;
+}
+
+/* line 1414, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#chat-container .panel .panel-body {
+  padding: 0 1.5rem;
+}
+
+/* line 1420, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#group-list {
+  height: 16.5rem;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 16px;
+  padding: 0.5rem;
+  position: relative;
+  cursor: initial;
+}
+
+/* line 1429, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#group-list-groups {
+  padding-top: 0.5rem;
+}
+
+/* line 1433, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#group {
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100px;
+  white-space: nowrap;
+}
+
+/* line 1442, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#group-all {
+  bottom: 7px;
+  position: absolute;
+  left: 15%;
+}
+
+/* line 1448, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.group-note {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* line 1453, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+table.user-groups-index {
+  width: 100%;
+}
+
+/* line 1457, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.mapboxgl-ctrl span.label.label-primary {
+  padding: 0.4rem;
+  margin: 0.1rem;
+}
+
+/* line 1462, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+span.label.label-primary {
+  background: #d80027;
+  color: #fff;
+  margin: 0.5rem;
+  display: block;
+  padding: 0.8rem;
+  text-align: center;
+}
+
+/* line 1471, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+span.label.label-primary a {
+  color: white;
+}
+
+/* line 1475, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.modal.new-group.list .modal-container {
+  width: 65rem;
+}
+
+/* line 1479, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.modal.all-groups.list .modal-container {
+  width: calc(100vw - 50rem);
+}
+
+/* line 1483, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+table.utable {
+  width: 100%;
+}
+
+/* line 1487, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.switch-field {
+  overflow: hidden;
+  padding-top: 1rem;
+}
+
+/* line 1492, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.switch-field input {
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  border: 0;
+  overflow: hidden;
+}
+
+/* line 1501, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.switch-field label {
+  float: left;
+}
+
+/* line 1505, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.switch-field label {
+  display: inline-block;
+  width: 60px;
+  background-color: #e4e4e4;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
+  text-shadow: none;
+  padding: 6px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+/* line 1525, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.switch-field label:hover {
+  cursor: pointer;
+}
+
+/* line 1529, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.switch-field input:checked + label {
+  background-color: #A5DC86;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* line 1535, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.switch-field label:first-of-type {
+  border-radius: 4px 0 0 4px;
+}
+
+/* line 1539, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.switch-field label:last-of-type {
+  border-radius: 0 4px 4px 0;
+}
+
+/* line 1543, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.switch-title {
+  line-height: 3rem;
+  float: left;
+}
+
+/* line 1548, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.invite-radio-btns {
+  float: right;
+}
+
+/* line 1552, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.modal.invites.list.active {
+  bottom: calc(100vh - 31rem);
+}
+
+/* line 1556, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.modal.all-groups .container {
+  margin-top: 1rem;
+}
+
+/* line 1560, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#group-manage {
+  text-align: center;
+  padding: 1rem;
+}
+
+@keyframes blink {
+  0% {
+    opacity: .2;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .2;
+  }
+}
+/* line 1580, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#group-main-container section {
+  display: none;
+  padding: 1.5rem;
+  border-top: 1px solid #ddd;
+}
+
+/* line 1586, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#group-main-container input[type="radio"] {
+  display: none;
+}
+
+/* line 1590, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#group-main-container label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 25px;
+  font-weight: 600;
+  text-align: center;
+  color: #bbb;
+  border: 1px solid transparent;
+}
+
+/* line 1600, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#group-main-container label:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+/* line 1606, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#group-main-container label[for*='1']:before {
+  content: '\f03e';
+}
+
+/* line 1607, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#group-main-container label[for*='2']:before {
+  content: '\f0f6';
+}
+
+/* line 1608, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#group-main-container label[for*='3']:before {
+  content: '\f24a';
+}
+
+/* line 1609, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#group-main-container label[for*='4']:before {
+  content: '\f0c0';
+}
+
+/* line 1611, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#group-main-container label:hover {
+  color: #888;
+  cursor: pointer;
+}
+
+/* line 1616, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#group-main-container input:checked + label {
+  color: #555;
+  border: 1px solid #ddd;
+  border-top: 2px solid #d80027;
+  border-bottom: 1px solid #fff;
+  width: 20%;
+}
+
+/* line 1624, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#group-main-container #tab1:checked ~ #content1,
+#group-main-container #tab2:checked ~ #content2,
+#group-main-container #tab3:checked ~ #content3,
+#group-main-container #tab4:checked ~ #content4 {
+  display: block;
+}
+
+/* line 1632, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+.bar {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  height: initial;
+  color: white;
+}
+
+/* line 1640, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#document_url {
+  margin-top: 1rem;
+}
+
+/* line 1644, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+section.panel-body {
+  height: calc(100vh - 19rem);
+  overflow: scroll;
+}
+
+/* line 1649, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+#well-group-documents {
+  margin-top: 2rem;
+}
+
+@media only screen and (max-width: 480px) {
+  /* Smartphone view: 1 tile */
+  /* line 1655, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+  .box {
+    width: 100%;
+    padding-bottom: 100%;
+  }
+}
+@media only screen and (max-width: 650px) and (min-width: 481px) {
+  /* Tablet view: 2 tiles */
+  /* line 1662, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+  .box {
+    width: 50%;
+    padding-bottom: 50%;
+  }
+}
+@media only screen and (max-width: 1050px) and (min-width: 651px) {
+  /* Small desktop / ipad view: 3 tiles */
+  /* line 1669, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+  .box {
+    width: 33.3%;
+    padding-bottom: 33.3%;
+  }
+}
+@media only screen and (min-width: 1051px) {
+  /* Medium desktop: 4 tiles */
+  /* line 1676, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
+  .box {
+    width: 25%;
+    padding-bottom: 25%;
+  }
+}

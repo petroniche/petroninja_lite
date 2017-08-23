@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Petro Ninja Lite</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato|Source+Sans+Pro">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/petroninja_style.css">
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css">
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+    
+    <!-- Include the Petro Ninja JS Library -->
+    <script src='./js/petroninja_lib.js'></script>
+
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    
+        #satellite-button-container{
+            border
+            overflow: hidden;
+            background-color: white;
+            border-radius: 4px;
+            -moz-box-shadow: 0px 0px 2px rgba(0,0,0,0.1);
+            -webkit-box-shadow: 0px 0px 2px rgba(0,0,0,0.1);
+            box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.1);
+        }
+
+        #satellite-button{
+            display: block;
+            width: 110px;
+            height: 35px;
+            color: black;
+            font-family: sans-serif;
+            font-size: 16px;
+            text-align: left;
+            padding-left: 0.7rem;
+            cursor: pointer;
+            line-height: 35px;
+        }
+
+        #units-button{
+            display: block;
+            width: 110px;
+            height: 35px;
+            color: black;
+            font-family: sans-serif;
+            font-size: 16px;
+            text-align: left;
+            padding-left: 0.7rem;
+            cursor: pointer;
+            line-height: 35px;
+        }
+
+        .switch{
+            background-color: white;
+            border-radius: 4px;
+            box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.1);
+            -moz-box-shadow: 0px 0px 2px rgba(0,0,0,0.1);
+            -webkit-box-shadow: 0px 0px 2px rgba(0,0,0,0.1);
+        }
+
+        .cmn-toggle {
+          position: absolute;
+          margin-left: -9999px;
+          visibility: hidden;
+        }
+        .cmn-toggle + label {
+          display: block;
+          position: relative;
+          cursor: pointer;
+          outline: none;
+          user-select: none;
+        }
+
+/*        input.cmn-toggle-yes-no + label {
+          padding: 2px;
+          width: 120px;
+          height: 60px;
+        }*/
+
+
+        input.cmn-toggle-yes-no + label:before,
+        input.cmn-toggle-yes-no + label:after {
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          /*color: #fff;*/
+          /*font-family: "Roboto Slab", serif;*/
+          /*font-size: 20px;*/
+         /* text-align: center;
+          line-height: 60px;*/
+        }
+        input.cmn-toggle-yes-no + label:before {
+          content: attr(data-off);
+          /*transition: transform 0.5s;*/
+          backface-visibility: hidden;
+        }
+        input.cmn-toggle-yes-no + label:after {
+          content: attr(data-on);
+          /*transition: transform 0.5s;*/
+          transform: rotateY(180deg);
+          backface-visibility: hidden;
+        }
+        input.cmn-toggle-yes-no:checked + label:before {
+          transform: rotateY(180deg);
+        }
+        input.cmn-toggle-yes-no:checked + label:after {
+          transform: rotateY(0);
+        }
+
+        #logo-container {
+            float: right;
+            width: initial !important;
+            padding-right: 1rem;
+        }
+
+        #logo img {
+          height: 43px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id='map'></div>
+    <div class="spinner"><i class="fa fa-refresh fa-spin fa-3x fa-fw center-spin"></i></div>
+
+    <aside>
+        <div id="layer2" class="shadow">
+            <div id="well_info" class="aside-section hidden">
+                <div class="aside-title">
+                    <span>Well Details</span>
+                    <button type="button" class="close float-right"><i class="fa fa-times fa-fw"></i></button>
+                    <button type="button" class="expand float-right"><i class="fa fa-expand fa-fw"></i></button>
+                </div>
+
+                <div class="well_info_container">
+                    <div>
+                        <div class="aside-subtitle">License Information</div>
+                        <table class="table table-striped table-hover table-attributes">
+                            <tr>
+                                <td>License</td>
+                                <td id="license"></td>
+                            </tr>
+                            <tr>
+                                <td>Licensee</td>
+                                <td id="licensee_value"></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div>
+                        <div class="aside-subtitle">General Well Information</div>
+                        <div class="hidden-well-details" id="well_lat"></div>
+                        <div class="hidden-well-details" id="well_lng"></div>
+                        <table class="table table-striped table-hover table-attributes">
+                            <tr>
+                                <td>Surface Location</td>
+                                <td id="surface_uwi_value"></td>
+                            </tr>
+                            <tr>
+                                <td>Well Name</td>
+                                <td id="well_name"></td>
+                            </tr>
+                            <tr>
+                                <td>Well Fluid Type</td>
+                                <td id="well_fluid_value"></td>
+                            </tr>
+                            <tr>
+                                <td>Well Status</td>
+                                <td id="well_status_value"></td>
+                            </tr>
+                            <tr>
+                                <td>Well Type</td>
+                                <td id="well_type_value"></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div>
+                        <div class="aside-subtitle">Formation & Pool Info</div>
+                        <table class="table table-striped table-hover table-attributes">
+                            <tr>
+                                <td>Projected Formation</td>
+                                <td id="xxx"></td>
+                            </tr>
+                            <tr>
+                                <td>Producing Formation</td>
+                                <td id="producing_formation"></td>
+                            </tr>
+                            <tr>
+                                <td>Field</td>
+                                <td id="xxx"></td>
+                            </tr>
+                            <tr>
+                                <td>Pool</td>
+                                <td id="xxx"></td>
+                            </tr>
+                            <tr>
+                                <td>Unit</td>
+                                <td id="xxx"></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div>
+                        <div class="aside-subtitle">Dates & Drilling Info</div>
+                        <table class="table table-striped table-hover table-attributes">
+                            <tr>
+                                <td>License Date</td>
+                                <td id="license_date"></td>
+                            </tr>
+                            <tr>
+                                <td>Spud Date</td>
+                                <td id="spud_date"></td>
+                            </tr>
+                            <tr>
+                                <td>Rig Release Date</td>
+                                <td id="rig_release_date"></td>
+                            </tr>
+                            <tr>
+                                <td>On Prod Date</td>
+                                <td id="license_date"></td>
+                            </tr>
+                            <tr>
+                                <td>Drilling Rig Number</td>
+                                <td id="rig_no"></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div>
+                        <div class="aside-subtitle">Depths</div>
+                        <table class="table table-striped table-hover table-attributes">
+                            <tr>
+                                <td>KB Elevation</td>
+                                <td id="kb_elevation"></td>
+                            </tr>
+                            <tr>
+                                <td>Ground Elevation</td>
+                                <td id="ground_elevation"></td>
+                            </tr>
+                            <tr>
+                                <td>Projected Total Depth</td>
+                                <td id="projected_total_depth"></td>
+                            </tr>
+                            <tr>
+                                <td>Max True Vertical Depth</td>
+                                <td id="tvd"></td>
+                            </tr>
+                            <tr>
+                                <td>Total Depth</td>
+                                <td id="total_depth"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="well_completions" class="aside-section hidden">
+                <div class="aside-title">
+                    <span>Completions and Casings</span>
+                    <button type="button" class="close float-right"><i class="fa fa-times fa-fw"></i></button>
+                    <button type="button" class="expand float-right"><i class="fa fa-expand fa-fw"></i></button>
+                </div>
+
+                <div class="casing_completions_container">
+
+                    <div class="rel">
+                        <div class="aside-subtitle">Completions</div>
+                        <table id="table_completions" class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="sort">Date</th>
+                                    <th class="sort" data-unit='m'>Bottom Measure</th>
+                                    <th class="sort" data-unit='m'>Top Measure</th>
+                                    <th class="sort">Formation</th>
+                                    <th class="sort">Treatment</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+
+                    <div class="rel">
+                        <div class="aside-subtitle">Casings</div>
+                        <table id="table_casings" class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="sort">Type</th>
+                                    <th class="sort" data-unit='mm'>Diameter</th> 
+                                    <th class="sort" data-unit='m'>Top Depth</th>
+                                    <th class="sort" data-unit='m'>Shoe Depth</th>
+                                    <th class="sort">Grade</th>
+                                    <th class="sort" data-unit='kg/m'>Weight</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div id="well_production" class="aside-section hidden">
+                <div class="aside-title">
+                    <span>Production Data</span>
+                    <button type="button" class="close float-right"><i class="fa fa-times fa-fw"></i></button>
+                    <button type="button" class="expand float-right"><i class="fa fa-expand fa-fw"></i></button>
+                </div>
+                
+                <div class="rel">
+                    <label id="toggle-daily-table" class="form-switch hand with-text">
+                        <input type="checkbox" id="daily-table" checked>
+                        <span>Daily</span><span>Monthly</span>
+                    </label>
+                    <table id="table_production" class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th class="sort">Date</th>
+                                <th class="sort" data-unit='m3'>Monthly Oil</th>
+                                <th class="sort" data-unit='m3/day'>Daily Oil</th>
+                                <th class="sort" data-unit='e3m3'>Monthly Gas</th>
+                                <th class="sort" data-unit='e3m3/day'>Daily Gas</th>
+                                <th class="sort" data-unit='m3'>Monthly Water</th>
+                                <th class="sort" data-unit='m3/day'>Daily Water</th>
+                                <th class="sort" data-unit='m3'>Monthly Injection</th>
+                                <th class="sort" data-unit='m3/day'>Daily Injection</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+            
+                </div>
+            </div>
+
+            <div id="well_chart" class="aside-section hidden">
+                <div class="aside-title">
+                    <span>Production Chart</span>
+                    <button type="button" class="close float-right"><i class="fa fa-times fa-fw"></i></button>
+                    <button type="button" class="expand float-right"><i class="fa fa-expand fa-fw"></i></button>
+                </div>
+
+                <div class="rel">
+                    <label id="toggle-daily" class="form-switch hand with-text">
+                        <input type="checkbox" id="daily" checked>
+                        <span>Daily</span><span>Monthly</span>
+                    </label>
+                    <label id="toggle-log" class="form-switch hand with-text">
+                        <input type="checkbox" id="log" checked>
+                        <span>Logarithmic</span><span>Linear</span>
+                    </label>
+
+                    <div id="chart-production" style="height:50rem"></div>
+                </div>
+            </div>
+
+
+        </div>
+        <div id="layer1" class="shadow">
+            <div class="aside-section" style="padding-top:2rem">
+                <b>Licencee</b>
+                <p id="licensee_value2"></p>
+                <b>Surface Location</b>
+                <p id="surface_uwi_value2"></p>
+            </div>
+            <div class="aside-buttons">
+                <a class="aside-button" data-val="well_info"><i class="fa fa-list-ul fa-fw"></i><span> WELL DETAILS</span><i class="fa fa-chevron-right fa-fw float-right"></i></a>
+                <a class="aside-button" data-val="well_completions"><i class="fa fa-cog fa-fw"></i><span> COMPLETIONS AND CASINGS</span><i class="fa fa-chevron-right fa-fw float-right"></i></a>
+                <a class="aside-button" data-val="well_production"><i class="fa fa-table fa-fw"></i><span> PRODUCTION DATA</span><i class="fa fa-chevron-right fa-fw float-right"></i></a>
+                <a class="aside-button" data-val="well_chart"><i class="fa fa-bar-chart fa-fw"></i><span> PRODUCTION CHART</span><i class="fa fa-chevron-right fa-fw float-right"></i></a>
+            </div>
+        </div>
+    </aside>
+
+    <div id="subheader">
+        <div>
+            <input type="search" id="search-input" name="filter" placeholder="Search by UWI, License, Township" maxlength="23" required>
+
+            <button id="clear_search_button" type="button" class="btn btn-lg btn-link tooltip tooltip-bottom close" data-tooltip="Clear search">&times;</button>
+
+            <button id="search_button" type="button" class="btn btn-lg btn-link tooltip tooltip-bottom" data-tooltip="Search"><i class="fa fa-search fa-lg"></i></button>            <div id="search_results">No wells found</div>
+        </div>
+        <div style="width:50rem">
+            <span class="inline-block"></span>
+            <select id="uwi_list" class="form-select inline-block" style="width:auto"></select>
+        </div>
+        <div id="logo-container">
+          <a id="logo" href="https://www.petroninja.com" target="_blank"><img src="images/logo.png" alt="Logo white"></a>
+        </div>
+    </div>
+
+    <div id="satellite-button-container" style="bottom:14rem;position:absolute;right:1rem">
+        <a id="satellite-button" class="list-button"><i class="fa fa-globe"> Satellite</i></a>
+    </div>
+
+    <div class="switch" style="bottom:19rem;position:absolute;right:1rem">
+        <div id="units-button">
+          <input id="cmn-toggle-7" class="cmn-toggle cmn-toggle-yes-no" type="checkbox" checked>
+          <label for="cmn-toggle-7" class="list-button" data-on="Metric" data-off="Imperial"></label>
+      </div>
+
+    </div>
+
+    <script src='./js/petroninja_ui.js'></script>
+    <script src='./js/petroninja_wells.js'></script>
+    <script src='./js/petroninja_charts.js'></script>
+
+
+    <script>
+
+        //Determine which zoom level to use. if a user provides a uwi in the url, go to zoom 5.
+        var initialZoomLevel = 10
+        var map = mapboxSetup(initialZoomLevel)
+
+        var filterInput = document.getElementById('search-input');
+    
+        map.on('load', function() {
+            var layer_list = wellAndCameraLayers();
+            //Show hand on map marker hover over.
+            map.on('mousemove', function (e) {
+               var features = map.queryRenderedFeatures(e.point, { layers: layer_list });
+               map.getCanvas().style.cursor = features.length ? 'pointer' : '';
+            });
+
+            //Handle map marker click
+            map.on('click', function (e) {
+
+                var well_features = map.queryRenderedFeatures(e.point, { layers: mapbox_style_layers });
+                console.log(well_features);
+                var camera_features = map.queryRenderedFeatures(e.point, { layers: ['ab-cameras'] });
+
+
+                if (well_features.length) {
+
+                    //remove well info if another well is currently selected
+                    $("#table_production").find("tbody").empty();
+                    $(".aside-button").removeClass("active");
+                    $("#layer2").fadeOut("fast");
+                    
+                    var feature = well_features[0];
+                    selectWell(feature.geometry.coordinates[1],feature.geometry.coordinates[0], feature.properties.symbol);
+                    quickWellInfo(feature.properties.WellID);
+                }
+                else if (camera_features.length){    
+                    var feature = camera_features[0]
+                    $('.camera-image').html("<a href='"+feature.properties["Camera URL"]+"' target='_blank'><img src='"+feature.properties["Image URL"]+"'</img></a>");
+                    $('.camera-name').html(feature.properties["Camera Name"]);
+                    $('.modal.camera').addClass('active');
+                }
+                else {
+                    return;
+                }
+            });
+
+            map.on('zoom', function() {
+                //If the selected well layer is on, drop and re-add the layer when the user zooms in out. 
+                //This ensure proper alignment of the selected well symbol with the symbol in the mapbox style
+                selected_layer = map.getLayer('point');
+                if (selected_layer){
+                    // map.removeLayer('point');
+                    var uwi = $("#search-input").val().replace(/-/gi, '').replace(/\//gi, '');
+                    var features = map.queryRenderedFeatures({layers: mapbox_style_layers, filter: ["==", "WellID", uwi]});
+                    if (features.length) {
+                        var feature = features[0];
+                        selectWell(feature.geometry.coordinates[1],feature.geometry.coordinates[0], feature.properties.symbol);
+                    }
+                }
+            });
+
+            satelitteToggle();
+
+        }); //end map on load
+
+    </script>
+
+</body>
+</html>
