@@ -8,7 +8,7 @@ To start using Petro Ninja Lite you require a Mapbox and Petro Ninja Data API Ke
 To view the Petro Ninja API documention: https://www.petroninja.com/api_documentation/index.html#/
 
 # Petro Ninja Data JavaScript Library
-Use our Javascript Library to easily communicate with the Petro Ninja API. The library is used by Petro Ninja Lite and petroninja.com. 
+Use our Javascript Library to easily communicate with the Petro Ninja API. The library is used by Petro Ninja Lite and petroninja.com. It can be found in js/petroninja_lib.js
 
 # Petro Ninja Lite IFrame
 Include the PetroNinja IFrame in your website to display the Petro Ninja Map and basic well data. See sample file in the IFrame folder or use the code snippet below:
