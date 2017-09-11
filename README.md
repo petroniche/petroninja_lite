@@ -16,10 +16,10 @@ Include the PetroNinja IFrame in your website to display the Petro Ninja Map and
 Default Petro Ninja Map
 To include the default Petro Ninja IFrame add the following snipped to your HTML:	
 ```html
-<iframe src="https://www.petroninja.com/lite/index.html" height="500px" width="1000px"></iframe>
+<iframe src="https://www.petroninja.com/PetroNinjaLite/index.html" height="500px" width="1000px"></iframe>
 ```
 Petro Ninja Map + Well List.
 To show a well list within the IFrame, add the identifier as a parameter in the URL:
 ```html
-<iframe src="https://www.petroninja.com/lite/index.html?list=QndUdK" height="500px" width="1000px"></iframe>
+<iframe src="https://www.petroninja.com/PetroNinjaLite/index.html?list=QndUdK" height="500px" width="1000px"></iframe>
 ```
