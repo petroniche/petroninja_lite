@@ -1,3 +1,6 @@
+//= require datatables.min.js
+//= require datatables.buttons.min.js
+
 $(function () {
 
 	/**
@@ -104,13 +107,13 @@ $(function () {
 				"order": [[0, "asc"]],
 				"columnDefs": [{
 					"render": $.fn.dataTable.render.number(",", ".", 2),
-					"targets": [1, 2, 3, 4, 5, 6, 7, 8],
+					"targets": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
 					"width": "11%"
 				}, {
 					"targets": [0],
 					"width": "11%"
 				}, {
-					"targets": [1, 3, 5, 7],
+					"targets": [1, 3, 4, 6, 7, 9, 10, 12, 13, 14, 15, 16],
 					"visible": false
 				}]
 			});
@@ -128,15 +131,17 @@ $(function () {
 		} else {
 			tableProduction.clear();
 		};
-		drawChartProduction(tableProduction, $("#log").is(":checked"), $("#daily").is(":checked"), $("#metric").is(":checked"));
+		drawChartProduction(tableProduction, $("#log").is(":checked"), $("input[name='switch_3']:checked").val(), $('input[name=metric]:checked').val());
 	});
 
-	function drawChartProduction(tableProduction, log, daily, metric) {
+	function drawChartProduction(tableProduction, log, pivot_type, metric) {
 		var arrays = tableProduction.rows().data().toArray();
 		arrays.sort();
 
 		if (arrays.length <= 1) {
 			$("a[data-val='well_chart']").addClass("disabled");
+			$(".aside-button").removeClass("active");
+			$("#layer2").fadeOut("fast");
 		} else {
 			$("a[data-val='well_chart']").removeClass("disabled");
 			var columns = [];
@@ -147,15 +152,23 @@ $(function () {
 					"month": arrays[i][0],
 					"oil": arrays[i][1],
 					"daily_oil": arrays[i][2],
-					"gas": arrays[i][3],
-					"daily_gas": arrays[i][4],
-					"water": arrays[i][5],
-					"daily_water": arrays[i][6],
-					"injection": arrays[i][7],
-					"daily_injection": arrays[i][8]
+					"producing_oil": arrays[i][3],
+					"gas": arrays[i][4],
+					"daily_gas": arrays[i][5],
+					"producing_gas": arrays[i][6],
+					"water": arrays[i][7],
+					"daily_water": arrays[i][8],
+					"producing_water": arrays[i][9],
+					"injection": arrays[i][10],
+					"daily_injection": arrays[i][11],
+					"producing_injection": arrays[i][12],
+					"cumulative_gas": arrays[i][13],
+					"cumulative_oil": arrays[i][14],
+					"cumulative_water": arrays[i][15],
+					"cumulative_injection": arrays[i][16]
 				});
-				water += parseFloat(arrays[i][5]);
-				injection += parseFloat(arrays[i][7]);
+				water += parseFloat(arrays[i][7]);
+				injection += parseFloat(arrays[i][10]);
 			};
 
 			var chart = AmCharts.makeChart("chart-production", {
@@ -172,7 +185,7 @@ $(function () {
 					"axisAlpha": 1,
 					"logarithmic": log,
 					"precision": 2,
-					"title": (daily ? "Daily Oil / " : "Monthly Oil / ") + (water ? "Water " : "Injection ") + (metric ? "(m3)" : "(bbl)"),
+					"title": ((pivot_type == "daily" ? "Daily Oil / " : (pivot_type == "monthly" ? "Monthly Oil / " : (pivot_type == "cumulatives" ? "Cumulative Oil /" : "Producing Oil /"))) + (water ? "Water " : "Injection ") + (metric == "true" ? "(m3)" : "(bbl)")),
 					"titleColor": "green",
 					"treatZeroAs": log ? 0.0001 : 0,
 					"position": "left"
@@ -182,7 +195,7 @@ $(function () {
 					"axisAlpha": 1,
 					"logarithmic": log,
 					"precision": 2,
-					"title": (daily ? "Daily Gas " : "Monthly Gas ") + (metric ? "(e3m3)" : "(mcf)"),
+					"title": (pivot_type == "daily" ? "Daily Gas " : (pivot_type == "monthly" ? "Monthly Gas " : (pivot_type == "cumulatives" ? "Cumulative Gas" : "Producing Gas "))) + (metric == "true" ? "(e3m3)" : "(mcf)"),
 					"titleColor": "red",
 					"treatZeroAs": log ? 0.0001 : 0,
 					"position": "right"
@@ -196,10 +209,10 @@ $(function () {
 					"hideBulletsCount": 50,
 					"lineColor": "green",
 					"lineThickness": 2,
-					"title": daily ? "Daily Oil" : "Monthly Oil",
+					"title": (pivot_type == "daily" ? "Daily Oil" : (pivot_type == "monthly" ? "Monthly Oil" : (pivot_type == "producing" ? "Producing Oil" : "Cumulative Oil"))),
 					"useLineColorForBulletBorder": true,
 					"valueAxis": "v1",
-					"valueField": daily ? "daily_oil" : "oil"
+					"valueField": (pivot_type == "daily" ? "daily_oil" : (pivot_type == "monthly" ? "oil" : (pivot_type == "producing" ? "producing_oil" : "cumulative_oil")))
     }, {
 					"bullet": "round",
 					"connect": false,
@@ -209,10 +222,10 @@ $(function () {
 					"hideBulletsCount": 50,
 					"lineColor": "red",
 					"lineThickness": 2,
-					"title": daily ? "Daily Gas" : "Monthly Gas",
+					"title": (pivot_type == "daily" ? "Daily Gas" : (pivot_type == "monthly" ? "Monthly Gas" : (pivot_type == "producing" ? "Producing Gas" : "Cumulative Gas"))),
 					"useLineColorForBulletBorder": true,
 					"valueAxis": "v2",
-					"valueField": daily ? "daily_gas" : "gas"
+					"valueField": (pivot_type == "daily" ? "daily_gas" : (pivot_type == "monthly" ? "gas" : (pivot_type == "producing" ? "producing_gas" : "cumulative_gas")))
     }],
 				"chartScrollbar": {},
 				"chartCursor": {
@@ -244,10 +257,10 @@ $(function () {
 				g.hideBulletsCount = 50;
 				g.lineColor = "dodgerblue"
 				g.lineThickness = 1.5;
-				g.title = daily ? "Daily Water" : "Monthly Water";
+				g.title = (pivot_type == "daily" ? "Daily Water" : (pivot_type == "monthly" ? "Monthly Water" : (pivot_type == "producing" ? "Producing Water" : "Cumulative Water")));
 				g.useLineColorForBulletBorder = true;
 				g.valueAxis = "v1";
-				g.valueField = daily ? "daily_water" : "water";
+				g.valueField = (pivot_type == "daily" ? "daily_water" : (pivot_type == "monthly" ? "water": (pivot_type == "producing" ? "producing_water" : "cumulative_water")));
 				chart.addGraph(g);
 			};
 
@@ -261,10 +274,10 @@ $(function () {
 				g.hideBulletsCount = 50;
 				g.lineColor = "purple";
 				g.lineThickness = 1.5;
-				g.title = daily ? "Daily Injection" : "Monthly Injection";
+				g.title = (pivot_type == "daily" ? "Daily Injection" : (pivot_type == "monthly" ? 'Monthly Injection' : (pivot_type == "producing" ? 'Producing Injection' : "Cumulative Injection")));
 				g.useLineColorForBulletBorder = true;
 				g.valueAxis = "v1";
-				g.valueField = daily ? "daily_injection" : "injection";
+				g.valueField = (pivot_type == "daily" ? "daily_injection" : (pivot_type == "monthly" ? injection : (pivot_type == "producing" ? "producing_injection": "cumulative_injection")));
 				chart.addGraph(g);
 			};
 		};
@@ -273,16 +286,34 @@ $(function () {
 
 
 	// 100/02-34-018-16W4/00
-	$("#log, #daily").change(function () {
-		drawChartProduction(tableProduction, $("#log").is(":checked"), $("#daily").is(":checked"), $("#metric").is(":checked"));
+	$("#log").change(function () {
+		drawChartProduction(tableProduction, $("#log").is(":checked"),  $("input[name='switch_3_chart']:checked").val(), $('input[name=metric]:checked').val());
 	});
 
+	$("input[name='switch_3']").change(function (){
+		var pivot_type = $("input[name='switch_3']:checked").val();
 
-	$("#daily-table").change(function () {
-		tableProduction.columns([1, 3, 5, 7]).visible(!this.checked);
-		tableProduction.columns([2, 4, 6, 8]).visible(this.checked);
+		if (pivot_type == 'daily'){
+			tableProduction.columns([2, 5, 8, 11]).visible(true);
+			tableProduction.columns([1, 3, 4, 6, 7, 9, 10, 12, 13, 14, 15, 16]).visible(false);
+		}
+		else if (pivot_type == 'monthly'){
+			tableProduction.columns([1, 4, 7, 10]).visible(true);
+			tableProduction.columns([2, 3, 5, 6, 8, 9, 11, 12, 13, 14, 15, 16]).visible(false);
+		}
+		else if (pivot_type == "producing"){
+			tableProduction.columns([3, 6, 9, 12]).visible(true);
+			tableProduction.columns([1, 2, 4, 5, 7, 8, 10, 11, 13, 14, 15, 16]).visible(false);
+		}
+		else if (pivot_type == "cumulatives"){
+			tableProduction.columns([13, 14, 15, 16]).visible(true);
+			tableProduction.columns([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]).visible(false);
+		}
+	})
+
+	$("input[name='switch_3_chart']").change(function (){
+		drawChartProduction(tableProduction, $("#log").is(":checked"),  $("input[name='switch_3_chart']:checked").val(), $('input[name=metric]:checked').val());
 	});
-
 });
 
 	

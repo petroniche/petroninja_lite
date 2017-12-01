@@ -4312,7 +4312,7 @@ aside {
   background-color: white;
   display: none;
   left: 100%;
-  height: calc(100vh - 9rem);
+  height: calc(100vh - 6rem);
   position: absolute;
   top: 0;
   width: 60rem;
@@ -4625,8 +4625,6 @@ i.fa.fa-search.fa-lg {
 
 /* line 528, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
 .dataTable th {
-  height: 3.5em;
-  line-height: 3.5em;
   padding-bottom: 0;
   padding-top: 0;
   position: relative;
@@ -4715,20 +4713,20 @@ i.fa.fa-search.fa-lg {
 
 /* line 607, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
 .table-container {
-  height: calc(100vh - 282px);
+  height: calc(100vh - 300px);
   overflow-y: scroll;
   padding-top: 2rem;
 }
 
 /* line 613, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
 .casing_completions_container {
-  height: calc(100vh - 210px);
+  height: calc(100vh - 155px);
   overflow-y: scroll;
 }
 
 /* line 618, C:/Users/kiwi/Documents/Rails_Projects/mapbox_test/app/assets/stylesheets/application.scss */
 .well_info_container {
-  height: calc(100vh - 210px);
+  height: calc(100vh - 155px);
   overflow-y: scroll;
 }
 
@@ -5904,4 +5902,121 @@ section.panel-body {
     width: 25%;
     padding-bottom: 25%;
   }
+}
+
+
+
+/* Pipeline and Facility Asides */
+#aside-pipeline {
+  display: none;
+  position: absolute;
+  top: 4rem;
+  width: 30rem;
+  z-index: 3;
+}
+
+#aside-facility {
+  display: none;
+  position: absolute;
+  top: 4rem;
+  width: 30rem;
+  z-index: 3;
+}
+
+
+#pipeline_side, #facility_side {
+  background-color: white;
+  overflow-y: scroll;
+  height: calc(100vh - 57px);
+}
+
+aside.expanded #pipeline_side, 
+aside.expanded #facility_side  {
+  width: 10rem;
+}
+
+aside.expanded #pipeline_side .aside-section, 
+aside.expanded #facility_side .aside-section  {
+  visibility: hidden;
+  white-space: nowrap;
+}
+
+
+
+/* Production data toggle */
+.production-toggle {
+    font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
+    padding-bottom: 5rem;
+}
+
+.production-toggle input {
+    position: absolute !important;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    border: 0;
+    overflow: hidden;
+}
+
+.production-toggle label {
+  float: left;
+}
+
+.production-toggle label {
+  display: inline-block;
+  width: 137px;
+  background-color: white;
+  color: black;
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
+  text-shadow: none;
+  padding: 6px 0px;
+  border: 1px solid #d80027;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition:    all 0.1s ease-in-out;
+  -ms-transition:     all 0.1s ease-in-out;
+  -o-transition:      all 0.1s ease-in-out;
+  transition:         all 0.1s ease-in-out;
+}
+
+.production-toggle label:hover {
+  cursor: pointer;
+}
+
+.production-toggle input:checked + label {
+  background-color: #d80027;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color:white;
+}
+
+.production-toggle label:first-of-type {
+  border-radius: 4px 0 0 4px;
+}
+
+.production-toggle label:last-of-type {
+  border-radius: 0 4px 4px 0;
+}
+
+.cumulative-title {
+    width: 23%;
+    float: left;
+    font-weight: bold;
+}
+
+.production-cumulatives {
+    padding-bottom: 2rem;
+}
+
+.tooltip::after {
+  max-width: 55rem;
+}
+/* end production data toggle*/
+
+#chart-production-container {
+    overflow-y: scroll;
+    height: calc(100vh - 335px);
 }

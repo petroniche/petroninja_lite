@@ -1,4 +1,4 @@
-function mapboxSetup(zoomlevel){
+function mapboxSetup(zoomlevel, homeLocation, custom_style){
     //API KEYS
     PetroNinjaData.setApiKey('PETRO NINJA API KEY HERE');
     mapboxgl.accessToken = 'MAPBOX TOKEN HERE';
@@ -12,13 +12,18 @@ function mapboxSetup(zoomlevel){
         container: "map",
         attributionControl: true,
         style: {version: 8, sources: {}, layers: []},
-        center: [-114.0708, 51.0486],
+        center: homeLocation,
         zoom: zoomlevel,
         maxZoom: 18,
         maxBounds: maxBounds
     }); 
 
-    map.setStyle("mapbox://styles/sbilston/ciza0vsss003f2roiutcx99d6?9");
+    
+    if (custom_style) {
+        map.setStyle(custom_style)
+    } else {
+        map.setStyle("mapbox://styles/sbilston/cj8aespwi6c3t2ro49hd1xwab?3");
+    }
 
     map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
 
@@ -34,7 +39,6 @@ function mapboxSetup(zoomlevel){
     map.touchZoomRotate.disableRotation();
 
     $("#search_button").on('click', function(e){
-        console.log("clicked");
         searchWell($("input#search-input").val().trim().toUpperCase());
     });
 
@@ -50,79 +54,60 @@ function mapboxSetup(zoomlevel){
         changeEvent($("#uwi_list").val());
     });
 
-
     return map;
 }
 
-function wellAndCameraLayers(){
-    //Layers defined in mapbox studio (not added dynamically)
-    mapbox_style_layers = ['ab-wellbores-1-abandoned_gas', 'ab-wellbores-2-abandoned_injection', 'ab-wellbores-3-abandoned_oil', 'ab-wellbores-4-abandoned_source', 'ab-wellbores-5-dry_or_abandoned', 'ab-wellbores-6-gas','ab-wellbores-7-injection','ab-wellbores-8-location', 'ab-wellbores-10-oil', 'ab-wellbores-11-source', 'ab-wellbores-12-suspended_gas', 'ab-wellbores-13-suspended_injection','ab-wellbores-14-suspended_oil','ab-wellbores-15-suspended_source'];
+function wellClick(e){
+        //remove well info if another well is currently selected
+        $("#table_production").find("tbody").empty();
+        $(".aside-button").removeClass("active");
+        $("#layer2").fadeOut("fast");
 
-    //Add Mapbox Style Layers to Layer List
-    layer_list = mapbox_style_layers.slice(0);
-    layer_list.push('ab-cameras');
-
-    return layer_list;
+        selectWell(e.features[0].properties.WellID);
+        quickWellInfo(e.features[0].properties.WellID);
 }
 
-function satelitteToggle(){
-    //Satelite Button
-    var switchy = document.getElementById('satellite-button');
-    switchy.addEventListener("click", function(){
-        switchy = document.getElementById('satellite-button');
-        if (switchy.className === 'on') {
-            switchy.setAttribute('class', 'off');
-            map.setLayoutProperty('mapbox-mapbox-satellite', 'visibility', 'none');
-            switchy.innerHTML = "<a class='list-button' id='satellite-button'><i class='fa fa-globe'> Satellite</i></a>";
-        } else {
-            switchy.setAttribute('class', 'on');
-            map.setLayoutProperty('mapbox-mapbox-satellite', 'visibility', 'visible');
-            switchy.innerHTML = "<a class='list-button' id='satellite-button'><i class='fa fa-map'> Map</i></a>";
-        }
-    });
+function quickWellInfo(WellID){
+        $(".spinner-container").show();
+        PetroNinjaData.getWellData(WellID, function(data){
+            renderWellData(JSON.parse(data.response));
+            renderEventSpecificData(JSON.parse(data.response));
+            $(".spinner-container").hide();
+        })
+        PetroNinjaData.getWellProductionData(WellID, function(data){
+            renderProductionData(JSON.parse(data.response));
+            $(".spinner-container").hide();
+        });
+        PetroNinjaData.getWellEvents(WellID, function(data){
+            renderWellEvents(JSON.parse(data.response), WellID);
+            $(".spinner-container").hide();
+        });
 }
 
 
+function selectWell(wellID){
+    //Get Current Filter
+    var current_filter = map.getFilter('all-wells');
+    map.setFilter('all-wells', current_filter);
 
-function selectWell(lat, lng, symbol){
-    console.log("selecting well" + symbol);
-    //Get Lat/Lng
-    var destination = [lng,lat];
-
-    //Create a point
-    var point = {
-        "type": "FeatureCollection",
-        "features": [{
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": destination
-            }
-        }]
+    var sobj = {"property": 'WellID',
+        "type":'categorical', 
+        "stops": [[wellID,'#8b0000']]
     };
 
-    //Remove old/previous selected points
-    if (map.getSource('point')){
-        map.removeSource('point');
-    }
-    if (map.getLayer('point')) {
-        map.removeLayer('point');
-    }
+    var bold = {"property": 'WellID',
+        "type":'categorical', 
+        "stops": [[wellID,20]]
+    };
 
-    map.addSource('point', {
-        "type": "geojson",
-        "data": point
-    });
+    var thick = {"property": 'WellID',
+        "type":'categorical', 
+        "stops": [[wellID, 2]]
+    };
+    map.setPaintProperty('all-wells', 'text-color', sobj);
+    map.setLayoutProperty('all-wells', 'text-size', bold);
 
-    map.addLayer({
-        "id": "point",
-        "source": "point",
-        "type": "symbol",
-        "layout": {
-            "icon-image": "well_selected_symbol"+symbol
-        }
-    });
-
+    map.setPaintProperty('wellbore-lines', 'line-color', sobj);
 }
 
 function selectAndFlyToWellByUWI(uwi){
@@ -130,10 +115,11 @@ function selectAndFlyToWellByUWI(uwi){
     PetroNinjaData.getBasicWellData(uwi, function(data){
         result = JSON.parse(data.response);
         $(".spinner-container").hide();
-        selectWell(result['BottomHoleLocationLat'], result['BottomHoleLocationLong'], result['Symbol']);
+        selectWell(result['UWI']);
         flyToStore([result['BottomHoleLocationLong'], result['BottomHoleLocationLat']] );
     });
 }
+
 
 function flyToStore(coordinates) {
   map.flyTo({
@@ -147,7 +133,7 @@ function daysInMonth(month,year) {
 }
 
 function searchWell(searchString){
-    console.log("searching");
+
     $(".spinner-container").show();
     PetroNinjaData.wellSearch(searchString, function(data){
         $(".spinner-container").hide();
@@ -170,10 +156,14 @@ function searchWell(searchString){
                 var coordinates = [result['Well']['Lng'], result['Well']['Lat'] ];
                 flyToStore(coordinates);
             }
-            else {        
+            else {
+                console.log(result['Well']['Title']);
                 var coordinates = [result['Well']['Lng'], result['Well']['Lat'] ];
-                selectWell(result['Well']['Lat'], result['Well']['Lng'], result['Well']['Symbol']);
+                map.setFilter('all-wells', ["any", ['==', 'is_active_event', 'active'], ['==', 'WellID', result['Well']['Title']]]);
                 flyToStore(coordinates);
+                selectWell(result['Well']['Title']);
+                // console.log(result);
+                // addWell(result['Well']['Lat'], result['Well']['Lng'], result['Well']['Symbol']);
                 quickWellInfo(result['Well']['Title'])
             }
         }                
@@ -195,30 +185,25 @@ function changeEvent(uwi){
     });
 }
 
-function quickWellInfo(WellID){
-    $(".spinner-container").show();
-    PetroNinjaData.getWellData(WellID, function(data){
-        renderWellData(JSON.parse(data.response));
-        renderEventSpecificData(JSON.parse(data.response));
-        $(".spinner-container").hide();
-    })
-    PetroNinjaData.getWellProductionData(WellID, function(data){
-        renderProductionData(JSON.parse(data.response));
-        $(".spinner-container").hide();
-    });
-    PetroNinjaData.getWellEvents(WellID, function(data){
-        renderWellEvents(JSON.parse(data.response), WellID);
-        $(".spinner-container").hide();
-    });
-}
 
 function renderWellData(data){
     // Reset the copied to clipboard indicator
     $("#copied").empty();
+    $(document).trigger("close-pipeline-aside");
 
     // Hide the search results if they are shown
     $("#search_results").hide();
 
+    
+    var _href = $("#set-home-location").attr("href"); 
+    $("#set-home-location").attr("href", _href + '?home_lat='+data['BottomHoleLocationLat']+'&home_lng='+data['BottomHoleLocationLong']);
+
+
+    //Set well message uwi
+    if($("#channel-message-uwi")){
+        $("#channel-message-uwi").val(data['UWI']);
+    }
+    
     // Well Detail
     var nf = new Intl.NumberFormat();
 
@@ -232,7 +217,10 @@ function renderWellData(data){
     $("#well_lat").html(data['SurfaceHoleLocationLat']);
     $("#well_lng").html(data['SurfaceHoleLocationLong']);
     $("#uwi_id").html(data['UWI']);
-    $("#producing_formation").html(data['ProducingFormation']);
+    $("#projected_formation").html(data['ProjectedFormation']);
+    $("#producing_formation, #producing_formation2").html(data['ProducingFormation']);
+    $("#on_prod_date").html(data['OnProdDate']);
+    $("#field, #field2").html(data['Field'])
 
 
     var g_link = 'https://maps.google.com?saddr=Current+Location&daddr='+ data['SurfaceHoleLocationLat'] + ',' + data['SurfaceHoleLocationLong'];
@@ -247,7 +235,7 @@ function renderWellData(data){
 
     $("#table_completions tbody").empty();
     treatments.forEach( function(item, index, array) {
-        if ( $('input#cmn-toggle-7').is(':checked') ) {
+        if ( $('input[name=metric]:checked').val() == "true" ) {
             $("#table_completions tbody").append("<tr>" +
                 "<td>"+item['Date']+"</td>" +
                 "<td>"+item['LowerDepth']+"</td>" +
@@ -270,7 +258,7 @@ function renderWellData(data){
     $("#table_casings tbody").empty();
 
     casings.forEach(function(item, index, array) {
-        if ( $('input#cmn-toggle-7').is(':checked') ) {
+        if ( $('input[name=metric]:checked').val() == 'true' ) {
             $("#table_casings tbody").append("<tr>" +
                 "<td>"+item['TubeType']+"</td>" +
                 "<td>"+item['Size']+"</td>" +
@@ -334,17 +322,15 @@ function renderEventSpecificData(data){
 
     //Render Depths
     //If Metric Else Imperial
-    if ( $('input#cmn-toggle-7').is(':checked') ) {
+    if ( $('input[name=metric]:checked').val() == 'true' ){
         $("#kb_elevation").html(data['KBElevation'] +' m');
         $("#ground_elevation").html(data['GroundElevation'] +' m');
-        $("#projected_total_depth").html(data['PbDepth'] +' m');
         $("#tvd").html(data['MaxTrueVerticalDepth'] +' m');
         $("#total_depth").html(data['TotalDepth'] +' m');
     }
     else {
         $("#kb_elevation").html(nf.format(_.round(data['KBElevation'] * 3.28084, 1))  +' ft');
         $("#ground_elevation").html(nf.format(_.round(data['GroundElevation'] * 3.28084, 1))  +' ft');
-        $("#projected_total_depth").html(nf.format(_.round(data['PbDepth'] * 3.28084, 1)) +' ft');
         $("#tvd").html(nf.format(_.round(data['MaxTrueVerticalDepth'] * 3.28084, 1)) +' ft');
         $("#total_depth").html(nf.format(_.round(data['TotalDepth'] * 3.28084, 1)) +' ft');
     }
@@ -384,11 +370,16 @@ function renderWellEvents(events, selected_event){
 
 function renderProductionData(production) {
     //Render Production
-    
+    var nf = new Intl.NumberFormat();
+
     $("#table_production").find("tbody").empty();
 
     if (production) {
         var first_record = 0; 
+        var max_cumulative_oil = 0;
+        var max_cumulative_gas = 0;
+        var max_cumulative_water = 0;
+
         production.forEach(function(item, index, array) {
             if (first_record == 0 && item['OIL_VOLUME'] ==0 && item['GAS_VOLUME'] ==0 && item['WATER_VOLUME'] ==0 && item['INJECTION_VOLUME'] ==0 ) {
                 first_record=0;
@@ -397,17 +388,25 @@ function renderProductionData(production) {
                 var month = date[1];
                 var year = date[0]
 
-                if ( $('input#cmn-toggle-7').is(':checked') ) {
+                if ( $('input[name=metric]:checked').val() == 'true' ) {
                     $("#table_production tbody").append("<tr>" +
                         "<td>"+ year + "-"+ month + "</td> " +
                         "<td>"+ item['OIL_VOLUME'] + "</td>" +
                         "<td>"+ item['OIL_CALENDAR_DAY'] + "</td>"+
+                        "<td>"+ item['OIL_PRODUCING_DAILY'] + "</td>"+
                         "<td>"+ item['GAS_VOLUME'] + "</td>" +
                         "<td>"+ item['GAS_CALENDAR_DAY'] + "</td>" +
+                        "<td>"+ item['GAS_PRODUCING_DAILY'] + "</td>"+
                         "<td>"+ item['WATER_VOLUME'] + "</td>" +
                         "<td>"+ item['WATER_CALENDAR_DAY'] +"</td>" +
+                        "<td>"+ item['WATER_PRODUCING_DAILY'] + "</td>"+
                         "<td>"+ item['INJECTION_VOLUME']+"</td>" +
                         "<td>"+ item['INJECTION_CALENDAR_DAY']+"</td>"+
+                        "<td>"+ item['INJECTION_PRODUCING_DAILY'] + "</td>"+
+                        "<td>"+ item['CUMGAS'] + "</td>"+
+                        "<td>"+ item['CUMOIL'] + "</td>"+
+                        "<td>"+ item['CUMWATER'] + "</td>"+
+                        "<td>"+ item['CUMINJECTION'] + "</td>"+
                         "</tr>");
                 } else {
                     //Convert from cubic meter to barrels
@@ -415,18 +414,119 @@ function renderProductionData(production) {
                         "<td>"+ year + "-" + month + "</td> " +
                         "<td>"+ _.round(item['OIL_VOLUME'] * 6.29, 2) + "</td>" +
                         "<td>"+ _.round((item['OIL_VOLUME'] * 6.29) / daysInMonth(month, year) , 2)  + "</td>"+
+                        "<td>"+ _.round((item['OIL_VOLUME'] * 6.29) / (item['PRODUCTION_HOURS'] / 24) , 2)  + "</td>"+
                         "<td>"+ _.round(item['GAS_VOLUME'] * 35.3147, 2)+ "</td>" +
                         "<td>"+ _.round((item['GAS_VOLUME'] * 35.3147) / daysInMonth(month, year) , 2)+ "</td>" +
+                        "<td>"+ _.round((item['GAS_VOLUME'] * 35.3147) / (item['PRODUCTION_HOURS'] / 24) , 2)+ "</td>" +
                         "<td>"+ _.round(item['WATER_VOLUME'] * 6.29, 2) + "</td>" +
                         "<td>"+ _.round((item['WATER_VOLUME'] * 6.29) / daysInMonth(month, year), 2)+"</td>" +
+                        "<td>"+ _.round((item['WATER_VOLUME'] * 6.29) / (item['PRODUCTION_HOURS'] / 24), 2)+"</td>" +
                         "<td>"+ _.round(item['INJECTION_VOLUME'] * 6.29, 2)+"</td>" +
                         "<td>"+ _.round((item['INJECTION_VOLUME'] * 6.29) / daysInMonth(month, year), 2)+"</td>"+
+                        "<td>"+ _.round((item['INJECTION_VOLUME'] * 6.29) / (item['INJECTION_HOURS'] / 24), 2)+"</td>"+
+                        "<td>"+ _.round(item['CUMGAS'] * 35.3147, 2) + "</td>"+
+                        "<td>"+ _.round(item['CUMOIL'] * 6.29, 2) + "</td>"+
+                        "<td>"+ _.round(item['CUMWATER'] * 6.29, 2) + "</td>"+
+                        "<td>"+ _.round(item['CUMINJECTION'] * 6.29, 2) + "</td>"+
                         "</tr>");
                 } 
                 first_record =1
+
+                // calculate max cumulative
+                if (item['CUMGAS'] > max_cumulative_gas){
+                    max_cumulative_gas = item['CUMGAS'];
+                }
+
+                if (item['CUMOIL'] > max_cumulative_oil){
+                    max_cumulative_oil = item['CUMOIL'];
+                }
+
+                if (item['CUMWATER'] > max_cumulative_water){
+                    max_cumulative_water = item['CUMWATER'];
+                }
+
             }
         });
+
+        //add total cumulatives
+        if ( $('input[name=metric]:checked').val() == 'true' ){
+            $('#cumulative-gas-val, #cumulative-gas-chart-val').html(nf.format(max_cumulative_gas) + " e3m3");
+            $('#cumulative-oil-val, #cumulative-oil-chart-val').html(nf.format(max_cumulative_oil) + " m3");
+            $('#cumulative-water-val, #cumulative-water-chart-val').html(nf.format(max_cumulative_water) + " m3");
+        } else {
+            $('#cumulative-gas-val, #cumulative-gas-chart-val').html(nf.format(_.round(max_cumulative_gas * 35.3147, 2)) + " mcf");
+            $('#cumulative-oil-val, #cumulative-oil-chart-val').html(nf.format(_.round(max_cumulative_oil * 6.29, 2)) + " bbl" );
+            $('#cumulative-water-val, #cumulative-water-chart-val').html(nf.format(_.round(max_cumulative_water* 6.29, 2)) + " bbl");
+        }
     }
 
     $(document).trigger("generate-production-tables");
+}
+
+function showPipelineInfo(properties){
+    $("#search_results").hide();
+
+    $("#search-input").val("Pipeline " + properties['LICENCE_NO']);
+
+    $("#pipeline_company").html(properties['COMP_NAME']);
+    $("#pipeline_from_location").html(properties['FRM_LOC']);
+    $("#pipeline_from_fac").html(properties['FROM_FAC']);
+    $("#pipeline_h2s_content").html(properties['H2S_CONTNT']);
+    $("#pipeline_last_occyr").html(properties['LAST_OCCYR']);
+    $("#pipeline_license_number").html(properties['LICENCE_NO']);
+    $("#pipeline_license_line_number").html(properties['LIC_LI_NO']);
+    $("#pipeline_original_line_number").html(properties['ORIGLIN_NO']);
+    $("#pipeline_original_license_number").html(properties['ORIG_LICNO']);
+    $("#pipeline_out_diameter").html(properties['OUT_DIAMET']);
+    $("#pipeline_pipegrade").html(properties['PIPE_GRADE']);
+    $("#pipeline_maop").html(properties['PIPE_MAOP']);
+    $("#pipeline_type").html(properties['PIPE_TYPE']);
+    $("#pipeline_material").html(properties['PIP_MATERL']);
+    $("#pipeline_pllicsegid").html(properties['PLLICSEGID']);
+    $("#pipeline_pl_spec_id").html(properties['PL_SPEC_ID']);
+    $("#pipeline_seg_length").html(properties['SEG_LENGTH']);
+    $("#pipeline_seg_status").html(properties['SEG_STATUS']);
+    $("#pipeline_substance").html(properties['SUBSTANCE']);
+    $("#pipeline_to_fac").html(properties['TO_FAC']);
+    $("#pipeline_to_location").html(properties['TO_LOC']);
+    $("#pipeline_wall_thick").html(properties['WALL_THICK']);
+
+    $(document).trigger("open-pipeline-aside")
+
+}
+
+function showFacilityInfo(properties){
+    $("#search_results").hide();
+
+    $("#search-input").val("Facility " + properties['Facility ID']);
+
+    $("#facility_id").html(properties['Facility ID']);
+    $("#facility_name").html(properties['Facility Name']);
+    $("#facility_operator").html(properties['Operator']);
+    $("#facility_status").html(properties['Status']);
+
+    if(properties['Province'] == 'AB'){
+        $(".ab_field").css('display', 'block');
+        $(".bc_field").css('display', 'none');
+    }
+    else if (properties['Province'] == 'BC'){
+        $(".bc_field").css('display', 'block');
+        $(".ab_field").css('display', 'none');
+    }
+
+    //AB Only Fields
+    $("#facility_subtype").html(properties['Facility Sub Type']);
+    $("#facility_license_number").html(properties['License Number']);
+    $("#facility_edct_descr").html(properties['EDCT_DESCR']);
+    $("#facility_licensee").html(properties['Licensee']);
+
+
+
+    //BC Only Fields
+    $("#facility_location").html(properties['Facility Location']);
+    $("#facility_approval_date").html(properties['Approval Date']);
+    $("#facility_operations_date").html(properties['Operations State Date']);
+
+    $(document).trigger("open-facility-aside")
+
 }

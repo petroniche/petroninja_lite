@@ -5,18 +5,21 @@
     <title>Petro Ninja Lite</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     
-    <script src='https://api.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.css' rel='stylesheet' />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato|Source+Sans+Pro">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="./css/petroninja_style.css">
+    <link rel="stylesheet" type="text/css" href="./css/sidebar.css">
     <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
     <script src="https://www.amcharts.com/lib/3/serial.js"></script>
     <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css">
     <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
     
     <!-- Include the Petro Ninja JS Library -->
     <script src='./js/petroninja_lib.js'></script>
@@ -24,102 +27,6 @@
     <style>
         body { margin:0; padding:0; }
         #map { position:absolute; top:0; bottom:0; width:100%; }
-    
-        #satellite-button-container{
-            border
-            overflow: hidden;
-            background-color: white;
-            border-radius: 4px;
-            -moz-box-shadow: 0px 0px 2px rgba(0,0,0,0.1);
-            -webkit-box-shadow: 0px 0px 2px rgba(0,0,0,0.1);
-            box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.1);
-        }
-
-        #satellite-button{
-            display: block;
-            width: 110px;
-            height: 35px;
-            color: black;
-            font-family: sans-serif;
-            font-size: 16px;
-            text-align: left;
-            padding-left: 0.7rem;
-            cursor: pointer;
-            line-height: 35px;
-        }
-
-        #units-button{
-            display: block;
-            width: 110px;
-            height: 35px;
-            color: black;
-            font-family: sans-serif;
-            font-size: 16px;
-            text-align: left;
-            padding-left: 0.7rem;
-            cursor: pointer;
-            line-height: 35px;
-        }
-
-        .switch{
-            background-color: white;
-            border-radius: 4px;
-            box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.1);
-            -moz-box-shadow: 0px 0px 2px rgba(0,0,0,0.1);
-            -webkit-box-shadow: 0px 0px 2px rgba(0,0,0,0.1);
-        }
-
-        .cmn-toggle {
-          position: absolute;
-          margin-left: -9999px;
-          visibility: hidden;
-        }
-        .cmn-toggle + label {
-          display: block;
-          position: relative;
-          cursor: pointer;
-          outline: none;
-          user-select: none;
-        }
-
-/*        input.cmn-toggle-yes-no + label {
-          padding: 2px;
-          width: 120px;
-          height: 60px;
-        }*/
-
-
-        input.cmn-toggle-yes-no + label:before,
-        input.cmn-toggle-yes-no + label:after {
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          bottom: 0;
-          right: 0;
-          /*color: #fff;*/
-          /*font-family: "Roboto Slab", serif;*/
-          /*font-size: 20px;*/
-         /* text-align: center;
-          line-height: 60px;*/
-        }
-        input.cmn-toggle-yes-no + label:before {
-          content: attr(data-off);
-          /*transition: transform 0.5s;*/
-          backface-visibility: hidden;
-        }
-        input.cmn-toggle-yes-no + label:after {
-          content: attr(data-on);
-          /*transition: transform 0.5s;*/
-          transform: rotateY(180deg);
-          backface-visibility: hidden;
-        }
-        input.cmn-toggle-yes-no:checked + label:before {
-          transform: rotateY(180deg);
-        }
-        input.cmn-toggle-yes-no:checked + label:after {
-          transform: rotateY(0);
-        }
 
         #logo-container {
             float: right;
@@ -138,6 +45,80 @@
 
     <div id='map'></div>
     <div class="spinner"><i class="fa fa-refresh fa-spin fa-3x fa-fw center-spin"></i></div>
+
+
+    <!-- Right Hand Side Bar -->
+    <div class="right-sidebar-vertical-open"><i class="fa fa-angle-left"></i></div>
+
+    <div class="right-container">
+        <div class="right-sidebar-vertical-close"><i class="fa fa-angle-right"></i></div>
+        
+        <div class="right-sidebar">
+            <div class="container">
+                <div id="map-toggles" class="right-sidebar-section columns">
+                    <div id ="satellite-label" class="col-8">
+                        Satellite View
+                    </div>
+                    <div id="satelitte-toggle" class="right-sidebar-toggle col-4">
+                        <label class="switch">
+                          <input id="satellite-toggle-input" type="checkbox">
+                          <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div> 
+
+                <div id="map-pipelines" class="right-sidebar-section columns">
+                    <div id ="pipelines-label" class="col-8">
+                        Pipeline View
+                    </div>
+                    <div id="pipeline-toggle" class="right-sidebar-toggle col-4">
+                        <label class="switch">
+                          <input id="pipeline-toggle-input" type="checkbox" checked>
+                          <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div> 
+
+                <div id="map-facilities" class="right-sidebar-section columns">
+                    <div id ="facilities-label" class="col-8">
+                        Facility View
+                    </div>
+                    <div id="facilities-toggle" class="right-sidebar-toggle col-4">
+                        <label class="switch">
+                          <input id="facilities-toggle-input" type="checkbox" checked>
+                          <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div> 
+
+                <div id="map-well-labels" class="right-sidebar-section columns">
+                    <div id ="well-label-label" class="col-8">
+                        Well Labels
+                    </div>
+                    <div id="well-label-toggle" class="right-sidebar-toggle col-4">
+                        <label class="switch">
+                          <input id="well-label-toggle-input" type="checkbox" checked>
+                          <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div> 
+
+                <div id="map-units" class="right-sidebar-section columns">
+                    <div id ="well-label-label" class="col-4">
+                        Units
+                    </div>
+                    <div class="col-4">
+                        <input type="radio" id="metric" name="metric" value=true checked/> <label for="metric">Metric</label>
+                    </div>
+                    <div class="col-4">
+                        <input type="radio" id="imperial" name="metric" value=false /> <label for="imperial">Imperial</label>
+                    </div>
+                </div> 
+
+            </div>
+        </div>
+    </div>
+    <!-- End Right Hand Side Bar -->
 
     <aside>
         <div id="layer2" class="shadow">
@@ -325,22 +306,47 @@
                 </div>
                 
                 <div class="rel">
-                    <label id="toggle-daily-table" class="form-switch hand with-text">
-                        <input type="checkbox" id="daily-table" checked>
-                        <span>Daily</span><span>Monthly</span>
-                    </label>
+   
+                    <div class="production-toggle">
+                        <input type="radio" id="switch_3_left" name="switch_3" value="daily" checked/>
+                        <label for="switch_3_left" class="tooltip tooltip-bottom" data-tooltip="Calendar Daily Avg = (Production Volume / # days in month)">Calendar Daily</label>
+                        <input type="radio" id="switch_3_right" name="switch_3" value="producing" />
+                        <label for="switch_3_right" class="tooltip tooltip-bottom" data-tooltip="Producing Daily Avg = (Production Volume / # days on production)">Producing Daily</label>
+                        <input type="radio" id="switch_3_center" name="switch_3" value="monthly" />
+                        <label for="switch_3_center">Monthly</label>
+                        <input type="radio" id="switch_3_far_right" name="switch_3" value="cumulatives" />
+                        <label for="switch_3_far_right">Cumulatives</label>
+                    </div>
+
+                    <div class="production-cumulatives">
+                        <div class="cumulative-title">Cumulative Oil </div>
+                        <div id="cumulative-oil-val" class="cumulative-value"></div>
+                        <div class="cumulative-title">Cumulative Gas </div>
+                        <div id="cumulative-gas-val" class="cumulative-value"></div>
+                        <div class="cumulative-title">Cumulative Water </div>
+                        <div id="cumulative-water-val" class="cumulative-value"></div>
+                    </div>
+
                     <table id="table_production" class="table table-striped table-hover">
                         <thead>
                             <tr>
                                 <th class="sort">Date</th>
                                 <th class="sort" data-unit='m3'>Monthly Oil</th>
                                 <th class="sort" data-unit='m3/day'>Daily Oil</th>
+                                <th class="sort" data-unit='m3/day'>Producing Oil</th>
                                 <th class="sort" data-unit='e3m3'>Monthly Gas</th>
                                 <th class="sort" data-unit='e3m3/day'>Daily Gas</th>
+                                <th class="sort" data-unit='e3m3/day'>Producing Gas</th>
                                 <th class="sort" data-unit='m3'>Monthly Water</th>
                                 <th class="sort" data-unit='m3/day'>Daily Water</th>
+                                <th class="sort" data-unit='m3/day'>Producing Water</th>
                                 <th class="sort" data-unit='m3'>Monthly Injection</th>
                                 <th class="sort" data-unit='m3/day'>Daily Injection</th>
+                                <th class="sort" data-unit='m3/day'>Producing Injection</th>
+                                <th class="sort" data-unit='e3m3'>Cumulative Gas</th>
+                                <th class="sort" data-unit='m3'>Cumulative Oil</th>
+                                <th class="sort" data-unit='m3'>Cumulative Water</th>
+                                <th class="sort" data-unit='m3'>Cumulative Injection</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -357,16 +363,33 @@
                 </div>
 
                 <div class="rel">
-                    <label id="toggle-daily" class="form-switch hand with-text">
-                        <input type="checkbox" id="daily" checked>
-                        <span>Daily</span><span>Monthly</span>
-                    </label>
+                    <div class="production-toggle">
+                        <input type="radio" id="chart switch_3_left" name="switch_3_chart" value="daily" checked/>
+                        <label for="chart switch_3_left" class="tooltip tooltip-bottom" data-tooltip="Calendar Daily Avg = (Production Volume / # days in month)">Calendar Daily</label>
+                        <input type="radio" id="chart switch_3_right" name="switch_3_chart" value="producing" />
+                        <label for="chart switch_3_right" class="tooltip tooltip-bottom" data-tooltip="Producing Daily Avg = (Production Volume / # days on production)">Producing Daily</label>
+                        <input type="radio" id="chart switch_3_center" name="switch_3_chart" value="monthly" />
+                        <label for="chart switch_3_center">Monthly</label>
+                        <input type="radio" id="chart switch_3_far_right" name="switch_3_chart" value="cumulatives" />
+                        <label for="chart switch_3_far_right">Cumulatives</label>
+                    </div>
+                    
                     <label id="toggle-log" class="form-switch hand with-text">
                         <input type="checkbox" id="log" checked>
                         <span>Logarithmic</span><span>Linear</span>
                     </label>
 
-                    <div id="chart-production" style="height:50rem"></div>
+                    <div class="production-cumulatives">
+                        <div class="cumulative-title">Cumulative Oil </div>
+                        <div id="cumulative-oil-chart-val" class="cumulative-value"></div>
+                        <div class="cumulative-title">Cumulative Gas </div>
+                        <div id="cumulative-gas-chart-val" class="cumulative-value"></div>
+                        <div class="cumulative-title">Cumulative Water </div>
+                        <div id="cumulative-water-chart-val" class="cumulative-value"></div>
+                    </div>
+                    <div id="chart-production-container">
+                        <div id="chart-production" style="height:50rem"></div>
+                    </div>
                 </div>
             </div>
 
@@ -388,6 +411,122 @@
         </div>
     </aside>
 
+    <!--- PIPELINE DATA BOX -->
+    <div id="aside-pipeline">
+        <div id="pipeline_side" class="shadow">
+            <div class="aside-section" style="padding-top:2rem">
+
+                <b>Company</b>
+                <p id="pipeline_company"></p>
+
+                <b>License Line Number</b>
+                <p id="pipeline_license_line_number"></p>
+
+                <b>Substance</b>
+                <p id="pipeline_substance"></p>
+
+                <b>Segment Status</b>
+                <p id="pipeline_seg_status"></p>
+
+                <b>Outside Diameter (mm)</b>
+                <p id="pipeline_out_diameter"></p>
+
+                <hr>
+
+                <b>From Facility</b>
+                <p id="pipeline_from_fac"></p> 
+
+                <b>From Location</b>
+                <p id="pipeline_from_location"></p> 
+
+                <b>To Facility</b>
+                <p id="pipeline_to_fac"></p>
+
+                <b>To Location</b>
+                <p id="pipeline_to_location"></p>
+
+                <b>Segment Length (km)</b>
+                <p id="pipeline_seg_length"></p>
+
+                <hr>
+
+                <b>Wall Thickness (mm)</b>
+                <p id="pipeline_wall_thick"></p>
+
+                <b>Pipe Type</b>
+                <p id="pipeline_type"></p>
+
+                <b>Pipe Grade</b>      
+                <p id="pipeline_pipegrade"></p>
+
+                <b>Pipe Material</b>            
+                <p id="pipeline_material"></p>
+
+                <b>Pipe Maximum Allowable Operating Pressure (kPa)</b>            
+                <p id="pipeline_maop"></p>
+
+                <b>H2S Content (%)</b>      
+                <p id="pipeline_h2s_content"></p> 
+
+            </div>
+        </div>
+    </div>
+    <!--- END PIPELINE DATA BOX -->
+
+    <div id = "aside-facility">
+        <div id="facility_side" class="shadow">
+            <div class="aside-section" style="padding-top:2rem">
+
+                <b>Facility ID</b>
+                <p id="facility_id"></p>
+
+                <b>Facility Name</b>
+                <p id="facility_name"></p>
+
+                <b>Facility Operator</b>
+                <p id="facility_operator"></p>
+
+                <b>Facility Status</b>
+                <p id="facility_status"></p>
+
+                <b>Facility Sub Type</b>
+                <p id="facility_subtype"></p>
+
+                <!-- AB Only Fields -->
+                <div class="ab_field">
+                    <b>Facility License Number</b>
+                    <p id="facility_license_number"></p>
+                </div>
+
+                <div class="ab_field">
+                    <b>Facility Description</b>
+                    <p id="facility_edct_descr"></p>
+                </div>
+
+                <div class="ab_field">
+                    <b>Facility Licensee</b>
+                    <p id="facility_licensee"></p>
+                </div>
+
+                     <!-- BC Only Fields -->
+                <div class="bc_field">
+                    <b>Facility Location</b>
+                    <p id="facility_location"></p>
+                </div>
+
+                <div class="bc_field">
+                    <b>Facility Approval Date</b>
+                    <p id="facility_approval_date"></p>
+                </div>
+
+                <div class="bc_field">
+                    <b>Facility Operations Date</b>
+                    <p id="facility_operations_date"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="subheader">
         <div>
             <input type="search" id="search-input" name="filter" placeholder="Search by UWI, License, Township" maxlength="23" required>
@@ -405,18 +544,6 @@
         </div>
     </div>
 
-    <div id="satellite-button-container" style="bottom:14rem;position:absolute;right:1rem">
-        <a id="satellite-button" class="list-button"><i class="fa fa-globe"> Satellite</i></a>
-    </div>
-
-    <div class="switch" style="bottom:19rem;position:absolute;right:1rem">
-        <div id="units-button">
-          <input id="cmn-toggle-7" class="cmn-toggle cmn-toggle-yes-no" type="checkbox" checked>
-          <label for="cmn-toggle-7" class="list-button" data-on="Metric" data-off="Imperial"></label>
-      </div>
-
-    </div>
-
     <script src='./js/petroninja_ui.js'></script>
     <script src='./js/petroninja_wells.js'></script>
     <script src='./js/petroninja_charts.js'></script>
@@ -425,67 +552,63 @@
     <script>
 
         //Determine which zoom level to use. if a user provides a uwi in the url, go to zoom 5.
-        var initialZoomLevel = 10
-        var map = mapboxSetup(initialZoomLevel)
+        var initialZoomLevel = 10;
+        var homeLocation = [-114.0708, 51.0486];
+        var map = mapboxSetup(initialZoomLevel, homeLocation, null);
 
         var filterInput = document.getElementById('search-input');
     
         map.on('load', function() {
-            var layer_list = wellAndCameraLayers();
-            //Show hand on map marker hover over.
+            var well_layers = ['all-wells'];
+            var all_layers = ['all-wells','ab-cameras', 'ab-pipelines', 'facilities'];
+
+        
+
             map.on('mousemove', function (e) {
-               var features = map.queryRenderedFeatures(e.point, { layers: layer_list });
-               map.getCanvas().style.cursor = features.length ? 'pointer' : '';
+                var features = map.queryRenderedFeatures(e.point, { layers: all_layers });
+                map.getCanvas().style.cursor = features.length ? 'crosshair' : '';
             });
 
-            //Handle map marker click
-            map.on('click', function (e) {
-
-                var well_features = map.queryRenderedFeatures(e.point, { layers: mapbox_style_layers });
-                console.log(well_features);
-                var camera_features = map.queryRenderedFeatures(e.point, { layers: ['ab-cameras'] });
-
-
-                if (well_features.length) {
-
-                    //remove well info if another well is currently selected
-                    $("#table_production").find("tbody").empty();
-                    $(".aside-button").removeClass("active");
-                    $("#layer2").fadeOut("fast");
-                    
-                    var feature = well_features[0];
-                    selectWell(feature.geometry.coordinates[1],feature.geometry.coordinates[0], feature.properties.symbol);
-                    quickWellInfo(feature.properties.WellID);
-                }
-                else if (camera_features.length){    
-                    var feature = camera_features[0]
-                    $('.camera-image').html("<a href='"+feature.properties["Camera URL"]+"' target='_blank'><img src='"+feature.properties["Image URL"]+"'</img></a>");
-                    $('.camera-name').html(feature.properties["Camera Name"]);
-                    $('.modal.camera').addClass('active');
-                }
-                else {
-                    return;
-                }
+            //Handle click on a well
+            map.on('click', 'all-wells', function(e){
+                console.log("well layer clicked");
+                wellClick(e);
             });
 
-            map.on('zoom', function() {
-                //If the selected well layer is on, drop and re-add the layer when the user zooms in out. 
-                //This ensure proper alignment of the selected well symbol with the symbol in the mapbox style
-                selected_layer = map.getLayer('point');
-                if (selected_layer){
-                    // map.removeLayer('point');
-                    var uwi = $("#search-input").val().replace(/-/gi, '').replace(/\//gi, '');
-                    var features = map.queryRenderedFeatures({layers: mapbox_style_layers, filter: ["==", "WellID", uwi]});
-                    if (features.length) {
-                        var feature = features[0];
-                        selectWell(feature.geometry.coordinates[1],feature.geometry.coordinates[0], feature.properties.symbol);
-                    }
-                }
+                //Handle Click on a Camera
+            map.on('click', 'ab-cameras', function(e){
+                $('.camera-image').html("<a href='"+e.features[0].properties["Camera URL"]+"' target='_blank'><img src='"+e.features[0].properties["Image URL"]+"'</img></a>");
+                $('.camera-name').html(e.features[0].properties["Camera Name"]);
+                $('.modal.camera').addClass('active');
             });
 
-            satelitteToggle();
+
+            //Handle Click on a pipeline
+            map.on('click', 'ab-pipelines', function(e){
+                showPipelineInfo(e.features[0].properties);
+                map.setFilter("ab-pipelines-hover", ["==", "LICENCE_NO", e.features[0].properties['LICENCE_NO']]);
+            });
+
+            //Handle Click on a facility
+            map.on('click', 'facilities', function(e){
+                showFacilityInfo(e.features[0].properties);
+            });
+
 
         }); //end map on load
+
+
+
+        function wellClick(e){
+            //remove well info if another well is currently selected
+            $("#table_production").find("tbody").empty();
+            $(".aside-button").removeClass("active");
+            $("#layer2").fadeOut("fast");
+            
+            selectWell(e.features[0].properties.WellID);
+            quickWellInfo(e.features[0].properties.WellID);
+        }
+
 
     </script>
 
