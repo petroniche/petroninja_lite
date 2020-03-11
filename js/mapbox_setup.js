@@ -1,4 +1,4 @@
-function mapboxSetup(zoomlevel, homeLocation, custom_style){
+function mapboxSetup(zoomlevel, homeLocation, custom_style) {
     //API KEYS
     PetroNinjaData.setApiKey('PETRO NINJA API KEY HERE'); // insert the API key here
     mapboxgl.accessToken = 'MAPBOX TOKEN HERE'; // insert the token here
@@ -11,7 +11,7 @@ function mapboxSetup(zoomlevel, homeLocation, custom_style){
     var map = new mapboxgl.Map({
         container: "map",
         attributionControl: true,
-        style: {version: 8, sources: {}, layers: []},
+        style: { version: 8, sources: {}, layers: [] },
         center: homeLocation,
         zoom: zoomlevel,
         maxZoom: 18,
@@ -22,12 +22,13 @@ function mapboxSetup(zoomlevel, homeLocation, custom_style){
     if (custom_style) {
         map.setStyle(custom_style)
     } else {
-      map.setStyle("mapbox://styles/sbilston/ck178vsq702h41cl3ejn511g9");
+        map.setStyle("mapbox://styles/sbilston/ck178vsq702h41cl3ejn511g9");
     }
 
     map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
 
-    var geolocate = new mapboxgl.GeolocateControl({positionOptions: {
+    var geolocate = new mapboxgl.GeolocateControl({
+        positionOptions: {
             enableHighAccuracy: true
         }
     });
@@ -38,19 +39,19 @@ function mapboxSetup(zoomlevel, homeLocation, custom_style){
     map.dragRotate.disable();
     map.touchZoomRotate.disableRotation();
 
-    $("#search_button").on('click', function(e){
+    $("#search_button").on('click', function (e) {
         searchWell($("input#search-input").val().trim().toUpperCase());
     });
 
     $('#search-input').keypress(function (e) {
-      if (e.which == 13) {
-        searchWell($("input#search-input").val().trim().toUpperCase());
-        return false;
-      }
+        if (e.which == 13) {
+            searchWell($("input#search-input").val().trim().toUpperCase());
+            return false;
+        }
     });
 
 
-    $("#uwi_list").change(function(){
+    $("#uwi_list").change(function () {
         changeEvent($("#uwi_list").val());
     });
 

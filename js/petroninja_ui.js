@@ -18,7 +18,7 @@ $(document).on("expand-aside", function () {
 });
 
 $(".expand").click(function () {
-        $(document).trigger("expand-aside");
+    $(document).trigger("expand-aside");
 });
 
 $(".close").click(function () {
@@ -43,17 +43,17 @@ $(document).on("close-facility-aside", function () {
     });
 });
 
-function closeAllLeftSideBars(){
+function closeAllLeftSideBars() {
     $(document).trigger("close-aside");
 }
 
-$(".right-sidebar-vertical-close").click(function() {
+$(".right-sidebar-vertical-close").click(function () {
     closeRightSidebar()
 });
 
-$(".right-sidebar-vertical-open").click(function() {
-    $(".right-container").toggle("slide", {direction: "right"}, 600);
-    $(".mapboxgl-ctrl.mapboxgl-ctrl-group").css({'margin-right':'29rem'});
+$(".right-sidebar-vertical-open").click(function () {
+    $(".right-container").toggle("slide", { direction: "right" }, 600);
+    $(".mapboxgl-ctrl.mapboxgl-ctrl-group").css({ 'margin-right': '29rem' });
 });
 
 
@@ -89,26 +89,26 @@ $(".aside-button").click(function () {
 $(".spinner").hide();
 
 // show spinner on AJAX start
-$(document).ajaxStart(function(){
+$(document).ajaxStart(function () {
     $(".spinner").show();
 });
 
 // hide spinner on AJAX stop
-$(document).ajaxStop(function(){
+$(document).ajaxStop(function () {
     $(".spinner").hide();
 });
 
-$("#uwi_list").change(function(){
+$("#uwi_list").change(function () {
     changeEvent($("#uwi_list").val());
 });
 
-function closeRightSidebar(){
-    $(".right-container").toggle("slide", {direction: "right"}, 600);
-    $(".mapboxgl-ctrl.mapboxgl-ctrl-group").css({'margin-right':'2rem'});
-    if($(".secondary-right-sidebar").is(":visible")){
-        $(".secondary-right-sidebar").toggle("slide", { direction: "right"}, 600);
+function closeRightSidebar() {
+    $(".right-container").toggle("slide", { direction: "right" }, 600);
+    $(".mapboxgl-ctrl.mapboxgl-ctrl-group").css({ 'margin-right': '2rem' });
+    if ($(".secondary-right-sidebar").is(":visible")) {
+        $(".secondary-right-sidebar").toggle("slide", { direction: "right" }, 600);
     }
-    if($(".tertiary-right-sidebar").is(":visible")){
-        $(".tertiary-right-sidebar").toggle("slide", { direction: "right"}, 600);
+    if ($(".tertiary-right-sidebar").is(":visible")) {
+        $(".tertiary-right-sidebar").toggle("slide", { direction: "right" }, 600);
     }
 }

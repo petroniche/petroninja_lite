@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8' />
     <title>Petro Ninja Lite</title>
@@ -11,7 +12,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato|Source+Sans+Pro">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="./css/petroninja_style.css">
     <link rel="stylesheet" type="text/css" href="./css/sidebar.css">
     <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
@@ -25,8 +27,17 @@
     <script src='./js/petroninja_lib.js'></script>
 
     <style>
-        body { margin:0; padding:0; }
-        #map { position:absolute; top:0; bottom:0; width:100%; }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
 
         #logo-container {
             float: right;
@@ -35,12 +46,12 @@
         }
 
         #logo img {
-          height: 43px;
+            height: 43px;
         }
-
     </style>
 
 </head>
+
 <body>
 
     <div id='map'></div>
@@ -234,10 +245,14 @@
                 <div class="rel">
 
                     <div class="production-toggle">
-                        <input type="radio" id="switch_3_left" name="switch_3" value="daily" checked/>
-                        <label for="switch_3_left" class="tooltip tooltip-bottom" data-tooltip="Calendar Daily Avg = (Production Volume / # days in month)">Calendar Daily</label>
+                        <input type="radio" id="switch_3_left" name="switch_3" value="daily" checked />
+                        <label for="switch_3_left" class="tooltip tooltip-bottom"
+                            data-tooltip="Calendar Daily Avg = (Production Volume / # days in month)">Calendar
+                            Daily</label>
                         <input type="radio" id="switch_3_right" name="switch_3" value="producing" />
-                        <label for="switch_3_right" class="tooltip tooltip-bottom" data-tooltip="Producing Daily Avg = (Production Volume / # days on production)">Producing Daily</label>
+                        <label for="switch_3_right" class="tooltip tooltip-bottom"
+                            data-tooltip="Producing Daily Avg = (Production Volume / # days on production)">Producing
+                            Daily</label>
                         <input type="radio" id="switch_3_center" name="switch_3" value="monthly" />
                         <label for="switch_3_center">Monthly</label>
                         <input type="radio" id="switch_3_far_right" name="switch_3" value="cumulatives" />
@@ -290,10 +305,14 @@
 
                 <div class="rel">
                     <div class="production-toggle">
-                        <input type="radio" id="chart switch_3_left" name="switch_3_chart" value="daily" checked/>
-                        <label for="chart switch_3_left" class="tooltip tooltip-bottom" data-tooltip="Calendar Daily Avg = (Production Volume / # days in month)">Calendar Daily</label>
+                        <input type="radio" id="chart switch_3_left" name="switch_3_chart" value="daily" checked />
+                        <label for="chart switch_3_left" class="tooltip tooltip-bottom"
+                            data-tooltip="Calendar Daily Avg = (Production Volume / # days in month)">Calendar
+                            Daily</label>
                         <input type="radio" id="chart switch_3_right" name="switch_3_chart" value="producing" />
-                        <label for="chart switch_3_right" class="tooltip tooltip-bottom" data-tooltip="Producing Daily Avg = (Production Volume / # days on production)">Producing Daily</label>
+                        <label for="chart switch_3_right" class="tooltip tooltip-bottom"
+                            data-tooltip="Producing Daily Avg = (Production Volume / # days on production)">Producing
+                            Daily</label>
                         <input type="radio" id="chart switch_3_center" name="switch_3_chart" value="monthly" />
                         <label for="chart switch_3_center">Monthly</label>
                         <input type="radio" id="chart switch_3_far_right" name="switch_3_chart" value="cumulatives" />
@@ -329,10 +348,14 @@
                 <p id="surface_uwi_value2"></p>
             </div>
             <div class="aside-buttons">
-                <a class="aside-button" data-val="well_info"><i class="fa fa-list-ul fa-fw"></i><span> WELL DETAILS</span><i class="fa fa-chevron-right fa-fw float-right"></i></a>
-                <a class="aside-button" data-val="well_completions"><i class="fa fa-cog fa-fw"></i><span> COMPLETIONS AND CASINGS</span><i class="fa fa-chevron-right fa-fw float-right"></i></a>
-                <a class="aside-button" data-val="well_production"><i class="fa fa-table fa-fw"></i><span> PRODUCTION DATA</span><i class="fa fa-chevron-right fa-fw float-right"></i></a>
-                <a class="aside-button" data-val="well_chart"><i class="fa fa-bar-chart fa-fw"></i><span> PRODUCTION CHART</span><i class="fa fa-chevron-right fa-fw float-right"></i></a>
+                <a class="aside-button" data-val="well_info"><i class="fa fa-list-ul fa-fw"></i><span> WELL
+                        DETAILS</span><i class="fa fa-chevron-right fa-fw float-right"></i></a>
+                <a class="aside-button" data-val="well_completions"><i class="fa fa-cog fa-fw"></i><span> COMPLETIONS
+                        AND CASINGS</span><i class="fa fa-chevron-right fa-fw float-right"></i></a>
+                <a class="aside-button" data-val="well_production"><i class="fa fa-table fa-fw"></i><span> PRODUCTION
+                        DATA</span><i class="fa fa-chevron-right fa-fw float-right"></i></a>
+                <a class="aside-button" data-val="well_chart"><i class="fa fa-bar-chart fa-fw"></i><span> PRODUCTION
+                        CHART</span><i class="fa fa-chevron-right fa-fw float-right"></i></a>
             </div>
         </div>
     </aside>
@@ -341,18 +364,23 @@
 
     <div id="subheader">
         <div>
-            <input type="search" id="search-input" name="filter" placeholder="Search by UWI, License, Township" maxlength="23" required>
+            <input type="search" id="search-input" name="filter" placeholder="Search by UWI, License, Township"
+                maxlength="23" required>
 
-            <button id="clear_search_button" type="button" class="btn btn-lg btn-link tooltip tooltip-bottom close" data-tooltip="Clear search">&times;</button>
+            <button id="clear_search_button" type="button" class="btn btn-lg btn-link tooltip tooltip-bottom close"
+                data-tooltip="Clear search">&times;</button>
 
-            <button id="search_button" type="button" class="btn btn-lg btn-link tooltip tooltip-bottom" data-tooltip="Search"><i class="fa fa-search fa-lg"></i></button>            <div id="search_results">No wells found</div>
+            <button id="search_button" type="button" class="btn btn-lg btn-link tooltip tooltip-bottom"
+                data-tooltip="Search"><i class="fa fa-search fa-lg"></i></button>
+            <div id="search_results">No wells found</div>
         </div>
         <div style="width:50rem">
             <span class="inline-block"></span>
             <select id="uwi_list" class="form-select inline-block" style="width:auto"></select>
         </div>
         <div id="logo-container">
-          <a id="logo" href="https://www.petroninja.com" target="_blank"><img src="images/logo.png" alt="Logo white"></a>
+            <a id="logo" href="https://www.petroninja.com" target="_blank"><img src="images/logo.png"
+                    alt="Logo white"></a>
         </div>
     </div>
 
@@ -370,40 +398,40 @@
 
         var filterInput = document.getElementById('search-input');
 
-        map.on('load', function() {
+        map.on('load', function () {
             var well_layers = ['all-wells'];
-            var all_layers = ['all-wells','ab-cameras', 'ab-pipelines', 'facilities'];
+            var all_layers = ['all-wells', 'ab-cameras', 'ab-pipelines', 'facilities'];
 
             map.on('mouseenter', 'all-wells', () => {
-                  map.getCanvas().style.cursor = 'crosshair';
-              });
+                map.getCanvas().style.cursor = 'crosshair';
+            });
 
             map.on('mouseleave', 'all-wells', () => {
-                  map.getCanvas().style.cursor = '';
+                map.getCanvas().style.cursor = '';
             });
 
             //Handle click on a well
-            map.on('click', 'all-wells', function(e){
+            map.on('click', 'all-wells', function (e) {
                 console.log("well layer clicked");
                 wellClick(e);
             });
 
-                //Handle Click on a Camera
-            map.on('click', 'ab-cameras', function(e){
-                $('.camera-image').html("<a href='"+e.features[0].properties["Camera URL"]+"' target='_blank'><img src='"+e.features[0].properties["Image URL"]+"'</img></a>");
+            //Handle Click on a Camera
+            map.on('click', 'ab-cameras', function (e) {
+                $('.camera-image').html("<a href='" + e.features[0].properties["Camera URL"] + "' target='_blank'><img src='" + e.features[0].properties["Image URL"] + "'</img></a>");
                 $('.camera-name').html(e.features[0].properties["Camera Name"]);
                 $('.modal.camera').addClass('active');
             });
 
 
             //Handle Click on a pipeline
-            map.on('click', 'ab-pipelines', function(e){
+            map.on('click', 'ab-pipelines', function (e) {
                 showPipelineInfo(e.features[0].properties);
                 map.setFilter("ab-pipelines-hover", ["==", "LICENCE_NO", e.features[0].properties['LICENCE_NO']]);
             });
 
             //Handle Click on a facility
-            map.on('click', 'facilities', function(e){
+            map.on('click', 'facilities', function (e) {
                 showFacilityInfo(e.features[0].properties);
             });
 
@@ -412,7 +440,7 @@
 
         }); //end map on load
 
-        function wellClick(e){
+        function wellClick(e) {
             //remove well info if another well is currently selected
             $("#table_production").find("tbody").empty();
             $(".aside-button").removeClass("active");
@@ -425,4 +453,5 @@
     </script>
 
 </body>
+
 </html>

@@ -1,48 +1,51 @@
-function wellClick(e){
-        //remove well info if another well is currently selected
-        $("#table_production").find("tbody").empty();
-        $(".aside-button").removeClass("active");
-        $("#layer2").fadeOut("fast");
+function wellClick(e) {
+    //remove well info if another well is currently selected
+    $("#table_production").find("tbody").empty();
+    $(".aside-button").removeClass("active");
+    $("#layer2").fadeOut("fast");
 
-        selectWell(e.features[0].properties.WellID);
-        quickWellInfo(e.features[0].properties.WellID);
+    selectWell(e.features[0].properties.WellID);
+    quickWellInfo(e.features[0].properties.WellID);
 }
 
-function quickWellInfo(WellID){
-        $(".spinner-container").show();
-        PetroNinjaData.getWellData(WellID, function(data){
-            renderWellData(JSON.parse(data.response));
-            renderEventSpecificData(JSON.parse(data.response));
-            $(".spinner-container").hide();
-        })
-        PetroNinjaData.getWellProductionData(WellID, function(data){
-            renderProductionData(JSON.parse(data.response));
-            $(".spinner-container").hide();
-        });
-        PetroNinjaData.getWellEvents(WellID, function(data){
-            renderWellEvents(JSON.parse(data.response), WellID);
-            $(".spinner-container").hide();
-        });
+function quickWellInfo(WellID) {
+    $(".spinner-container").show();
+    PetroNinjaData.getWellData(WellID, function (data) {
+        renderWellData(JSON.parse(data.response));
+        renderEventSpecificData(JSON.parse(data.response));
+        $(".spinner-container").hide();
+    })
+    PetroNinjaData.getWellProductionData(WellID, function (data) {
+        renderProductionData(JSON.parse(data.response));
+        $(".spinner-container").hide();
+    });
+    PetroNinjaData.getWellEvents(WellID, function (data) {
+        renderWellEvents(JSON.parse(data.response), WellID);
+        $(".spinner-container").hide();
+    });
 }
 
 
-function selectWell(wellID){
+function selectWell(wellID) {
     //Get Current Filter
     var current_filter = map.getFilter('all-wells');
     map.setFilter('all-wells', current_filter);
 
-    var sobj = {"property": 'WellID',
-        "type":'categorical',
-        "stops": [[wellID,'#8b0000']]
+    var sobj = {
+        "property": 'WellID',
+        "type": 'categorical',
+        "stops": [[wellID, '#8b0000']]
     };
 
-    var bold = {"property": 'WellID',
-        "type":'categorical',
-        "stops": [[wellID,20]]
+    var bold = {
+        "property": 'WellID',
+        "type": 'categorical',
+        "stops": [[wellID, 20]]
     };
 
-    var thick = {"property": 'WellID',
-        "type":'categorical',
+    var thick = {
+        "property": 'WellID',
+        "type": 'categorical',
         "stops": [[wellID, 2]]
     };
     map.setPaintProperty('all-wells', 'text-color', sobj);
@@ -51,39 +54,39 @@ function selectWell(wellID){
     map.setPaintProperty('wellbore-lines', 'line-color', sobj);
 }
 
-function selectAndFlyToWellByUWI(uwi){
+function selectAndFlyToWellByUWI(uwi) {
     $(".spinner-container").show();
-    PetroNinjaData.getBasicWellData(uwi, function(data){
+    PetroNinjaData.getBasicWellData(uwi, function (data) {
         result = JSON.parse(data.response);
         $(".spinner-container").hide();
         selectWell(result['UWI']);
-        flyToStore([result['BottomHoleLocationLong'], result['BottomHoleLocationLat']] );
+        flyToStore([result['BottomHoleLocationLong'], result['BottomHoleLocationLat']]);
     });
 }
 
 
 function flyToStore(coordinates) {
-  map.flyTo({
-    center: coordinates,
-    zoom: 13
-  });
+    map.flyTo({
+        center: coordinates,
+        zoom: 13
+    });
 }
 
-function daysInMonth(month,year) {
+function daysInMonth(month, year) {
     return new Date(year, month, 0).getDate();
 }
 
-function searchWell(searchString){
+function searchWell(searchString) {
 
     $(".spinner-container").show();
-    PetroNinjaData.wellSearch(searchString, function(data){
+    PetroNinjaData.wellSearch(searchString, function (data) {
         $(".spinner-container").hide();
         result = JSON.parse(data.response);
-        if (result['error_message']){
-            $( "#search_results" ).show();
+        if (result['error_message']) {
+            $("#search_results").show();
         }
         else {
-            $( "#search_results" ).hide();
+            $("#search_results").hide();
 
             //remove well info if another well is currently selected
             $("#table_production").find("tbody").empty();
@@ -91,15 +94,15 @@ function searchWell(searchString){
             $("#layer2").fadeOut("fast");
 
 
-            if (result['Well']['ResultType'] == 'Township'){
+            if (result['Well']['ResultType'] == 'Township') {
                 $(document).trigger("close-aside");
                 $("#uwi_list").prev().html('');
-                var coordinates = [result['Well']['Lng'], result['Well']['Lat'] ];
+                var coordinates = [result['Well']['Lng'], result['Well']['Lat']];
                 flyToStore(coordinates);
             }
             else {
                 console.log(result['Well']['Title']);
-                var coordinates = [result['Well']['Lng'], result['Well']['Lat'] ];
+                var coordinates = [result['Well']['Lng'], result['Well']['Lat']];
                 map.setFilter('all-wells', ["any", ['==', 'is_active_event', 'active'], ['==', 'WellID', result['Well']['Title']]]);
                 flyToStore(coordinates);
                 selectWell(result['Well']['Title']);
@@ -114,20 +117,20 @@ function searchWell(searchString){
 
 
 
-function changeEvent(uwi){
+function changeEvent(uwi) {
     $(".spinner-container").show();
-    PetroNinjaData.getWellData(uwi, function(data){
-            renderEventSpecificData(JSON.parse(data.response));
-            $(".spinner-container").hide();
+    PetroNinjaData.getWellData(uwi, function (data) {
+        renderEventSpecificData(JSON.parse(data.response));
+        $(".spinner-container").hide();
     });
-    PetroNinjaData.getWellProductionData(uwi, function(data){
-            renderProductionData(JSON.parse(data.response));
-            $(".spinner-container").hide();
+    PetroNinjaData.getWellProductionData(uwi, function (data) {
+        renderProductionData(JSON.parse(data.response));
+        $(".spinner-container").hide();
     });
 }
 
 
-function renderWellData(data){
+function renderWellData(data) {
     // Reset the copied to clipboard indicator
     $("#copied").empty();
     $(document).trigger("close-pipeline-aside");
@@ -137,11 +140,11 @@ function renderWellData(data){
 
 
     var _href = $("#set-home-location").attr("href");
-    $("#set-home-location").attr("href", _href + '?home_lat='+data['BottomHoleLocationLat']+'&home_lng='+data['BottomHoleLocationLong']);
+    $("#set-home-location").attr("href", _href + '?home_lat=' + data['BottomHoleLocationLat'] + '&home_lng=' + data['BottomHoleLocationLong']);
 
 
     //Set well message uwi
-    if($("#channel-message-uwi")){
+    if ($("#channel-message-uwi")) {
         $("#channel-message-uwi").val(data['UWI']);
     }
 
@@ -164,9 +167,9 @@ function renderWellData(data){
     $("#field, #field2").html(data['Field'])
 
 
-    var g_link = 'https://maps.google.com?saddr=Current+Location&daddr='+ data['SurfaceHoleLocationLat'] + ',' + data['SurfaceHoleLocationLong'];
+    var g_link = 'https://maps.google.com?saddr=Current+Location&daddr=' + data['SurfaceHoleLocationLat'] + ',' + data['SurfaceHoleLocationLong'];
 
-    $("#google_directions").html('<a target="_blank" href="'+ g_link +'">View printable directions on Google Maps</a>');
+    $("#google_directions").html('<a target="_blank" href="' + g_link + '">View printable directions on Google Maps</a>');
 
 
     $("#well_url").val("https://www.petroninja.com/wells/" + data['UWI']);
@@ -175,21 +178,21 @@ function renderWellData(data){
     var treatments = data['Treatments'];
 
     $("#table_completions tbody").empty();
-    treatments.forEach( function(item, index, array) {
-        if ( $('input[name=metric]:checked').val() == "true" ) {
+    treatments.forEach(function (item, index, array) {
+        if ($('input[name=metric]:checked').val() == "true") {
             $("#table_completions tbody").append("<tr>" +
-                "<td>"+item['Date']+"</td>" +
-                "<td>"+item['LowerDepth']+"</td>" +
-                "<td>"+item['UpperDepth']+"</td>" +
-                "<td>"+item['Formation']+"</td>" +
-                "<td>"+item['Treatment']+"</td></tr>");
+                "<td>" + item['Date'] + "</td>" +
+                "<td>" + item['LowerDepth'] + "</td>" +
+                "<td>" + item['UpperDepth'] + "</td>" +
+                "<td>" + item['Formation'] + "</td>" +
+                "<td>" + item['Treatment'] + "</td></tr>");
         } else {
             $("#table_completions tbody").append("<tr>" +
-                "<td>"+item['Date']+"</td>" +
-                "<td>"+nf.format(_.round(item['LowerDepth'] * 3.28084, 1))+"</td>" +
-                "<td>"+nf.format(_.round(item['UpperDepth'] * 3.28084, 1))+"</td>" +
-                "<td>"+item['Formation']+"</td>" +
-                "<td>"+item['Treatment']+"</td></tr>");
+                "<td>" + item['Date'] + "</td>" +
+                "<td>" + nf.format(_.round(item['LowerDepth'] * 3.28084, 1)) + "</td>" +
+                "<td>" + nf.format(_.round(item['UpperDepth'] * 3.28084, 1)) + "</td>" +
+                "<td>" + item['Formation'] + "</td>" +
+                "<td>" + item['Treatment'] + "</td></tr>");
         }
     });
 
@@ -198,24 +201,24 @@ function renderWellData(data){
     //Render Casings
     $("#table_casings tbody").empty();
 
-    casings.forEach(function(item, index, array) {
-        if ( $('input[name=metric]:checked').val() == 'true' ) {
+    casings.forEach(function (item, index, array) {
+        if ($('input[name=metric]:checked').val() == 'true') {
             $("#table_casings tbody").append("<tr>" +
-                "<td>"+item['TubeType']+"</td>" +
-                "<td>"+item['Size']+"</td>" +
-                "<td>"+item['UpperDepth']+"</td>" +
-                "<td>"+item['LowerDepth']+"</td>" +
-                "<td>"+item['SteelSpec']+"</td>" +
-                "<td>"+item['TubeDensity']+"</td></tr>");
+                "<td>" + item['TubeType'] + "</td>" +
+                "<td>" + item['Size'] + "</td>" +
+                "<td>" + item['UpperDepth'] + "</td>" +
+                "<td>" + item['LowerDepth'] + "</td>" +
+                "<td>" + item['SteelSpec'] + "</td>" +
+                "<td>" + item['TubeDensity'] + "</td></tr>");
         } else {
             $("#table_casings tbody").append(
                 "<tr>" +
-                "<td>"+item['TubeType']+"</td>" +
-                "<td>"+nf.format(_.round(item['Size'] * 0.0393701, 1))+"</td>" +
-                "<td>"+nf.format(_.round(item['UpperDepth'] * 3.28084, 1))+"</td>" +
-                "<td>"+nf.format(_.round(item['LowerDepth'] * 3.28084, 1))+"</td>" +
-                "<td>"+item['SteelSpec']+"</td>" +
-                "<td>"+nf.format(_.round(item['TubeDensity'] * 0.671969, 1))+"</td></tr>");
+                "<td>" + item['TubeType'] + "</td>" +
+                "<td>" + nf.format(_.round(item['Size'] * 0.0393701, 1)) + "</td>" +
+                "<td>" + nf.format(_.round(item['UpperDepth'] * 3.28084, 1)) + "</td>" +
+                "<td>" + nf.format(_.round(item['LowerDepth'] * 3.28084, 1)) + "</td>" +
+                "<td>" + item['SteelSpec'] + "</td>" +
+                "<td>" + nf.format(_.round(item['TubeDensity'] * 0.671969, 1)) + "</td></tr>");
         }
     });
 
@@ -223,7 +226,7 @@ function renderWellData(data){
     $(document).trigger("open-aside");
 }
 
-function renderBasicWellData(data){
+function renderBasicWellData(data) {
     // Reset the copied to clipboard indicator
     $("#copied").empty();
 
@@ -246,7 +249,7 @@ function renderBasicWellData(data){
     $(document).trigger("generate-production-tables");
 }
 
-function renderEventSpecificData(data){
+function renderEventSpecificData(data) {
     var nf = new Intl.NumberFormat();
 
     $("#search-input").val(data['AliasFullName']);
@@ -263,21 +266,21 @@ function renderEventSpecificData(data){
 
     //Render Depths
     //If Metric Else Imperial
-    if ( $('input[name=metric]:checked').val() == 'true' ){
-        $("#kb_elevation").html(data['KBElevation'] +' m');
-        $("#ground_elevation").html(data['GroundElevation'] +' m');
-        $("#tvd").html(data['MaxTrueVerticalDepth'] +' m');
-        $("#total_depth").html(data['TotalDepth'] +' m');
+    if ($('input[name=metric]:checked').val() == 'true') {
+        $("#kb_elevation").html(data['KBElevation'] + ' m');
+        $("#ground_elevation").html(data['GroundElevation'] + ' m');
+        $("#tvd").html(data['MaxTrueVerticalDepth'] + ' m');
+        $("#total_depth").html(data['TotalDepth'] + ' m');
     }
     else {
-        $("#kb_elevation").html(nf.format(_.round(data['KBElevation'] * 3.28084, 1))  +' ft');
-        $("#ground_elevation").html(nf.format(_.round(data['GroundElevation'] * 3.28084, 1))  +' ft');
-        $("#tvd").html(nf.format(_.round(data['MaxTrueVerticalDepth'] * 3.28084, 1)) +' ft');
-        $("#total_depth").html(nf.format(_.round(data['TotalDepth'] * 3.28084, 1)) +' ft');
+        $("#kb_elevation").html(nf.format(_.round(data['KBElevation'] * 3.28084, 1)) + ' ft');
+        $("#ground_elevation").html(nf.format(_.round(data['GroundElevation'] * 3.28084, 1)) + ' ft');
+        $("#tvd").html(nf.format(_.round(data['MaxTrueVerticalDepth'] * 3.28084, 1)) + ' ft');
+        $("#total_depth").html(nf.format(_.round(data['TotalDepth'] * 3.28084, 1)) + ' ft');
     }
 }
 
-function renderWellEvents(events, selected_event){
+function renderWellEvents(events, selected_event) {
     // Change the search input to show currently selected well
     // $("#search-input").val(events[0]['AliasFullName']);
 
@@ -286,7 +289,7 @@ function renderWellEvents(events, selected_event){
     // var events = data['WellEvents'];
 
     var selected_event_formatted = '';
-    events.forEach( function(item, index, array) {
+    events.forEach(function (item, index, array) {
         $("#uwi_list").append(
             $("<option></option>").val(item['UWI']).html(item['AliasFullName'])
         );
@@ -299,7 +302,7 @@ function renderWellEvents(events, selected_event){
 
     $("#uwi_list").val(selected_event);
 
-    $("#uwi_list").parent("div").removeClass().addClass("events"+ events.length)
+    $("#uwi_list").parent("div").removeClass().addClass("events" + events.length)
     if (events.length === 1) {
         $("#uwi_list").prop("disabled", true).hide();
         $("#uwi_list").prev().html("This well only has 1 event");
@@ -321,68 +324,68 @@ function renderProductionData(production) {
         var max_cumulative_gas = 0;
         var max_cumulative_water = 0;
 
-        production.forEach(function(item, index, array) {
-            if (first_record == 0 && item['OIL_VOLUME'] ==0 && item['GAS_VOLUME'] ==0 && item['WATER_VOLUME'] ==0 && item['INJECTION_VOLUME'] ==0 ) {
-                first_record=0;
+        production.forEach(function (item, index, array) {
+            if (first_record == 0 && item['OIL_VOLUME'] == 0 && item['GAS_VOLUME'] == 0 && item['WATER_VOLUME'] == 0 && item['INJECTION_VOLUME'] == 0) {
+                first_record = 0;
             } else {
                 var date = item['DATE'].split("-");
                 var month = date[1];
                 var year = date[0]
 
-                if ( $('input[name=metric]:checked').val() == 'true' ) {
+                if ($('input[name=metric]:checked').val() == 'true') {
                     $("#table_production tbody").append("<tr>" +
-                        "<td>"+ year + "-"+ month + "</td> " +
-                        "<td>"+ item['OIL_VOLUME'] + "</td>" +
-                        "<td>"+ item['OIL_CALENDAR_DAY'] + "</td>"+
-                        "<td>"+ item['OIL_PRODUCING_DAILY'] + "</td>"+
-                        "<td>"+ item['GAS_VOLUME'] + "</td>" +
-                        "<td>"+ item['GAS_CALENDAR_DAY'] + "</td>" +
-                        "<td>"+ item['GAS_PRODUCING_DAILY'] + "</td>"+
-                        "<td>"+ item['WATER_VOLUME'] + "</td>" +
-                        "<td>"+ item['WATER_CALENDAR_DAY'] +"</td>" +
-                        "<td>"+ item['WATER_PRODUCING_DAILY'] + "</td>"+
-                        "<td>"+ item['INJECTION_VOLUME']+"</td>" +
-                        "<td>"+ item['INJECTION_CALENDAR_DAY']+"</td>"+
-                        "<td>"+ item['INJECTION_PRODUCING_DAILY'] + "</td>"+
-                        "<td>"+ item['CUMGAS'] + "</td>"+
-                        "<td>"+ item['CUMOIL'] + "</td>"+
-                        "<td>"+ item['CUMWATER'] + "</td>"+
-                        "<td>"+ item['CUMINJECTION'] + "</td>"+
+                        "<td>" + year + "-" + month + "</td> " +
+                        "<td>" + item['OIL_VOLUME'] + "</td>" +
+                        "<td>" + item['OIL_CALENDAR_DAY'] + "</td>" +
+                        "<td>" + item['OIL_PRODUCING_DAILY'] + "</td>" +
+                        "<td>" + item['GAS_VOLUME'] + "</td>" +
+                        "<td>" + item['GAS_CALENDAR_DAY'] + "</td>" +
+                        "<td>" + item['GAS_PRODUCING_DAILY'] + "</td>" +
+                        "<td>" + item['WATER_VOLUME'] + "</td>" +
+                        "<td>" + item['WATER_CALENDAR_DAY'] + "</td>" +
+                        "<td>" + item['WATER_PRODUCING_DAILY'] + "</td>" +
+                        "<td>" + item['INJECTION_VOLUME'] + "</td>" +
+                        "<td>" + item['INJECTION_CALENDAR_DAY'] + "</td>" +
+                        "<td>" + item['INJECTION_PRODUCING_DAILY'] + "</td>" +
+                        "<td>" + item['CUMGAS'] + "</td>" +
+                        "<td>" + item['CUMOIL'] + "</td>" +
+                        "<td>" + item['CUMWATER'] + "</td>" +
+                        "<td>" + item['CUMINJECTION'] + "</td>" +
                         "</tr>");
                 } else {
                     //Convert from cubic meter to barrels
-                    $("#table_production tbody").append("<tr>"+
-                        "<td>"+ year + "-" + month + "</td> " +
-                        "<td>"+ _.round(item['OIL_VOLUME'] * 6.29, 2) + "</td>" +
-                        "<td>"+ _.round((item['OIL_VOLUME'] * 6.29) / daysInMonth(month, year) , 2)  + "</td>"+
-                        "<td>"+ _.round((item['OIL_VOLUME'] * 6.29) / (item['PRODUCTION_HOURS'] / 24) , 2)  + "</td>"+
-                        "<td>"+ _.round(item['GAS_VOLUME'] * 35.3147, 2)+ "</td>" +
-                        "<td>"+ _.round((item['GAS_VOLUME'] * 35.3147) / daysInMonth(month, year) , 2)+ "</td>" +
-                        "<td>"+ _.round((item['GAS_VOLUME'] * 35.3147) / (item['PRODUCTION_HOURS'] / 24) , 2)+ "</td>" +
-                        "<td>"+ _.round(item['WATER_VOLUME'] * 6.29, 2) + "</td>" +
-                        "<td>"+ _.round((item['WATER_VOLUME'] * 6.29) / daysInMonth(month, year), 2)+"</td>" +
-                        "<td>"+ _.round((item['WATER_VOLUME'] * 6.29) / (item['PRODUCTION_HOURS'] / 24), 2)+"</td>" +
-                        "<td>"+ _.round(item['INJECTION_VOLUME'] * 6.29, 2)+"</td>" +
-                        "<td>"+ _.round((item['INJECTION_VOLUME'] * 6.29) / daysInMonth(month, year), 2)+"</td>"+
-                        "<td>"+ _.round((item['INJECTION_VOLUME'] * 6.29) / (item['INJECTION_HOURS'] / 24), 2)+"</td>"+
-                        "<td>"+ _.round(item['CUMGAS'] * 35.3147, 2) + "</td>"+
-                        "<td>"+ _.round(item['CUMOIL'] * 6.29, 2) + "</td>"+
-                        "<td>"+ _.round(item['CUMWATER'] * 6.29, 2) + "</td>"+
-                        "<td>"+ _.round(item['CUMINJECTION'] * 6.29, 2) + "</td>"+
+                    $("#table_production tbody").append("<tr>" +
+                        "<td>" + year + "-" + month + "</td> " +
+                        "<td>" + _.round(item['OIL_VOLUME'] * 6.29, 2) + "</td>" +
+                        "<td>" + _.round((item['OIL_VOLUME'] * 6.29) / daysInMonth(month, year), 2) + "</td>" +
+                        "<td>" + _.round((item['OIL_VOLUME'] * 6.29) / (item['PRODUCTION_HOURS'] / 24), 2) + "</td>" +
+                        "<td>" + _.round(item['GAS_VOLUME'] * 35.3147, 2) + "</td>" +
+                        "<td>" + _.round((item['GAS_VOLUME'] * 35.3147) / daysInMonth(month, year), 2) + "</td>" +
+                        "<td>" + _.round((item['GAS_VOLUME'] * 35.3147) / (item['PRODUCTION_HOURS'] / 24), 2) + "</td>" +
+                        "<td>" + _.round(item['WATER_VOLUME'] * 6.29, 2) + "</td>" +
+                        "<td>" + _.round((item['WATER_VOLUME'] * 6.29) / daysInMonth(month, year), 2) + "</td>" +
+                        "<td>" + _.round((item['WATER_VOLUME'] * 6.29) / (item['PRODUCTION_HOURS'] / 24), 2) + "</td>" +
+                        "<td>" + _.round(item['INJECTION_VOLUME'] * 6.29, 2) + "</td>" +
+                        "<td>" + _.round((item['INJECTION_VOLUME'] * 6.29) / daysInMonth(month, year), 2) + "</td>" +
+                        "<td>" + _.round((item['INJECTION_VOLUME'] * 6.29) / (item['INJECTION_HOURS'] / 24), 2) + "</td>" +
+                        "<td>" + _.round(item['CUMGAS'] * 35.3147, 2) + "</td>" +
+                        "<td>" + _.round(item['CUMOIL'] * 6.29, 2) + "</td>" +
+                        "<td>" + _.round(item['CUMWATER'] * 6.29, 2) + "</td>" +
+                        "<td>" + _.round(item['CUMINJECTION'] * 6.29, 2) + "</td>" +
                         "</tr>");
                 }
-                first_record =1
+                first_record = 1
 
                 // calculate max cumulative
-                if (item['CUMGAS'] > max_cumulative_gas){
+                if (item['CUMGAS'] > max_cumulative_gas) {
                     max_cumulative_gas = item['CUMGAS'];
                 }
 
-                if (item['CUMOIL'] > max_cumulative_oil){
+                if (item['CUMOIL'] > max_cumulative_oil) {
                     max_cumulative_oil = item['CUMOIL'];
                 }
 
-                if (item['CUMWATER'] > max_cumulative_water){
+                if (item['CUMWATER'] > max_cumulative_water) {
                     max_cumulative_water = item['CUMWATER'];
                 }
 
@@ -390,14 +393,14 @@ function renderProductionData(production) {
         });
 
         //add total cumulatives
-        if ( $('input[name=metric]:checked').val() == 'true' ){
+        if ($('input[name=metric]:checked').val() == 'true') {
             $('#cumulative-gas-val, #cumulative-gas-chart-val').html(nf.format(max_cumulative_gas) + " e3m3");
             $('#cumulative-oil-val, #cumulative-oil-chart-val').html(nf.format(max_cumulative_oil) + " m3");
             $('#cumulative-water-val, #cumulative-water-chart-val').html(nf.format(max_cumulative_water) + " m3");
         } else {
             $('#cumulative-gas-val, #cumulative-gas-chart-val').html(nf.format(_.round(max_cumulative_gas * 35.3147, 2)) + " mcf");
-            $('#cumulative-oil-val, #cumulative-oil-chart-val').html(nf.format(_.round(max_cumulative_oil * 6.29, 2)) + " bbl" );
-            $('#cumulative-water-val, #cumulative-water-chart-val').html(nf.format(_.round(max_cumulative_water* 6.29, 2)) + " bbl");
+            $('#cumulative-oil-val, #cumulative-oil-chart-val').html(nf.format(_.round(max_cumulative_oil * 6.29, 2)) + " bbl");
+            $('#cumulative-water-val, #cumulative-water-chart-val').html(nf.format(_.round(max_cumulative_water * 6.29, 2)) + " bbl");
         }
     }
 
