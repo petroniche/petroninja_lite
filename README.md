@@ -2,7 +2,11 @@
 
 Petro Ninja Lite is a collection of html, csv and js files that provide the basic functionality and look and feel of https://www.petroninja.com/. Included in the JS files is the Petro Ninja Data JS Library that provides an easy way to integrate with the Petro Ninja API. Petro Ninja Lite is a starting point for companies looking to integrate the Petro Ninja map and data into their own system.
 
-To start using Petro Ninja Lite you require a Mapbox and Petro Ninja Data API Keys. To obtain these keys, lease send a request to info@petroniche.com.
+# How To Use
+
+1. To start using Petro Ninja Lite you need a Mapbox and Petro Ninja Data API Keys. To obtain these keys, please send a request to info@petroniche.com.
+2. Put the keys from step 1 in `js/mapbox_setup.js` to run this demo.
+3. Run `index.html`
 
 # Petro Ninja Data API
 To view the Petro Ninja API documention: https://www.petroninja.com/api_documentation/index.html#/

@@ -1,7 +1,7 @@
 function mapboxSetup(zoomlevel, homeLocation, custom_style){
     //API KEYS
-    PetroNinjaData.setApiKey('PETRO NINJA API KEY HERE');
-    mapboxgl.accessToken = 'MAPBOX TOKEN HERE';
+    PetroNinjaData.setApiKey('PETRO NINJA API KEY HERE'); // insert the API key here
+    mapboxgl.accessToken = 'MAPBOX TOKEN HERE'; // insert the token here
 
     //Map Boundaries
     var sw = new mapboxgl.LngLat(-142.5796, 47.9438);
