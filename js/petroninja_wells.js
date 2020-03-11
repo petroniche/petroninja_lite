@@ -16,13 +16,13 @@ function mapboxSetup(zoomlevel, homeLocation, custom_style){
         zoom: zoomlevel,
         maxZoom: 18,
         maxBounds: maxBounds
-    }); 
+    });
 
-    
+
     if (custom_style) {
         map.setStyle(custom_style)
     } else {
-        map.setStyle("mapbox://styles/sbilston/cj8aespwi6c3t2ro49hd1xwab?3");
+      map.setStyle("mapbox://styles/sbilston/ck178vsq702h41cl3ejn511g9");
     }
 
     map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
@@ -91,17 +91,17 @@ function selectWell(wellID){
     map.setFilter('all-wells', current_filter);
 
     var sobj = {"property": 'WellID',
-        "type":'categorical', 
+        "type":'categorical',
         "stops": [[wellID,'#8b0000']]
     };
 
     var bold = {"property": 'WellID',
-        "type":'categorical', 
+        "type":'categorical',
         "stops": [[wellID,20]]
     };
 
     var thick = {"property": 'WellID',
-        "type":'categorical', 
+        "type":'categorical',
         "stops": [[wellID, 2]]
     };
     map.setPaintProperty('all-wells', 'text-color', sobj);
@@ -148,7 +148,7 @@ function searchWell(searchString){
             $("#table_production").find("tbody").empty();
             $(".aside-button").removeClass("active");
             $("#layer2").fadeOut("fast");
-            
+
 
             if (result['Well']['ResultType'] == 'Township'){
                 $(document).trigger("close-aside");
@@ -166,7 +166,7 @@ function searchWell(searchString){
                 // addWell(result['Well']['Lat'], result['Well']['Lng'], result['Well']['Symbol']);
                 quickWellInfo(result['Well']['Title'])
             }
-        }                
+        }
     });
 }
 
@@ -194,8 +194,8 @@ function renderWellData(data){
     // Hide the search results if they are shown
     $("#search_results").hide();
 
-    
-    var _href = $("#set-home-location").attr("href"); 
+
+    var _href = $("#set-home-location").attr("href");
     $("#set-home-location").attr("href", _href + '?home_lat='+data['BottomHoleLocationLat']+'&home_lng='+data['BottomHoleLocationLong']);
 
 
@@ -203,7 +203,7 @@ function renderWellData(data){
     if($("#channel-message-uwi")){
         $("#channel-message-uwi").val(data['UWI']);
     }
-    
+
     // Well Detail
     var nf = new Intl.NumberFormat();
 
@@ -309,7 +309,7 @@ function renderEventSpecificData(data){
     var nf = new Intl.NumberFormat();
 
     $("#search-input").val(data['AliasFullName']);
-    
+
     //General
     $("#well_name").html(data['WellName']);
 
@@ -343,8 +343,8 @@ function renderWellEvents(events, selected_event){
     //Set Events for the UWI
     $("#uwi_list").find("option").remove().end();
     // var events = data['WellEvents'];
-    
-    var selected_event_formatted = '';  
+
+    var selected_event_formatted = '';
     events.forEach( function(item, index, array) {
         $("#uwi_list").append(
             $("<option></option>").val(item['UWI']).html(item['AliasFullName'])
@@ -355,7 +355,7 @@ function renderWellEvents(events, selected_event){
         }
     });
 
-    
+
     $("#uwi_list").val(selected_event);
 
     $("#uwi_list").parent("div").removeClass().addClass("events"+ events.length)
@@ -375,7 +375,7 @@ function renderProductionData(production) {
     $("#table_production").find("tbody").empty();
 
     if (production) {
-        var first_record = 0; 
+        var first_record = 0;
         var max_cumulative_oil = 0;
         var max_cumulative_gas = 0;
         var max_cumulative_water = 0;
@@ -429,7 +429,7 @@ function renderProductionData(production) {
                         "<td>"+ _.round(item['CUMWATER'] * 6.29, 2) + "</td>"+
                         "<td>"+ _.round(item['CUMINJECTION'] * 6.29, 2) + "</td>"+
                         "</tr>");
-                } 
+                }
                 first_record =1
 
                 // calculate max cumulative
@@ -461,72 +461,4 @@ function renderProductionData(production) {
     }
 
     $(document).trigger("generate-production-tables");
-}
-
-function showPipelineInfo(properties){
-    $("#search_results").hide();
-
-    $("#search-input").val("Pipeline " + properties['LICENCE_NO']);
-
-    $("#pipeline_company").html(properties['COMP_NAME']);
-    $("#pipeline_from_location").html(properties['FRM_LOC']);
-    $("#pipeline_from_fac").html(properties['FROM_FAC']);
-    $("#pipeline_h2s_content").html(properties['H2S_CONTNT']);
-    $("#pipeline_last_occyr").html(properties['LAST_OCCYR']);
-    $("#pipeline_license_number").html(properties['LICENCE_NO']);
-    $("#pipeline_license_line_number").html(properties['LIC_LI_NO']);
-    $("#pipeline_original_line_number").html(properties['ORIGLIN_NO']);
-    $("#pipeline_original_license_number").html(properties['ORIG_LICNO']);
-    $("#pipeline_out_diameter").html(properties['OUT_DIAMET']);
-    $("#pipeline_pipegrade").html(properties['PIPE_GRADE']);
-    $("#pipeline_maop").html(properties['PIPE_MAOP']);
-    $("#pipeline_type").html(properties['PIPE_TYPE']);
-    $("#pipeline_material").html(properties['PIP_MATERL']);
-    $("#pipeline_pllicsegid").html(properties['PLLICSEGID']);
-    $("#pipeline_pl_spec_id").html(properties['PL_SPEC_ID']);
-    $("#pipeline_seg_length").html(properties['SEG_LENGTH']);
-    $("#pipeline_seg_status").html(properties['SEG_STATUS']);
-    $("#pipeline_substance").html(properties['SUBSTANCE']);
-    $("#pipeline_to_fac").html(properties['TO_FAC']);
-    $("#pipeline_to_location").html(properties['TO_LOC']);
-    $("#pipeline_wall_thick").html(properties['WALL_THICK']);
-
-    $(document).trigger("open-pipeline-aside")
-
-}
-
-function showFacilityInfo(properties){
-    $("#search_results").hide();
-
-    $("#search-input").val("Facility " + properties['Facility ID']);
-
-    $("#facility_id").html(properties['Facility ID']);
-    $("#facility_name").html(properties['Facility Name']);
-    $("#facility_operator").html(properties['Operator']);
-    $("#facility_status").html(properties['Status']);
-
-    if(properties['Province'] == 'AB'){
-        $(".ab_field").css('display', 'block');
-        $(".bc_field").css('display', 'none');
-    }
-    else if (properties['Province'] == 'BC'){
-        $(".bc_field").css('display', 'block');
-        $(".ab_field").css('display', 'none');
-    }
-
-    //AB Only Fields
-    $("#facility_subtype").html(properties['Facility Sub Type']);
-    $("#facility_license_number").html(properties['License Number']);
-    $("#facility_edct_descr").html(properties['EDCT_DESCR']);
-    $("#facility_licensee").html(properties['Licensee']);
-
-
-
-    //BC Only Fields
-    $("#facility_location").html(properties['Facility Location']);
-    $("#facility_approval_date").html(properties['Approval Date']);
-    $("#facility_operations_date").html(properties['Operations State Date']);
-
-    $(document).trigger("open-facility-aside")
-
 }

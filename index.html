@@ -4,9 +4,9 @@
     <meta charset='utf-8' />
     <title>Petro Ninja Lite</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    
-    <script src='https://api.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.css' rel='stylesheet' />
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
@@ -20,7 +20,7 @@
     <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
-    
+
     <!-- Include the Petro Ninja JS Library -->
     <script src='./js/petroninja_lib.js'></script>
 
@@ -45,80 +45,6 @@
 
     <div id='map'></div>
     <div class="spinner"><i class="fa fa-refresh fa-spin fa-3x fa-fw center-spin"></i></div>
-
-
-    <!-- Right Hand Side Bar -->
-    <div class="right-sidebar-vertical-open"><i class="fa fa-angle-left"></i></div>
-
-    <div class="right-container">
-        <div class="right-sidebar-vertical-close"><i class="fa fa-angle-right"></i></div>
-        
-        <div class="right-sidebar">
-            <div class="container">
-                <div id="map-toggles" class="right-sidebar-section columns">
-                    <div id ="satellite-label" class="col-8">
-                        Satellite View
-                    </div>
-                    <div id="satelitte-toggle" class="right-sidebar-toggle col-4">
-                        <label class="switch">
-                          <input id="satellite-toggle-input" type="checkbox">
-                          <span class="slider round"></span>
-                        </label>
-                    </div>
-                </div> 
-
-                <div id="map-pipelines" class="right-sidebar-section columns">
-                    <div id ="pipelines-label" class="col-8">
-                        Pipeline View
-                    </div>
-                    <div id="pipeline-toggle" class="right-sidebar-toggle col-4">
-                        <label class="switch">
-                          <input id="pipeline-toggle-input" type="checkbox">
-                          <span class="slider round"></span>
-                        </label>
-                    </div>
-                </div> 
-
-                <div id="map-facilities" class="right-sidebar-section columns">
-                    <div id ="facilities-label" class="col-8">
-                        Facility View
-                    </div>
-                    <div id="facilities-toggle" class="right-sidebar-toggle col-4">
-                        <label class="switch">
-                          <input id="facilities-toggle-input" type="checkbox">
-                          <span class="slider round"></span>
-                        </label>
-                    </div>
-                </div> 
-
-                <div id="map-well-labels" class="right-sidebar-section columns">
-                    <div id ="well-label-label" class="col-8">
-                        Well Labels
-                    </div>
-                    <div id="well-label-toggle" class="right-sidebar-toggle col-4">
-                        <label class="switch">
-                          <input id="well-label-toggle-input" type="checkbox">
-                          <span class="slider round"></span>
-                        </label>
-                    </div>
-                </div> 
-
-                <div id="map-units" class="right-sidebar-section columns">
-                    <div id ="well-label-label" class="col-4">
-                        Units
-                    </div>
-                    <div class="col-4">
-                        <input type="radio" id="metric" name="metric" value=true checked/> <label for="metric">Metric</label>
-                    </div>
-                    <div class="col-4">
-                        <input type="radio" id="imperial" name="metric" value=false /> <label for="imperial">Imperial</label>
-                    </div>
-                </div> 
-
-            </div>
-        </div>
-    </div>
-    <!-- End Right Hand Side Bar -->
 
     <aside>
         <div id="layer2" class="shadow">
@@ -283,7 +209,7 @@
                             <thead>
                                 <tr>
                                     <th class="sort">Type</th>
-                                    <th class="sort" data-unit='mm'>Diameter</th> 
+                                    <th class="sort" data-unit='mm'>Diameter</th>
                                     <th class="sort" data-unit='m'>Top Depth</th>
                                     <th class="sort" data-unit='m'>Shoe Depth</th>
                                     <th class="sort">Grade</th>
@@ -304,9 +230,9 @@
                     <button type="button" class="close float-right"><i class="fa fa-times fa-fw"></i></button>
                     <button type="button" class="expand float-right"><i class="fa fa-expand fa-fw"></i></button>
                 </div>
-                
+
                 <div class="rel">
-   
+
                     <div class="production-toggle">
                         <input type="radio" id="switch_3_left" name="switch_3" value="daily" checked/>
                         <label for="switch_3_left" class="tooltip tooltip-bottom" data-tooltip="Calendar Daily Avg = (Production Volume / # days in month)">Calendar Daily</label>
@@ -351,7 +277,7 @@
                         </thead>
                         <tbody></tbody>
                     </table>
-            
+
                 </div>
             </div>
 
@@ -373,7 +299,7 @@
                         <input type="radio" id="chart switch_3_far_right" name="switch_3_chart" value="cumulatives" />
                         <label for="chart switch_3_far_right">Cumulatives</label>
                     </div>
-                    
+
                     <label id="toggle-log" class="form-switch hand with-text">
                         <input type="checkbox" id="log" checked>
                         <span>Logarithmic</span><span>Linear</span>
@@ -411,121 +337,7 @@
         </div>
     </aside>
 
-    <!--- PIPELINE DATA BOX -->
-    <div id="aside-pipeline">
-        <div id="pipeline_side" class="shadow">
-            <div class="aside-section" style="padding-top:2rem">
 
-                <b>Company</b>
-                <p id="pipeline_company"></p>
-
-                <b>License Line Number</b>
-                <p id="pipeline_license_line_number"></p>
-
-                <b>Substance</b>
-                <p id="pipeline_substance"></p>
-
-                <b>Segment Status</b>
-                <p id="pipeline_seg_status"></p>
-
-                <b>Outside Diameter (mm)</b>
-                <p id="pipeline_out_diameter"></p>
-
-                <hr>
-
-                <b>From Facility</b>
-                <p id="pipeline_from_fac"></p> 
-
-                <b>From Location</b>
-                <p id="pipeline_from_location"></p> 
-
-                <b>To Facility</b>
-                <p id="pipeline_to_fac"></p>
-
-                <b>To Location</b>
-                <p id="pipeline_to_location"></p>
-
-                <b>Segment Length (km)</b>
-                <p id="pipeline_seg_length"></p>
-
-                <hr>
-
-                <b>Wall Thickness (mm)</b>
-                <p id="pipeline_wall_thick"></p>
-
-                <b>Pipe Type</b>
-                <p id="pipeline_type"></p>
-
-                <b>Pipe Grade</b>      
-                <p id="pipeline_pipegrade"></p>
-
-                <b>Pipe Material</b>            
-                <p id="pipeline_material"></p>
-
-                <b>Pipe Maximum Allowable Operating Pressure (kPa)</b>            
-                <p id="pipeline_maop"></p>
-
-                <b>H2S Content (%)</b>      
-                <p id="pipeline_h2s_content"></p> 
-
-            </div>
-        </div>
-    </div>
-    <!--- END PIPELINE DATA BOX -->
-
-    <div id = "aside-facility">
-        <div id="facility_side" class="shadow">
-            <div class="aside-section" style="padding-top:2rem">
-
-                <b>Facility ID</b>
-                <p id="facility_id"></p>
-
-                <b>Facility Name</b>
-                <p id="facility_name"></p>
-
-                <b>Facility Operator</b>
-                <p id="facility_operator"></p>
-
-                <b>Facility Status</b>
-                <p id="facility_status"></p>
-
-                <b>Facility Sub Type</b>
-                <p id="facility_subtype"></p>
-
-                <!-- AB Only Fields -->
-                <div class="ab_field">
-                    <b>Facility License Number</b>
-                    <p id="facility_license_number"></p>
-                </div>
-
-                <div class="ab_field">
-                    <b>Facility Description</b>
-                    <p id="facility_edct_descr"></p>
-                </div>
-
-                <div class="ab_field">
-                    <b>Facility Licensee</b>
-                    <p id="facility_licensee"></p>
-                </div>
-
-                     <!-- BC Only Fields -->
-                <div class="bc_field">
-                    <b>Facility Location</b>
-                    <p id="facility_location"></p>
-                </div>
-
-                <div class="bc_field">
-                    <b>Facility Approval Date</b>
-                    <p id="facility_approval_date"></p>
-                </div>
-
-                <div class="bc_field">
-                    <b>Facility Operations Date</b>
-                    <p id="facility_operations_date"></p>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div id="subheader">
         <div>
@@ -557,16 +369,17 @@
         var map = mapboxSetup(initialZoomLevel, homeLocation, null);
 
         var filterInput = document.getElementById('search-input');
-    
+
         map.on('load', function() {
             var well_layers = ['all-wells'];
             var all_layers = ['all-wells','ab-cameras', 'ab-pipelines', 'facilities'];
 
-        
+            map.on('mouseenter', 'all-wells', () => {
+                  map.getCanvas().style.cursor = 'crosshair';
+              });
 
-            map.on('mousemove', function (e) {
-                var features = map.queryRenderedFeatures(e.point, { layers: all_layers });
-                map.getCanvas().style.cursor = features.length ? 'crosshair' : '';
+            map.on('mouseleave', 'all-wells', () => {
+                  map.getCanvas().style.cursor = '';
             });
 
             //Handle click on a well
@@ -595,20 +408,19 @@
             });
 
 
+
+
         }); //end map on load
-
-
 
         function wellClick(e){
             //remove well info if another well is currently selected
             $("#table_production").find("tbody").empty();
             $(".aside-button").removeClass("active");
             $("#layer2").fadeOut("fast");
-            
+
             selectWell(e.features[0].properties.WellID);
             quickWellInfo(e.features[0].properties.WellID);
         }
-
 
     </script>
 
